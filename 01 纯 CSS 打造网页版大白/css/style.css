@@ -1,0 +1,200 @@
+/* 设置网页的背景颜色 */
+body {
+    background: #595959;
+}
+
+/* 大白的整体样式 */
+#baymax {
+    /* 设置为居中 */
+    margin: 0 auto;
+    /* 高度 */
+    height: 600px;
+    /* ps */
+    /* background-color: pink; */
+    /* 隐藏溢出 */
+    overflow: hidden;
+}
+
+/* 大白的头部 */
+#head {
+    width: 100px;
+    height: 64px;
+    /* 以百分比定义圆角形状 */
+    border-radius: 50%;
+    /* 背景 */
+    background-color: #fff;
+    /* 水平居中 */
+    margin: 0 auto;
+    margin-bottom: -20px;
+    /* 设置下边框的样式 */
+    border-bottom: 5px solid #e0e0e0;
+    /* 设置元素的堆叠顺序；拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素前面 */
+    z-index: 100;
+    /* 生成相对定位的元素 */
+    position: relative;
+}
+
+/* 大白的眼睛 */
+#eye,
+#eye2 {
+    width: 11px;
+    height: 13px;
+    background-color: #282828;
+    border-radius: 50%;
+    position: relative;
+    top: 30px;
+    left: 27px;
+    /* 旋转该元素 */
+    transform: rotate(8deg);
+    /* 添加动画 */
+    animation: blink 1s ease-in-out infinite alternate;
+}
+
+#eye2 {
+    /* 使其旋转对称 */
+    transform: rotate(-8deg);
+    top: 17px;
+    left: 69px;
+}
+
+/* 大白的嘴巴 */
+#mouth {
+    width: 38px;
+    height: 1.5px;
+    background-color: #282828;
+    position: relative;
+    top: 10px;
+    left: 34px;
+}
+
+/* 大白的躯干和腹部 */
+#torso,
+#belly {
+    margin: 0 auto;
+    width: 180px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 47%;
+    /* 设置边框 */
+    border: 5px solid #e0e0e0;
+    border-top: none;
+    z-index: 1;
+}
+
+#belly {
+    height: 300px;
+    width: 245px;
+    margin-top: -140px;
+    z-index: 5;
+}
+
+#cover {
+    width: 190px;
+    height: 150px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    border-radius: 50%;
+}
+
+/* 大白的心脏 */
+#heart {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* 向边框四周添加阴影效果 */
+    box-shadow: 2px 5px 2px #ccc inset;
+    position: relative;
+    top: 40px;
+    right: -115px;
+    z-index: 111;
+    border: 1px solid #ccc;
+}
+
+/* 大白的手臂 */
+#left-arm,
+#right-arm {
+    width: 120px;
+    height: 270px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -350px;
+    left: -100px;
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+#right-arm {
+    transform: rotate(-20deg);
+    top: -620px;
+    left: 100px;
+}
+
+/* 大白的大手指 */
+#l-bigfinger,
+#r-bigfinger {
+    width: 20px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    top: 250px;
+    left: 50px;
+    transform: rotate(-50deg);
+}
+
+#r-bigfinger {
+    left: 50px;
+    transform: rotate(50deg);
+}
+
+/* 大白的小手指 */
+#l-smallfinger,
+#r-smallfinger {
+    width: 15px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    top: 195px;
+    left: 66px;
+    transform: rotate(-40deg);
+}
+
+#r-smallfinger {
+    left: 37px;
+    transform: rotate(40deg);
+}
+
+/* 大白的腿 */
+#left-leg,
+#right-leg {
+    width: 90px;
+    height: 170px;
+    border-radius: 40% 30% 10px 45%;
+    background-color: #fff;
+    position: relative;
+    top: -640px;
+    left: -45px;
+    transform: rotate(-1deg);
+    z-index: -2;
+    margin: 0 auto;
+}
+
+#right-leg {
+    top: -810px;
+    left: 50px;
+    border-radius: 30% 40% 45% 10px;
+    transform: rotate(1deg);
+}
+
+/* 扩展功能：添加动画让大白的眼睛动起来 */
+@keyframes blink {
+    40% {
+        transform: rotate(80deg);
+    }
+}
+/* 把该动画放入到 eye eye2 的样式中 */
