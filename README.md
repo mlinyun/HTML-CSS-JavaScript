@@ -35,3 +35,15 @@
 <div align=center>
     <img src="./doc/image-puzzle.gif" alt="Puzzle" width="280" />
 </div>
+
+## 案例04 HTML 实现 Markdown 编辑器
+
+作为一个程序员，你应该知道 Markdown 吧，它是一种轻量级的标记语言，旨在让人们以简单的方式编写格式化文档。
+
+在本案例中，我们将运用库（`marked`、`ace` 和 `highlight.js`）实现一个实时 Markdown 编辑器，并实现代码高亮效果。
+
+最终的效果如下图所示：
+
+<div align=center>
+    <img src="./doc/image-editor.gif" alt="Editor" width="300" />
+</div>

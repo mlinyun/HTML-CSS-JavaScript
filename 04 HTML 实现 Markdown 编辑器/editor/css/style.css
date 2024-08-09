@@ -1,0 +1,22 @@
+/* 设置编辑器和预览框各占 50% 宽度，编辑器在左边，预览框在右边。 */
+#md-editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    /* ps */
+    /* background-color: pink; */
+}
+
+#md-viewer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    overflow-y:  scroll;
+    /* ps */
+    /* background-color: skyblue; */
+}
