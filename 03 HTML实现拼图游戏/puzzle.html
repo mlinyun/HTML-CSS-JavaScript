@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="./css/puzzle.css">
+</head>
+<body>
+    <!-- 最外面的 div，用来包含里面的结构 -->
+    <div id="container">
+        <!-- 游戏区域，也就是大 div 方块 -->
+        <div id="game">
+            <!-- 小 div，也就是8个小方块。当点击的时候执行 move()函数，参数是显示的编号这样我们就知道了点击了那个方块 -->
+            <div id="d1" onclick="move(1)">1</div>
+            <div id="d2" onclick="move(2)">2</div>
+            <div id="d3" onclick="move(3)">3</div>
+            <div id="d4" onclick="move(4)">4</div>
+            <div id="d5" onclick="move(5)">5</div>
+            <div id="d6" onclick="move(6)">6</div>
+            <div id="d7" onclick="move(7)">7</div>
+            <div id="d8" onclick="move(8)">8</div>
+        </div>
+        <!-- 游戏控制区 -->
+        <div id="control">
+            <!-- 显示游戏事件区域 -->
+            <p>
+                <rowspan id="timeText">总用时</rowspan>
+                <rowspan id="timer"></rowspan>
+            </p>
+            <!-- 显示控制按钮区域 -->
+            <p>
+                <rowspan id="start" onclick="start()">开始</rowspan>
+                <rowspan id="reset" onclick="reset()">重来</rowspan>
+            </p>
+        </div>
+        <!-- 游戏结束祝贺面版 -->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>恭喜 🎉</h2>
+                <a href="javascript:;" class="close">×</a>
+                <div class="content-1">
+                    恭喜你获得了胜利 🎉🎉
+                </div>
+                <button id="play-again" onclick="playAgain()">
+                    再玩一次 😄
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/puzzle.js"></script>
+</body>
+</html>
