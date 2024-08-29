@@ -47,3 +47,13 @@
 <div align=center>
     <img src="./doc/image-editor.gif" alt="Editor" width="300" />
 </div>
+
+## 案例5 网页版别踩白块游戏
+
+别踩白块这个游戏相信很多人都在手机上玩过，今天我们就来做一个网页版的，先上一张游戏效果图：
+
+<div align=center>
+    <img src="./doc/image-white-blocks.gif" alt="Editor" width="350" />
+</div>
+
+属于简化版别踩白块，代码相对较为简单易学，主要涉及通过 javascript 操作元素节点的增删以及属性节点（class）的操作。
