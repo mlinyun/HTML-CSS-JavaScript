@@ -1,0 +1,43 @@
+/* 获取谷歌字体的链接 */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+/* 设置 body 样式 */
+body {
+    /* 将项目置于中心 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 指定垂直高度 */
+    height: 100vh;
+    overflow: hidden;
+
+    /* 设置背景图片 */
+    background: url('../img/bg.png') no-repeat center/cover;
+}
+
+/* 设置 clock 样式 */
+.clock {
+    /* 把时钟内容放在屏幕中央 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 550px;
+    color: #fff;
+    font-size: 60px;
+    font-family: Orbitron;
+    /* 调整数字时钟之间的空隙 */
+    letter-spacing: 7px;
+    /* 圆角边框 */
+    border-radius: 50px;
+    /* 将时钟做成毛玻璃效果 */
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+                inset -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}

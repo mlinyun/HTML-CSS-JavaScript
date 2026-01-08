@@ -1,0 +1,82 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
+
+body {
+    background: #bdbdbd;
+}
+
+/* 基本设计 */
+#calcContainer {
+    width: 80%;
+    height: auto;
+    box-shadow: 0.5em 0.5em 1.2em rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+
+/* 第一行 */
+.result-clear {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* 显示 */
+.result-clear input[type=text].result {
+    width: 72%;
+    height: 60px;
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+    display: block;
+    padding-top: 1%;
+    padding-left: 5%;
+    outline: none;
+    border: none;
+}
+
+/* 输入按钮 */
+.grid-buttons {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212121;
+}
+
+input[type=button] {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    color: #fff;
+    background-color: #212121;
+    border: 2px solid #212121;
+    flex-grow: 1;
+    width: 25%;
+    height: auto;
+    padding: 4%;
+    border: 0;
+    align-items: center;
+    text-align: center;
+}
+
+input[type=button].clear {
+    width: 25.5%;
+    font-size: 2em;
+    background-color: #009688;
+    border: 2px solid #009688;
+}
+
+.grid-buttons input[type=button].math {
+    background-color: #757575;
+    border: 2px solid #757575;
+}
+
+.grid-buttons input[type=button]:hover,
+input[type=button].clear:hover {
+    transition: 0.3s ease;
+    border: 2px solid #00bcd4;
+    background-color: #00bcd4;
+}

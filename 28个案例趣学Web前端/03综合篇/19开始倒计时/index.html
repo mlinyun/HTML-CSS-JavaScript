@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开始倒计时</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h5>添加日期</h5>
+        <form action="" id="addDate">
+            <!-- 日期类型表单 -->
+            <input type="date" name="date" id="date">
+            <!-- 时间类型表单 -->
+            <input type="time" name="time" id="time">
+            <button type="submit">提交</button>
+        </form>
+        <p class="hidden">截止日期<span id="until"></span></p>
+        <p class="hidden">还剩的时间</p>
+        <div class="pickTime">
+            <div class="time">
+                <span id="time-years">-</span>
+                <p>年</p>
+            </div>
+            <div class="time">
+                <span id="time-days">-</span>
+                <p>天</p>
+            </div>
+            <div class="time">
+                <span id="time-hours">-</span>
+                <p>时</p>
+            </div>
+            <div class="time">
+                <span id="time-minutes">-</span>
+                <p>分</p>
+            </div>
+            <div class="time">
+                <span id="time-seconds">-</span>
+                <p>秒</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

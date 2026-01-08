@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿GitHub登录页面</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 我们在 index 文件中添加一对 div 标签作为登录表单的容器 -->
+    <div class="wrapper">
+        <!-- 在登录页面添加回徽标 -->
+        <div class="logo">
+            <img src="./img/github.png" alt="GitHub">
+        </div>
+        <!-- 添加标题 -->
+        <div class="title">
+            <p>Sign in to GitHub</p>
+        </div>
+        <!-- 登录表单
+             登录表单就是我们的输入框和按钮的显示区域
+             我们先创建两个输入框和一个登录按钮
+             第一个输入框用于输入用户名或者邮箱地址
+             第二个输入框用于输入登录密码
+         -->
+        <div class="form">
+            <!-- 用户输入框 -->
+            <div class="input_field">
+                <label for="username">Username or email address</label>
+                <input type="text" name="username" id="username" class="input">
+            </div>
+            <!-- 密码输入框 -->
+            <div class="input_field">
+                <label for="username">Password</label>
+                <input type="password" name="password" id="password" class="input">
+                <!-- 添加一个忘记密码的链接 -->
+                <a href="javascript:;" class="forgot">Forgot password?</a>
+            </div>
+            <!-- 登录按钮 -->
+            <div class="btn">
+                <input type="button" value="Sign in" class="sign_btn">
+            </div>
+        </div>
+        <!-- 创建新账户的选项 -->
+        <div class="create_act">
+            <p>New to GitHub? <a href="javascript:;">Create an account.</a></p>
+        </div>
+    </div>
+    <!-- 网页底部 -->
+    <div class="footer">
+        <ul>
+            <li>
+                <a href="javascript:;">Terms</a>
+            </li>
+            <li>
+                <a href="javascript:;">Privacy</a>
+            </li>
+            <li>
+                <a href="javascript:;">Security</a>
+            </li>
+            <li>
+                <a href="javascript:;">Contact GitHub</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

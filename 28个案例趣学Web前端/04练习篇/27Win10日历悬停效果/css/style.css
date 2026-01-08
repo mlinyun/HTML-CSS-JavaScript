@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
+* {
+    box-sizing: border-box !important;
+    color: white;
+    text-transform: capitalize !important;
+    font-family: "Noto Sans JP", sans-serif;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.win-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.2rem;
+    align-items: stretch;
+    text-align: center;
+    padding: 2rem;
+    cursor: default;
+    /* 开始添加的代码 */
+    border: 1px solid white;
+    /* 结束添加的代码 */
+}
+
+.win-btn {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0px;
+    border: 3px solid transparent;
+}
+
+
+/* 开始添加的代码 */
+/* 今天的日期 */
+.win-btn-active {
+    background-color: red;
+}
+
+
+/* 其他月份的日期 */
+.win-btn-inactive {
+    color: #ffffff5f;
+}
+/* 结束添加的代码 */
+
+button:focus {
+    outline: none;
+}

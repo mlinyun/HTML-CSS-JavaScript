@@ -1,0 +1,83 @@
+/* 基本的CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 90%;
+}
+
+/* 让我们的轮播与我们的图像一样宽，并使滚动区域可滚动 */
+.carousel__wrapper {
+    max-width: min(80%, 853px);
+    position: relative;
+}
+
+.carousel__wrapper .carousel__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 2rem 1rem;
+    color: #fff;
+    background: none;
+    border: none;
+}
+
+.carousel__button--left {
+    left: 0;
+}
+
+.carousel__button--right {
+    right: 0;
+}
+
+.carousel__scroll-area {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    scroll-snap-type: x mandatory;
+    /* 再增加一条线，使我们的滚动丝滑连贯 */
+    scroll-behavior: smooth;
+}
+
+.carousel__scroll-area figure {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* 美化我们的图像、图形和标题 */
+figure {
+    position: relative;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel__wrapper figure img {
+    /* width: 853px;
+    height: 480px; */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5rem;
+    font-style: italic;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(to top, rgb(0 0 0 / 0.5), transparent);
+}

@@ -1,0 +1,46 @@
+body {
+    font-size: 14px;
+    font-family: "simhei", Arial, Helvetica, sans-serif;
+    color: #666;
+}
+
+#d1 {
+    width: 611px;
+    height: 336px;
+    background-color: #e8e8e8;
+    background-image: url('../img/Think.png');
+    background-size: 318px 260px;
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    overflow: hidden;
+}
+
+#p1 {
+    font-size: 32px;
+    color: #333;
+}
+
+#p3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0aa1ed;
+}
+
+#d1 > div {
+    width: 245px;
+    height: 232px;
+    margin: 68px 0 0 36px;
+}
+
+#d1 a {
+    width: 132px;
+    height: 40px;
+    display: block;
+    background-color: #0aa1ed;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 3px;
+}

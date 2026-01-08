@@ -1,0 +1,167 @@
+/* 使用以下 CSS 作为网页的初始化代码 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* 将背景颜色设为白色 */
+body {
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+/* 这里我们来设置一下容器的样式
+ * 设置最大宽度为 310px
+ * 将容器放置网页中间
+ */
+.wrapper {
+    max-width: 310px;
+    width: 100%;
+    height: auto;
+    /* height: 100px; */
+    margin: 40px auto;
+    /* ps */
+    /* background-color: pink; */
+}
+
+/* 图片默认是行内元素，这里我们要让它独占一行，将其改变为块元素
+ * 这里设置图片的宽和高为 48px，并且水平居中
+ */
+.wrapper .logo img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 25px;
+}
+
+/* 设置标题的颜色为黑色，字体大小为 24px，文字居中 */
+.wrapper .title p {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+/* 首先我们先给登录表单设置样式 */
+.wrapper .form {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* 设置两个输入区域的样式 */
+.wrapper .form .input_field {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* 给提示文字添加样式 */
+.wrapper .form .input_field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #24292e;
+}
+
+/* 给两个输入框添加样式 */
+.wrapper .form .input_field .input {
+    width: 100%;
+    min-height: 34px;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+    border-radius: 3px;
+    color: #24292e;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 8px;
+}
+
+/* 当我们点击输入框时，box-shadow 和边框颜色会发生变化 */
+.wrapper .form .input_field .input:focus {
+    border-color: #2188ff;
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
+                      0 0 2.5 rgba(3, 102, 214, 0.3);
+}
+
+/* 给忘记密码链接添加样式 */
+.wrapper .form .input_field a.forgot {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* 设计登录按钮 */
+.wrapper .form .btn .sign_btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #28a745;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 2px;
+}
+
+/* 鼠标经过按钮更换背景颜色 */
+.wrapper .form .btn .sign_btn:hover {
+    background-color: #279f43;
+}
+
+/* 给新建新账户添加样式 */
+.wrapper .create_act {
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
+    padding: 15px 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #0366d6;
+}
+
+.wrapper .create_act a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    max-width: 1012px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.footer ul li {
+    margin-right: 16px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer ul li:last-child a {
+    color: #57606a;
+}
+
+.footer ul li:last-child a:hover {
+    color: #0366d6;
+}

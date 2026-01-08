@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子游戏</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>让我们开始吧</h1>
+        <div class="dice">
+            <p class="player1">玩家 1</p>
+            <img class="img1" src="./img/dice6.png" alt="dice6">
+        </div>
+        <div class="dice">
+            <p class="player2">玩家 2</p>
+            <img class="img2" src="./img/dice6.png" alt="dice6">
+        </div>
+    </div>
+    <div class="container bottom">
+        <button type="button" class="btn" onclick="rollTheDice()">掷骰子</button>
+    </div>
+    <div class="container bottom">
+        <button type="button" class="btn" onclick="editNames()">编辑玩家姓名</button>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何使用 HTML 创建网页</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 在header中添加了名为header的class作为我们导航栏的容器 -->
+    <header class="header">
+        <!-- 在nav中添加了名为navbar的class -->
+        <nav class="navbar">
+            <!-- 在一个a标签中添加了名为nav-logo的class -->
+            <a href="http://haiyong.site/" class="nav-logo">海拥</a>
+            <!-- 在ul中添加了名为nav-menu的class -->
+            <ul class="nav-menu">
+                <!-- ul里面的4个li都添加了名为nav-item的class -->
+                <!-- 在每一个nav-tiem内部，都有一个名为nav-link的class -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">服务</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">博客</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">联系</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1>HTML初学者训练营</h1>
+        <section>
+            <h2>介绍</h2>
+            <p>
+                HyperText Markup Language: 超文本标记语义
+            </p>
+        </section>
+
+        <section>
+            <h2>初始HTML</h2>
+            <p>
+                HTML
+                文档应该有<mark>.html</mark>文件扩展名。通常应该站点的主页被命名为<strong>“index.html”</strong>。
+                “index”表示这是浏览器将加载的默认文件。命名 HMTL 文件时使用<em>小写字母</em>。HTML
+                资源的名称通常用在 URL 中。URL通常区分大小写。
+            </p>
+            <ul>
+                <li>HTML 学习如何搭建页面结构和内容（盖房子 毛坯房）</li>
+                <li>CSS 学习如何美化页面（装修）</li>
+                <li>JavaScript 学习如何给页面添加动态效果</li>
+                <li>jQuery JS语言框架，简化原生JS开发</li>
+                <li>
+                    <a href="http://www.bootcss.com/">
+                        Bootstrap 前端框架 对HTML/CSS/JavaScript/jQuery
+                        进行封装，目的时提高前端页面的开发效率
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <h2>联系我们</h2>
+        <div class="form">
+            <div class="form_container">
+                <div class="from_left">
+                    <div class="input_field">
+                        <input type="text" name="username" id="username" placeholder="你的名字*" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" name="email" id="email" placeholder="你的邮件*" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" name="usertel" id="usertel" placeholder="你的电话*" />
+                    </div>
+                </div>
+                <div class="form_right">
+                    <textarea name="userinfo" id="userinfo" placeholder="你的信息*"></textarea>
+                </div>
+            </div>
+            <div class="btn">
+                <a href="#">发送</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

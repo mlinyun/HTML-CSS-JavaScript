@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维码生成器</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/qrcode.js"></script>
+</head>
+<body>
+    <!-- 
+        QRCode.js 的基本使用方式如下所示：
+    
+    <div id="qrcode"></div>
+    <script>
+        new QRCode(document.getElementById('qrcode'), '蓝桥云课')
+
+        // 或者添加一些配置项：
+        var qrcode = new QRCode("test", {
+            text: '蓝桥云课',
+            width: 128,
+            height: 128,
+            colorDark: '#000',
+            colorLight: '#fff',
+            correctLevel: QRCode.CorrectLevel.H
+        })
+    </script>
+     -->
+    
+    <section class="heading">
+        <div class="title">二维码生成器</div>
+        <div class="sub-title">将任何你想要的东西生成二维码！！</div>
+    </section>
+    <section class="user-input">
+        <label for="input_text">准备好创建自己的二维码了吗？</label>
+        <input type="text" name="input_text" id="input_text" autocomplete="off">
+        <button class="button" type="button">生成二维码</button>
+    </section>
+    <div class="qr-code" style="display: none"></div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

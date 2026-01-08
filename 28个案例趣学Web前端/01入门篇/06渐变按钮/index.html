@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变按钮</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        button {
+            width: 320px;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 7px;
+            background-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+            border: none;
+            overflow: hidden;
+        }
+        
+        button::before {
+            content: "Web前端开发";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            font-family: "Poppins", sans-serif;
+            font-size: 25px;
+            letter-spacing: 6px;
+            font-weight: 700;
+            padding: 32px 0;
+            color: #fcfcfc;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        /* 现在让我们用 :after 为按钮添加不同的颜色 */
+        button::after {
+            content: "";
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            left: -90px;
+            top: -200px;
+            z-index: -1;
+            background-image: conic-gradient(
+                #ff2e4e,
+                #d960ff,
+                #9264ff,
+                #00b3f9,
+                #06cd69,
+                #ffcd00,
+                #ff5c22,
+                #ff2e4e
+            );
+        }
+
+        button:hover::after {
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button>Web前端开发</button>
+</body>
+</html>

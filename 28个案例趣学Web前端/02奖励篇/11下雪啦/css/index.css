@@ -1,0 +1,9 @@
+body {
+    background-color: #000;
+    margin: 0;  /* 去掉自带的外边距 */
+    overflow: hidden;
+}
+
+img {
+    position: absolute;
+}

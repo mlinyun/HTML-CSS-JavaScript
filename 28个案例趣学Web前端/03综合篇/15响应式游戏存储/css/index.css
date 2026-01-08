@@ -1,0 +1,91 @@
+body {
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.gallery {
+    width: 100%;
+    display: block;
+    min-height: 100vh;
+    background-color: #2a2932;
+    padding: 30px 0;
+}
+
+.gallery .gallery-filter {
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery .gallery-filter .filter-item {
+    color: #fff;
+    font-size: 17px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 20px;
+    margin-right: 8px;
+    padding: 8px 20px;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery .gallery-filter .filter-item.active {
+    color: #fff;
+    border-color: #16b5ef;
+    background-color: #16b5ef;
+}
+
+.gallery .gallery-item {
+    width: calc(100% / 3);
+    padding: 15px;
+}
+
+.gallery .gallery-item-inner img {
+    width: 100%;
+    border: 3px solid #d4dad9;
+}
+
+.gallery .gallery-item.hide {
+    display: none;
+}
+
+/*当屏幕宽度介于 467px-800px 时*/
+@media (max-width: 800px) {
+    .gallery .gallery-item {
+        width: 50%;
+    }
+}
+
+/*当屏幕宽度小于 467px 时*/
+@media (max-width: 467px) {
+    .gallery .gallery-item {
+        width: 100%;
+    }
+
+    .gallery .gallery-filter .fillter-item {
+        margin-bottom: 10px;
+    }
+}
