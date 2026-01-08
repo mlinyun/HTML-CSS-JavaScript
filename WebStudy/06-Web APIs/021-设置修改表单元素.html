@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置修改表单元素</title>
+    <style>
+        input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    密码：<input type="password" name="" id="" placeholder="请输入密码">
+    <button class="btn1">按钮</button>
+    <br />
+    爱好：
+    <input type="checkbox">唱歌
+    <input type="checkbox">跳舞
+    <input type="checkbox">画画
+    <button class="btn2">全选</button>
+    <br />
+    地址：
+    <select name="" id="">
+        <option value="">北京</option>
+        <option value="">上海</option>
+        <option value="">广州</option>
+        <option value="">深圳</option>
+    </select>
+    <script>
+        // 1. 获取元素
+        let password = document.querySelector('input[type=password]')
+        // 2. 修改表单元素type属性
+        password.type = 'text'
+
+        let btn1 = document.querySelector('.btn1')
+        btn1.disabled = true     // 禁用按钮
+        // btn1.disabled = false    // 启用按钮
+
+        let checkbox = document.querySelectorAll('input[type=checkbox]')
+        // for (let i = 0; i < checkbox.length; i++) {
+        //     checkbox[i].checked = true
+        // }
+
+        let btn2 = document.querySelector('.btn2')
+        // btn2.onclick = function() {
+        //     for (let i = 0; i < checkbox.length; i++) {
+        //         // console.log(checkbox[i])
+        //         checkbox[i].checked = true
+        //     }
+        // }
+        
+        // 点击全选
+        btn2.addEventListener('click', function() {
+            for (let i = 0; i < checkbox.length; i++) {
+                // console.log(i);
+                // console.log(checkbox[i]);
+                checkbox[i].checked = true
+                // this 指向的是事件函数的调用者 btn2
+                this.disabled = true
+            }
+        })
+    </script>
+</body>
+</html>

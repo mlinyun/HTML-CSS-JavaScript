@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名</title>
+    <style>
+        div {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid pink;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div>开始点名</div>
+    <button>点击点名</button>
+    <script>
+        // 得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min    // 含最大值，含最小值
+        }
+        let names = ['刘备', '关羽', '张飞', '赵云', '马超', '黄忠', '诸葛亮', '曹操']
+        // 获取元素
+        let btn = document.querySelector('button')
+        let div = document.querySelector('div')
+        // 监听事件
+        btn.addEventListener('click', function() {
+            // 生成随机数
+            let random = getRandomIntInclusive(0, names.length - 1)
+            // 将抽到的名字添加到盒子内容
+            div.innerHTML = names[random]
+            // 抽过的名字从数组中删除
+            names.splice(random, 1)
+            // 如果数组的长度最终未0时，禁用点名按钮
+            if (names.length === 0) {
+                this.disabled = true
+            }
+        })
+    </script>
+</body>
+</html>

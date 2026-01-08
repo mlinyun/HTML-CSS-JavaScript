@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery的排他思想</title>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        .current {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="current">快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                // jQuery 有隐式迭代，它会给所有选中的按钮都绑定点击事件
+                // 不需要使用for循环给每一个按钮绑定点击事件
+
+                // 第一种方法
+                // 干掉所有人
+                $('button').removeClass('current')
+                // 复活自己
+                $(this).addClass('current')
+
+                // 第二种方法
+                // 这种方法需要把原来第一个按钮的类名去掉
+                // 当前元素变化背景颜色
+                $(this).css('background', 'pink')
+                // 当前元素的其余兄弟元素去掉背景颜色，隐式迭代
+                $(this).siblings().css('backgroundColor', '')
+            })
+        })
+    </script>
+</body>
+</html>

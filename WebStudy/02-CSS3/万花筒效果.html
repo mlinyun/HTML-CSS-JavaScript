@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万花筒效果</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .box {
+            position: relative;
+            width: 350px;
+            height: 500px;
+            /* background-color: pink; */
+            margin: 130px auto 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-10deg);
+            animation: change 10s infinite linear;
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            width: 350px;
+            height: 500px;
+        }
+
+        .pic1 {
+            transform: rotateY(0deg) translateZ(500px);
+        }
+
+        .pic2 {
+            transform: rotateY(40deg) translateZ(500px);
+        }
+
+        .pic3 {
+            transform: rotateY(80deg) translateZ(500px);
+        }
+
+        .pic4 {
+            transform: rotateY(120deg) translateZ(500px);
+        }
+
+        .pic5 {
+            transform: rotateY(160deg) translateZ(500px);
+        }
+
+        .pic6 {
+            transform: rotateY(200deg) translateZ(500px);
+        }
+
+        .pic7 {
+            transform: rotateY(240deg) translateZ(500px);
+        }
+
+        .pic8 {
+            transform: rotateY(280deg) translateZ(500px);
+        }
+
+        .pic9 {
+            transform: rotateY(320deg) translateZ(500px);
+        }
+
+        .pic10 {
+            transform: rotateY(360deg) translateZ(500px);
+        }
+
+        @keyframes change {
+            0% {
+                transform: rotateX(-10deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(-10deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pic1"><img src="./images/1.jpg" alt=""></div>
+        <div class="pic2"><img src="./images/2.jpg" alt=""></div>
+        <div class="pic3"><img src="./images/3.jpg" alt=""></div>
+        <div class="pic4"><img src="./images/4.jpg" alt=""></div>
+        <div class="pic5"><img src="./images/5.jpg" alt=""></div>
+        <div class="pic6"><img src="./images/6.jpg" alt=""></div>
+        <div class="pic7"><img src="./images/7.jpg" alt=""></div>
+        <div class="pic8"><img src="./images/8.jpg" alt=""></div>
+        <div class="pic9"><img src="./images/9.jpg" alt=""></div>
+        <div class="pic10"><img src="./images/10.jpg" alt=""></div>
+    </div>
+</body>
+</html>

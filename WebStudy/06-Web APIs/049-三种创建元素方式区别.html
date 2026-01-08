@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种创建元素方式区别</title>
+</head>
+<body>
+    <button>创建元素</button>
+    <div>123</div>
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // 三种创建元素方式区别
+        // 1. document.write() 创建元素  如果页面文档流加载完毕，再调用这句话会导致页面重绘
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            document.write('<div>456</div>')
+        })
+
+        // 2. innerHTML 创建元素
+        let inner = document.querySelector('.inner')
+        for (let i = 0; i < 10000; i++) {
+            inner.innerHTML += '<a href="#">百度</a>'
+        }
+        console.log((time2 - time1) / 1000)
+        // 使用拼接字符串会比较耗时间，可以采取数组的方式进行操作
+
+        let arr = []
+        for (let i = 0; i < 10000; i++) {
+            // 将a标签添加到数组，然后再添加到页面
+            arr.push('<a href="#">百度</a>')
+        }
+        inner.innerHTML = arr.join('')
+        console.log((time4 - time3) / 1000)
+        // 使用字符串拼接会非常消耗内存，而数组不会
+
+        // 3. document.createElement() 创建元素
+        let create = document.querySelector('.create')
+        for (let i = 0; i < 10000; i++) {
+            let a = document.createElement('a')
+            create.appendChild(a)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环练习</title>
+</head>
+<body>
+    <script>
+        // 1.求1~100之间所有整数的和
+        let sum1 = 0
+        for (let i = 1; i <= 100; i++) {
+            sum1 += i	// sum1 = sum1 + i
+        }
+        console.log(`1 + 2 + 3 + ... + 100 = ${sum1}`)
+
+        // 2.求1~100之间所有数的平均值
+        let sum2 = 0
+        for (let i = 1; i <= 100; i++) {
+            sum2 += i	// sum2 = sum2 + i
+        }
+        let average = sum2 / 100
+        console.log(`1~100的平均值为: ${average}`)
+
+        // 3.求1~100之间所有偶数和奇数的和
+        let even_sum = 0
+        let odd_sum = 0
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                even_sum += i
+            } else {
+                odd_sum += i
+            }
+        }
+        console.log(`2 + 4 + 6 + ... + 100 = ${even_sum}`)
+        console.log(`1 + 3 + 5 + ... + 99 = ${odd_sum}`)
+
+        // 4. 求1~100之间所有能被3整除的数字的和
+        let sum3 = 0
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0) {
+                sum3 += i
+            }
+        }
+        console.log(`1~100之间所有能被3整除的数字的和是${sum3}`)
+    </script>
+</body>
+</html>

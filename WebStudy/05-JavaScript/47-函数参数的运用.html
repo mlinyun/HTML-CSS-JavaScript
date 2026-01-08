@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数的运用</title>
+</head>
+<body>
+    <script>
+        // 1.利用函数求任意两个数的和
+        // function getAdd(num1, num2) {
+        //     num1 = num1 || 0
+        //     num2 = num2 || 0
+        //     return num1 + num2
+        // }
+        // console.log(getAdd(10, 10), getAdd())
+
+        // 2.利用函数求任意两个数之间所有整数的和
+        // function getSum(start, end) {
+        //     let sum = 0	// 准备一个变量，保存数字和
+        //     for (let i = start; i <= end; i++) {
+        //         sum += i // 把每个数值 都累加 到变量中
+        //     }
+        //     return sum	// 返回sum的值
+        // }
+        // console.log(getSum(1, 100))
+
+        // 3.用户输入任意两个数，输出两个数中最大的数
+        let num1 = +prompt('请输入第一个数: ')
+        let num2 = +prompt('请输入第二个数: ')
+        function getMax(x, y) {
+            // 当调用者没有传入数据时，x,y默认为0
+            // 利用逻辑中断可以实现这一个功能
+            x = x || 0
+            y = y || 0
+            if (x > y) {
+                return x
+            } else {
+                return y
+            }
+        }
+        let max = getMax(num1, num2)
+        alert(`${num1}和${num2}中最大的数是${max}`)
+    </script>
+</body>
+</html>

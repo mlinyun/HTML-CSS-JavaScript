@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- 知识点：-——————————————————————————————————————
+    1.CSS3新增兄弟选择器 例：div~p，选择div的兄弟元素p；
+	
+	回顾旧知识：相邻兄弟选择器，例:div+p，选择div的相邻兄弟元素p
+	
+	2.CSS3新增属性选择器，
+	格式：E[attribute^=value]，选取以value开头的属性值元素
+	格式：E[attribute$=value]，选取以value结尾的属性值元素
+	格式：E[attribute*=value]，选取包含value的属性值元素
+	
+	回顾旧知识：属性选择器
+	格式：E[attribute]，选取有指定属性的元素
+	格式：E[attribute=value]，选取等于value的属性值元素
+	格式：E[attribute~=value]，选取包含value且value前后只能有空格的属性值元素
+	格式：E[attribute|=value]，选取以value开头且value只能为独立单词，后面可跟连字符的属性值元素
+ ——————————————————————————————————————————————————-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS3新增选择器1</title>
+		<style type="text/css">
+			/* 根据要求完成样式设置*/	
+			
+			   /*清除元素外边距、内边距样式*/
+			  *{
+				  margin:0;
+			      padding:0;
+				}		
+				
+			/* 1.h1的相邻兄弟p，蓝色边框。h1的兄弟p是红色。 */
+			
+			
+			/* 2.根据b标签中的文字，将被选择的td元素背景设置为黄色 */ 
+				
+				
+				
+				
+				
+		    </style>
+		</head>
+		<body>
+			<!-- 1.h1的相邻兄弟p，蓝色边框。h1的兄弟p是红色。-->
+			<p>段落1</p>
+		    <h1>标题1</h1>
+		    <p>段落2</p>
+		    <p>段落3</p>
+			<h2>标题2</h2>
+			<p>段落4</p>
+			<hr>
+			<!-- 2.根据b标签中的文字，将被选择的td元素背景设置为黄色 -->
+			<big><b>有lang属性的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>th[lang]</td>
+			        <td>无属性</td>
+			        <td lang="">lang=""</td>
+			        <td lang="en">lang="en"</td>
+			        <td lang="cn">lang="cn"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值为a的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title="a"]</td>
+			        <td>无属性</td>
+			        <td title="a">title="a"</td>
+			        <td title="a b">title="a b"</td>
+			        <td title="ab">title="ab"</td>
+			        <td title="ba">title="ba"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值包含“c，且c前后只能有空格”的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title~="c"]</td>
+			        <td>无属性</td>
+			        <td title="c">title="c"</td>
+			        <td title="c d">title="c d"</td>
+			        <td title="c-d">title="c-d"</td>
+			        <td title="cd">title="cd"</td>
+			        <td title="d c">title="d c"</td>
+			        <td title="dc">title="dc"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值为“h开头，且h只能为独立单词，后面可跟连字符”的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title|="h"]</td>
+			        <td>无属性</td>
+			        <td title="h">title="h"</td>
+			        <td title="h i">title="h i"</td>
+			        <td title="h-i">title="h-i"</td>
+			        <td title="hi">title="hi"</td>
+			        <td title="i h">title="i h"</td>
+			        <td title="i h j">title="i h j"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值为“l开头”的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title^="l"]</td>
+			        <td>无属性</td>
+			        <td title="l">title="l"</td>
+			        <td title="l m">title="l m"</td>
+			        <td title="l-m">title="l-m"</td>
+			        <td title="lm">title="lm"</td>
+			        <td title="m l">title="m l"</td>
+			        <td title="m l n">title="m l n"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值为“o结尾”的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title$="o"]</td>
+			        <td>无属性</td>
+			        <td title="o">title="o"</td>
+			        <td title="o p">title="o p"</td>
+			        <td title="o-p">title="o-p"</td>
+			        <td title="op">title="op"</td>
+			        <td title="p o">title="p o"</td>
+			        <td title="p-o">title="p-o"</td>
+			        <td title="po">title="po"</td>
+			    </tr>
+			</table>
+			<br />
+			<big><b>title属性值“包含x”的td元素会被选择</b></big>
+			<table border="1">
+			    <tr>
+			        <td>[title*="x"]</td>
+			        <td>无属性</td>
+			        <td title="x">title="x"</td>
+			        <td title="y">title="y"</td>
+			        <td title="x y">title="x y"</td>
+			        <td title="x-y">title="x-y"</td>
+			        <td title="xy">title="yx"</td>
+			        <td title="y x">title="y x"</td>
+			        <td title="y-x">title="y-x"</td>
+			        <td title="yx">title="yx"</td>
+			    </tr>
+			</table>
+		</body>
+</html>

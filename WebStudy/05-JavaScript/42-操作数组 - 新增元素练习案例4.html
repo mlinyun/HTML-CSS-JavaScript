@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作数组 - 新增元素练习案例4</title>
+</head>
+<body>
+    <script>
+        // 案例④：需求：将i数组 ['red', 'green', 'blue', 'pink', 'purple'] 的内容反过来存放，输出 ['purple', 'pink', 'blue', 'green', 'red']
+        // 方法1：使用 push(新增内容) 来实现
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // for (let i = arr.length - 1; i >= 0; i--) {
+        //     new_arr.push(arr[i])
+        // }
+        // console.log(new_arr)  // ['purple', 'pink', 'blue', 'green', 'red']
+
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // for (let i = 0; i < arr.length; i++) {
+        //     new_arr.push(arr[arr.length - 1 - i])
+        // }
+        // console.log(new_arr)  // ['purple', 'pink', 'blue', 'green', 'red']
+
+
+        // 方法2：使用 unshift (新增的内容) 来实现
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // for (let i = 0; i < arr.length; i++) {
+        //     new_arr.unshift(arr[i])
+        // }
+        // console.log(new_arr)  // ['purple', 'pink', 'blue', 'green', 'red']
+
+        // 方法3：使用 修改索引号赋值的方式 来实现
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // let j = arr.length - 1
+        // for (let i = 0; i < arr.length; i++) {
+        //     new_arr[j] = arr[i]
+        //     j--
+        // }
+        // console.log(new_arr)  // ['purple', 'pink', 'blue', 'green', 'red']
+
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // let j = 0
+        // for (let i = arr.length; i > 0; i--) {
+        //     new_arr[j] = arr[i - 1]
+        //     j++
+        // }
+        // console.log(new_arr)	// ['purple', 'pink', 'blue', 'green', 'red']
+
+        // 方法4：使用 数组[ 数组.length ] = 新数据 来实现
+        // let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        // let new_arr = []
+        // for (let i = 0; i < arr.length; i++) {
+        //     new_arr[new_arr.length] = arr[arr.length - 1 -i]
+        // }
+        // console.log(new_arr)
+        let arr = ['red', 'green', 'blue', 'pink', 'purple']
+        let new_arr = []
+        for (let i = arr.length; i > 0; i--) {
+            new_arr[new_arr.length] = arr[i - 1]
+        }
+        console.log(new_arr)	// ['purple', 'pink', 'blue', 'green', 'red']
+    </script>
+</body>
+</html>

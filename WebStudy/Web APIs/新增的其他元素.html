@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>其他常用元素</title>
+		<script type="text/javascript">
+						// 9.此处添加js代码，设置designmode开启
+						document.designMode = "on";
+		</script>
+	</head>
+	
+	<body>
+		<!-- 知识点————————————————————————————————————————————————
+	         一、HTML5新增常用元素包括文档结构元素以及：
+		     （1）.文本格式化元素 bdi、mark、time（有属性datatime、pubdate）
+		     （2）.页面增强元素 meter、progress
+			 （3）.多媒体元素audio、video
+			 二、HTML5的通用属性contenteditable,designmode,hidden,spellcheck
+			———————————————————————————————————————————————————————————————
+			 -->
+		<!-- 按要求完成1-9设置。 -->
+		
+		<p>
+			hello <bdi>0601</bdi> children
+		</p>
+		
+		<!-- 1.给“儿童节”定义高亮文本 -->
+		<p>2020年 <mark>儿童节</mark>	</p> 
+		
+		<!-- 2.给段落里的两个内容分别加上time标签，并设置datatime和pubdate属性
+		 （1）第一个time的datetime为2020-06-01
+		 （2）第二个time的datetime为2020-06-01T12:00，pubdate为true
+		 -->
+		<p>
+		   <time datatime="2020-0601">儿童的节日</time>
+		   <time datatime="2020-0601" pubdate="true">现在的时间是12：00</time>
+		</p>
+		<!-- 3.设置计数器及进度条 -->
+		<p>
+		当前汽车行驶速度是<meter value="30" max="100"></meter>千米/小时<br \>
+		
+		任务完成比<progress value="80" max="150"></progress><br \>
+		</p>
+		<!-- 4.背景音乐循环播放 -->
+		<audio src=""  loop="loop" autoplay="autoplay"></audio>
+	   <!-- 5视频自动播放，出现控制条 -->
+		<video src="./video/video.mp4" controls="controls" loop="loop" muted="muted" width="300"></video>
+	  
+	  <!-- 6.设置table的属性可编辑 -->
+       <table border="1" contenteditable="true">
+           <caption><b>值班表</b></caption>
+           <tr>
+               <th>星期一</th>
+               <th>星期二</th>
+               <th>星期三</th>
+               <th>星期四</th>
+               <th>星期五</th>
+           </tr>
+           <tr>
+               <td>张三</td>
+               <td>李四</td>
+               <td>王五</td>
+               <td>赵六</td>
+               <td>孙七</td>
+           </tr>
+       </table>
+	   
+	   <!-- 7.设置一下段落隐藏属性，使得该段落隐藏 -->
+	   <p  hidden="hidden">这个段落是隐藏的</p>
+	   <br>
+	   
+	   <!-- 8.textarea的设置检查拼写属性 -->
+	   <form action="">
+		   请输入：<textarea rows="10" cols="20" spellcheck="true">
+		   	
+		        </textarea>
+	   </form>
+	  
+	</body>
+	
+</html>

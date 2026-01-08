@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element.innerHTML 属性</title>
+    <style>
+        div {
+            width: 250px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">前端程序的头发很多</div>
+    <script>
+        let box = document.getElementById('box')
+        box.innerHTML = '<h3>前端程序员的头发有很多</h3>'
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开启定时器</title>
+</head>
+<body>
+    <script>
+        // 回调函数可以是一个匿名函数
+        setTimeout(function() {
+            console.log('时间到了')
+        }, 1000)
+
+        function callback() {
+            console.log('爆炸了')
+        }
+
+        // 回调函数也可以是一个有名函数
+
+        // 我们通常会给不同的定时器设置不同的标识符，用来区分不同的定时器
+        let timer1 = setTimeout(callback, 3000)
+        let timer2 = setTimeout('callback()', 5000) // 我们不提倡这种写法
+    </script>
+</body>
+</html>

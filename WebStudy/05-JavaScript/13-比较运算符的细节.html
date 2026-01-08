@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比较运算符的细节</title>
+</head>
+<body>
+    <script>
+        let a
+        let b = a - 0
+        if (b == b) {
+            console.log(b * 2 + '2' - 0 + 4)
+        } else {
+            console.log(!b * 2 + '2' - 0 + 8)
+        }
+
+        console.log(0 === NaN)
+        console.log(NaN === NaN)
+
+        let num1 = 0.1 + 0.2
+        console.log(num1)
+        console.log(num1 === 0.3)
+
+        let num2 = 0.07 * 100
+        console.log(num2)
+        console.log(num2 === 7)
+    </script>
+</body>
+</html>

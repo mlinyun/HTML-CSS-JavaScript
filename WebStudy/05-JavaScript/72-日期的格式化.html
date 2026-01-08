@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期的格式化</title>
+</head>
+<body>
+    <script>
+        // 创建一个时间对象date
+        let date = new Date()
+        let year = date.getFullYear()	// 获取当年
+        let month = date.getMonth() + 1	// 获取当月（0 ~ 11）从0开始算起 所以这里要加1
+        let dates = date.getDate()	// 获取当天日
+        let arr = ['星期日', '星期一','星期二', '星期三', '星期四', '星期五', '星期六']
+        let day = date.getDay()	// 获取星期	返回的是(0 ~ 6) 所以可以借助数组完成
+        let hours = date.getHours()		// 获取当前小时
+        let minute = date.getMinutes()	// 获取当前分钟
+        let second = date.getSeconds()	// 获取当前秒钟
+        // 时间补零
+        month = month >= 10 ? month : '0' + month
+        dates = dates >= 10 ? dates : '0' + dates
+        hours = hours >= 10 ? hours : '0' + hours
+        minute = minute >= 10 ? minute : '0' + minute
+        second = second >= 10 ? second : '0' + second
+        // 格式化输出今天是xxxx年x月x日 星期x x时x分x秒
+        console.log('今天是' + year + '年' + month + '月' + dates+ '日 ' + arr[day] + ' ' + hours + '时' + minute + '分' + second + '秒')
+    </script>
+</body>
+</html>

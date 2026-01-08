@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 自定义属性：程序员自己添加的属性，下面的 index属性即是自定义属性 -->
+    <div id="demo" index="1" class="header"></div>
+    <script>
+        let div = document.querySelector('div')
+        // // 1. 获取元素属性值 
+        // // (1) 获取内置属性：element.属性(元素本身自带的属性)
+        // console.log(div.id) // demo
+        // // 特殊：获取元素的class值时，使用classNmae，不要使用class
+        // console.log(div.className)  // header
+        // // (2) 获取自定义属性：element.getAttribute('属性')
+        // console.log(div.getAttribute('id'))
+        // console.log(div.getAttribute('index'))
+        // // 若使用获取内置属性的方式获取自定义属性，则会出现 undefined
+        // console.log(div.index)  // undefined
+
+        // // 2. 设置元素属性值
+        // // (1) 设置内置属性的属性值：element.属性 = '值'
+        // div.id = 'test'
+        // console.log(div.id)     // test
+        // div.className = 'footer'
+        // console.log(div.className)  // footer
+        // // (2) 设置自定义属性的属性值：element.setAttribute('要修改的属性'，'属性值')
+        // div.setAttribute('class', 'nav')
+        // console.log(div.className)  // nav
+        // div.setAttribute('index', '2')
+        // console.log(div.getAttribute('index'))  // 2
+
+        // 3. 移除元素属性的属性值
+        // (1) 移除内置属性的属性值：element.属性 = ''
+        div.id = ''
+        console.log(div.id) // 空
+        // (2) 移除自定义属性的属性值：element.removeAttribute('属性')
+        div.removeAttribute('class')
+        console.log(div.className)  // 空
+        div.removeAttribute('index')
+        console.log(div.getAttribute('index'))  // null
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>正则表达式</title>
+</head>
+<body>
+	<script>
+		console.log("hello , . > overy one! . . , 23 ni hao .".match(/\b\w+\b/g))
+		let str1 = "hi every one!"
+		let str2 = "oe"
+		let reg1 = new RegExp("["+str2+"]", "g")
+		console.log(str1.replace(reg1, ""))
+		let time = '2022-11-30'
+		let reg2 = /^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+		let regExp = new RegExp(reg2)
+		console.log(regExp.test(time))
+		console.log(regExp.exec(time))
+	</script>
+</body>
+</html>

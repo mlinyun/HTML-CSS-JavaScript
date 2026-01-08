@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS03</title>
+	</head>
+	<!-- 请在style标签对中填写代码，完成以下（1）-（9）的样式 -->
+	
+	<!--(1)使用伪类选择器，设置a标签的四种状态样式: 未访问链接， 已访问链接 ， 鼠标移动到链接上， 鼠标点击时  -->
+	<!-- (2)使用伪类选择器，设置form表单中鼠标聚焦到输入框时的样式背景色为黄色 -->
+	<!-- (3)使用伪类选择器，设置ul的第一个li元素字号为30px； -->
+	<!-- (4)使用伪类选择器，设置ul的第二个li元素颜色为蓝色； -->
+	<!-- (5)使用伪类选择器，设置ul的倒数第2个li元素颜色为红色 -->
+	<!--（6）使用伪类选择器，为id为d2的元素进行样式设置，分别设置第一个p、最后一个p、第一个h1、最后一个h1的背景色-->
+	<!--（7）使用伪类选择器，设置表单中选中项图标大小-->
+	<!--（8）使用伪类选择器，设置不同语言的样式 -->
+	<!-- （9）使用伪元素选择器，设置id为d1的div中相关伪元素的样式
+	   a.使用:first-letter伪元素设置第一个p段落第一个字字号和颜色。
+	   b.使用:first-line伪元素设置第二个p段落第一行为小型大写字母字体,设置颜色。
+	   c.分别使用:after,:before在h1元素前后加一副图片。
+	-->
+	<style type="text/css">
+	/* 此处写代码 */
+	/* (1) */
+	a:link {
+		font-size: 20px;
+		text-decoration: none;
+		color: red;
+	}
+
+	a:hover {
+		font-size: 30px;
+		color: pink;
+	}
+	
+	a:active {
+		color: yellow;
+	}
+
+	a:visited {
+		font-size: 20px;
+		color: gray;
+	}
+
+	/* (2) */
+	form input:focus {
+		background-color: yellow;
+	}
+
+	/* (3) */
+	ul li:first-child {
+		font-size: 30px;
+	}
+
+	/* (4) */
+	ul li:nth-child(2) {
+		color: blue;
+	}
+
+	/* (5) */
+	ul li:nth-last-child(2) {
+		color: red;
+	}
+
+	/* (6) */
+	#d2 p:first-child {
+		background-color: lightgreen;
+	}
+
+	#d2 p:last-child {
+		background-color: grey;
+	}
+
+	#d2 h1:first-of-type {
+		background-color: yellow;
+	}
+
+	#d2 h1:last-of-type {
+		background-color: green;
+	}
+
+	/* (7) */
+	form input:nth-of-type(3) {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		vertical-align: top;
+	}
+
+	form input:nth-of-type(5) {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+	}
+
+	/* (8) */
+	q:lang(no) {
+		background-color: skyblue;
+		font-size: 14px;
+	}
+
+	/* (9) a */
+	#d1 p:first-child::first-letter {
+		font-size: 30px;
+		color: red;
+	}
+
+	/* (9) b */
+	#d1 p:nth-child(2)::first-line {
+		font-variant: small-caps;
+		color: blue;
+	}
+
+	/* (9) c */
+	#d1 h1::before {
+		content: '';
+		display: inline-block;
+		width: 96px;
+		height: 80px;
+		background: url('./img/angel.gif') no-repeat;
+		vertical-align: middle;
+	}
+
+	#d1 h1::after {
+		content: '';
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background: url('./img/angel.gif') no-repeat;
+		background-size: contain;
+		vertical-align: middle;
+	}
+	</style>
+	<body>
+		<a href="#">测试链接1</a>
+		<a href="#">测试链接2</a><br>
+		<form action="" method="post">
+		    用户名：<input type="text" name="username" id="username" value="" /> <br>
+		    密码：<input type="password" name="password" id="password" value="" /><br>
+			性别：<input type="radio" name="sex" value="F" checked="checked">女
+				  <input type="radio" name="sex" value="M">男<br>
+		    爱好：<input type="checkbox" name="fav" value="1" checked="checked">足球
+		    	  <input type="checkbox" name="fav" value="2">篮球 
+				  <input type="checkbox" name="fav" value="3">乒乓球 
+				  <input type="checkbox" name="fav" value="4">羽毛球<br> 
+		</form>
+		<ul>
+		    <li>吃饭</li>
+		    <li>喝酒</li>
+		    <li>玩乐</li>
+			<li>睡觉</li>
+		</ul>
+		<ul>
+		    <li>太平洋</li>
+		    <li>大西洋</li>
+		    <li>北冰洋</li>
+		    <li>印度洋</li>
+		</ul>
+		<div id="d2">
+			<p>one  one </p>
+			<h1>two</h1>
+			<h1>three</h1>
+			<p>four</p>			
+		</div>		
+		<q lang="no">this is a lang test!</q>		
+		<div id="d1">
+			<p>welcome to Beijing</p>
+			<p>welcome to Beijing<br/>
+			    为你开天辟地<br/>
+			</p>
+			<h1>百度</h1>
+		</div>		
+	</body>
+</html>

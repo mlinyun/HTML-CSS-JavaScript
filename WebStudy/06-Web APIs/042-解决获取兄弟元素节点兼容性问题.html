@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解决获取兄弟元素节点兼容性问题</title>
+</head>
+<body>
+    <div>1</div>
+    <span>2</span>
+    <script>
+        function getNextElementSibling(element) {
+            let el = element
+            while (el = el.nextSibling) {
+                if (el.nodeType === 1) {
+                    return el
+                }
+            }
+            return null
+        }
+        let div = document.querySelector('div')
+        console.log(getNextElementSibling(div));
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>006-jQuery隐式迭代</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <div>惊不惊喜，意不意外</div>
+    <ul>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+        <li>相同的操作</li>
+    </ul>
+    <script>
+        // 1. 获取4的div元素，并在控制台上打印出来
+        console.log($('div'))
+        // 2. 给4个div设置背景颜色为粉色，jQuery对象不能使用style
+        $('div').css('backgroundColor', 'pink')
+        // 3. 隐式迭代就是把所有匹配到的元素内部进行循环遍历，给每一个元素添加css这个方法
+        // 设置ul里面的li的文字颜色为红色
+        // $('ul').css('color', 'red')  // li继承了ul的color属性
+        $('ul li').css('color', 'red')
+    </script>
+</body>
+</html>

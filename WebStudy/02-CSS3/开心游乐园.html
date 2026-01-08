@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开心游乐园</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            position: relative;
+            width: 1547px;
+            height: 1000px;
+            background: url("./images/ylybg.png");
+        }
+
+        .fsw {
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            width: 768px;
+            height: 768px;
+            transform: translate(-50%, 0);
+            background: url("./images/fsw.png");
+            animation: change1 15s infinite linear;
+        }
+
+        .box .player {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            margin-left: -65px;
+            width: 130px;
+            height: 170px;
+            background: url("./images/boy.png");
+            animation: change2 15s infinite linear;
+        }
+
+        .box .girl1 {
+            top: 55%;
+            left: 8%;
+            background: url("./images/girl1.png");
+        }
+
+        .box .girl2 {
+            top: 55%;
+            left: 92%;
+            background: url("./images/girl2.png");
+        }
+
+
+        @keyframes change1 {
+            0% {
+                transform: translate(-50%, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, 0) rotate(360deg);
+            }
+        }
+
+        @keyframes change2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="fsw">
+            <div class="boy player"></div>
+            <div class="girl1 player"></div>
+            <div class="girl2 player"></div>
+        </div>
+    </div>
+</body>
+</html>

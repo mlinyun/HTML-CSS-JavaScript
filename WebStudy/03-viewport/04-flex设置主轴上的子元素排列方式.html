@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 400px;
+            height: 300px;
+            background-color: #fac090;
+            margin-bottom: 100px;
+        }
+
+        .box1 {
+            /* flex-direction设置主轴的方向，默认row X轴 */
+            flex-direction: row;
+            /* flex-wrap设置子元素是否换行，默认不换行nowrap */
+            flex-wrap: nowrap;
+            /* justify-content设置主轴上的子元素排列方式 */
+            justify-content: center;
+            /* 设置侧轴上的子元素排列方式（单行） */
+            align-items: center;
+            /* 此时设置align-content: center;无效 */
+            align-content: center;
+        }
+
+        .box2 {
+            /* 设置子元素换行 */
+            flex-wrap: wrap;
+            /* 设置主轴上的子元素居中排列 */
+            justify-content: center;
+            /* align-content设置侧轴上的子元素排列方式（多行） */
+            /* align-content在单行下无效 */
+            align-content: center;
+            /* 设置align-items: center;不能到达垂直水平居中的效果 */
+            /* align-items: center; */
+        }
+
+        div span {
+            width: 100px;
+            height: 100px;
+            background-color: #95b3d7;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+
+    <div class="box2">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+</html>

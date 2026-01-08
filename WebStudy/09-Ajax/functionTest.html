@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定义、封装函数</title>
+</head>
+<body>
+    <script>
+        // 1. 声明一个函数用于统计字符串中数字的个数、字母的个数
+        function countNumAndLetter(str) {
+            // 定义一个变量，用来记录数字的个数
+            let count_num = 0;
+            // 统计数字
+            let num = str.match(/\d{1}/g)
+            // 遍历对象num统计字符串中数字的个数
+            for (i in num) {
+                count_num++
+            }
+            // 定义一个变量，用来记录字母的个数
+            let count_letter = 0;
+            // 统计字母
+            let letter = str.match(/[a-zA-Z]/g)
+            // 遍历对象letter统计字符串中字母的个数
+            for (i in letter) {
+                count_letter++
+            }
+            // 返回结果
+            let ans = [count_num, count_letter]
+            return ans
+        }
+
+        let str = "hello, world 1234567"
+        console.log(str)
+        let ans = countNumAndLetter(str)
+        console.log(`该字符串中数字的个数是${ans[0]}，字母的个数是${ans[1]}`)
+
+        // 2. 声明一个给字符串去重的函数
+        function quChong(str) {
+            str = str.replace(/(.).*\1/g, "$1")
+            return str
+        }
+
+        let str2 = "aaabbbcccddd111222...///"
+        let res = quChong(str2)
+        console.log(str2)
+        console.log(res)
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>文本属性</title>
+	<style type="text/css">
+		#d1{
+			width:500px;
+			height:500px;
+		}
+		/* (1)设置标题为白文本上的阴影，字号20px,rtl方向，
+		字符间距8px，小写转大写，*/
+
+		#d1 h1 {
+			text-shadow: 5px 5px 5px #000;
+			color: #fff;
+			font-size: 20px;
+			direction: rtl;
+			letter-spacing: 8px;
+			text-transform: uppercase;
+		}
+	
+		/* (2)设置第一个段落背景yellow，行高30px，水平对齐方式居中，
+		下划线装饰,大写转小写，字符间距5px,单词间距50px*/
+		#d1 p:nth-of-type(1) {
+			background-color: yellow;
+			line-height: 30px;
+			text-align: center;
+			text-decoration: underline;
+			text-transform: lowercase;
+			letter-spacing: 5px;
+			word-spacing: 50px;
+		}
+		
+		/* (3)设置第二个段落背景#90EE90，宽度100px,行高300%，水平对齐方式靠左，
+		文本首行缩进30px,上划线装饰，红色模糊阴影,
+		元素内部空白方式为不换行,首字母大写*/
+		#d1 p:nth-of-type(2) {
+			width: 100px;
+			line-height: 300%;
+			background-color: #90EE90;
+			text-align: left;
+			text-indent: 30px;
+			text-decoration: overline;
+			text-shadow: 5px 5px 5px red;
+			white-space: nowrap;
+			text-transform: capitalize;
+		}
+
+		
+		/* (4)设置第三个段落背景色#FAEBD7，文字颜色blue，行高1.5,
+		水平对齐方式靠右，	元素内部空白保留 */
+		#d1 p:nth-of-type(3) {
+			background-color: #FAEBD7;
+			color: blue;
+			line-height: 1.5;
+			text-align: right;
+			white-space: pre;
+		}
+		
+		
+		/* (5)设置第四个段落，背景色lightblue，首行缩进30% ，
+		单词间距-20px,，添加删除线装饰*/
+		#d1 p:nth-of-type(4) {
+			background-color: lightblue;
+			text-indent: 30%;
+			word-spacing: -20px;
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">		
+		<h1>
+			你笑起来真好看smile!
+		</h1>		
+		<p>
+		SMILE sMile Smile <br>
+		想去远方的山川<br>
+		想去海边看海鸥<br>
+		不管风雨有多少<br>
+		有你就足够<br>
+		</p>
+		<p>
+		sMiLE sMile Smile <br>
+		喜欢看你的嘴角<br>
+		喜欢看你的眉梢<br>
+		白云挂在那蓝天<br>
+		像你的微笑<br>
+		</p>
+		<p>
+		你  笑起来  真好看
+		像春天的    花一样
+		</p>
+		<p>
+		把所有  的烦恼     所有  的忧愁<br>     统统都吹散
+		</p>		
+	</div>
+</body>
+</html>

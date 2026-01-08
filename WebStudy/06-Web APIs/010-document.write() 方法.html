@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write() 方法</title>
+</head>
+<body>
+    <script>
+        // 1. document.write()
+        // 永远都只是追加操作，且只能添加在 </body> 前
+        document.write('Hello World!')
+        document.write('<h3>你好，世界！</h3')
+        
+        // 2. element.innerText属性 将文本内容添加/更新到任意位置
+        // 在类名伪info的p标签里添加文本内容：'hi~ 我叫李雷！'
+        let info = document.querySelector('p.info')
+        info.innerText = 'hi~ 我叫李雷！'
+    </script>
+</body>
+</html>

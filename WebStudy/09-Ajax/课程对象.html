@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程对象</title>
+</head>
+<body>
+    <script>
+        // 定义一个课程对象
+        // 使用字面量创建一个Web前端开发课程
+        let course = {
+            // 对象的属性
+            courseNo: 1001,
+            cName: 'Web前端开发',
+            cType: '必修课',
+            period: '68小时',
+            term: '大二第一学期',
+            classroom: 'L3-509',
+            // 对象的方法
+            pringCourseInfo: function() {
+                console.log('课程编号：' + course.courseNo)
+                console.log('课程名称：' + course.cName)
+                console.log('课程类型：' + course.cType)
+                console.log('总学时：' + course.period)
+                console.log('开课学期：' + course.term)
+                console.log('上课教室：' + course.classroom)
+            }
+        }
+        // 打印Web前端开发课程对象
+        console.log('打印Web前端开发课程对象---------------')
+        console.log(course)
+
+        // 访问course对象里的属性
+        console.log('访问course对象里的属性---------------')
+        console.log(course.courseNo)
+        console.log(course.cName)
+        console.log(course.classroom)
+
+        // 调用course对象里的方法
+        console.log('调用course对象里的方法---------------')
+        course.pringCourseInfo()
+
+        // 增加属性
+        console.log('打印增加的属性---------------')
+        course.teacher = '丁老师'
+        course['exp'] = '10小时'
+        console.log('上课教师：' + course.teacher)
+        console.log('实验学时：' + course.exp)
+
+        // 删除属性
+        // 只会删除属性值，不会删除该属性，删除后，该属性的值变为: undefined
+        console.log('打印删除的属性---------------')
+        delete course.period
+        delete course.term
+        console.log(course.period)
+        console.log(course.term)
+
+
+        // 检测属性
+        console.log('检测属性是否存在---------------')
+        if ('cName' in course) {
+            console.log('cName属性存在')
+        } else {
+            console.log('cName属性不存在')
+        }
+        course.hasOwnProperty('cname') ? console.log('cname属性存在') : console.log('cname属性不存在');
+
+        // 遍历对象
+        console.log('遍历对象---------------')
+        for (let k in course) {
+            console.log(k + ': ' + course[k])
+        }
+
+        // 使用构造函数创建一个课程对象
+        function Course(cNo, cNmae, cType, cRoom) {
+            this.cNo = cNo
+            this.cName = cNmae
+            this.cType = cType
+            this.cRoom = cRoom
+        }
+
+        // 创建一个课程实例
+        let Web = new Course('1002', 'Web前端开发课程2', '必修课程', 'L2-507')
+        // 打印Web课程实例
+        console.log('打印Web课程实例---------------')
+        console.log(Web)
+    </script>
+</body>
+</html>

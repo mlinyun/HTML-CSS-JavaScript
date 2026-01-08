@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易ATM取款机案例</title>
+</head>
+<body>
+    <script>
+        // 准备金额变量，并设置默认值0
+        let price = 0
+        // 1.不断弹出对话框
+        while (true) {
+            let choice = prompt(`
+                请您选择操作：
+                1.存钱
+                2.取钱
+                3.查看余额
+                4.退出
+            `)
+            
+            // 2.若输入4，则退出循环
+            if (choice === '4') {
+                let choice2 = prompt('输入(Y或y)确定退出，输入任意键取消退出')
+                if (choice2 === 'Y' || choice2 === 'y') {
+                    break
+                }
+            }
+
+            // 4.switch 进行加减操作
+            switch (choice) {
+                case '1':
+                    let money1 = +prompt('请输入您要存的金额：')
+                    price += money1
+                    alert(`您存入的金额是${money1}，您的余额是${price}`)
+                    break
+                case '2':
+                    let money2 = +prompt('请输入您要取出的金额：')
+                    price -= money2
+                    alert(`您取出的金额是${money2}，您的余额是${price}`)
+                    break
+                case '3':
+                    alert(`您的余额是${price}`)
+                    break
+                case '4':
+                    alert('按确定返回首页')
+                    break
+                default:
+                    alert('您输入的类型有误')
+            }
+        }
+    </script>
+</body>
+</html>

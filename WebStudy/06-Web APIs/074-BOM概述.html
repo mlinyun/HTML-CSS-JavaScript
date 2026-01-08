@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM概述</title>
+</head>
+<body>
+    <script>
+        var num = 10;
+        console.log(num)            // 10
+        console.log(window.num)     // 10
+
+        function fn() {
+            console.log(11)
+        }
+        fn()            // 11
+        window.fn()     // 11
+
+        alert(12)
+        window.alert('12')
+
+        prompt()
+        window.prompt()
+
+        // 查看 window对象
+        console.dir(window)
+
+        // 声明变量时不要使用name作为变量名
+        // 因为 name 是 window 对象的一个特殊的属性
+        // var name = 13;
+        // console.log(name)
+        console.log(window.name)    // 空字符串
+    </script>
+</body>
+</html>

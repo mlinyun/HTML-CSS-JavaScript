@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [3, 6, 4, 7, 9, 1]
+        let arr2 = [8, 4, 0, 2, 7, 5]
+        let arr3 = [6, 4, 5, 8, 4, 1]
+        // 1. 合并数组
+        let newCopy = arr1.concat(arr2)
+        console.log(newCopy)
+
+        // 2. 把数组转换成字符串
+        console.log(arr3.toString());
+
+        // 3. 对数组进行排序、反转
+        // 排序
+        console.log(arr1.sort())
+        // 反转
+        console.log(arr2.reverse())
+
+        // 4. 数组检索：正向、反向、判断元素是否存在以及条件检索
+        // 正向
+        console.log(arr3.indexOf(4));
+        // 反向
+        console.log(arr3.lastIndexOf(4))
+        // 判断元素是否存在
+        console.log(arr3.includes(1));
+        // 有条件检索
+        console.log(arr3.find((x) => x % 2 == 1))
+
+    </script>
+</body>
+</html>

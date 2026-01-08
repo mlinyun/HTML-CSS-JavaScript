@@ -1,0 +1,71 @@
+/* 基础样式 */
+body {
+    min-width: 320px;
+    max-width: 750px;
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2F2F2;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* 注意：我们按照 10rem 的设计稿制作的页面 */
+/* 如果我们的屏幕超过了10rem，那么我们就按照10rem的设计稿来走，不要让我们的页面超过10rem */
+@media screen and (min-width: 750px) {
+    html {
+        /* 这个选择器的权重不够大，可以使用!import */
+        font-size: 75px!important;
+    }
+}
+
+/* 顶部搜索框 */
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.1733rem;
+    background-color: #FFC001;
+}
+
+.search-content .classify {
+    width: .5867rem;
+    height: .9333rem;
+    margin: .1467rem .3333rem .0933rem .32rem;
+    background: url("../images/classify.png") no-repeat;
+    background-size: .5867rem .9333rem;
+}
+
+.search-content .search {
+    flex: 1;
+}
+
+.search-content .search input {
+    width: 100%;
+    height: .88rem;
+    margin-top: .16rem;
+    padding-left: .7333rem;
+    outline: none;
+    border: 0;
+    background-color: #FFF2CC;
+    border-radius: .44rem;
+    font-size: .3333rem;
+    color: #757575;
+}
+
+.search-content .login {
+    width: 1rem;
+    height: .9333rem;
+    margin: .1333rem;
+    line-height: .9333rem;
+    font-size: .3333rem;
+    text-align: center;
+    color: #fff;
+}

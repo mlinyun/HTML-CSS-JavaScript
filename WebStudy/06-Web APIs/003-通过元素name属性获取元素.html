@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过元素name属性获取元素</title>
+</head>
+<body>
+    <form action="service/form_action" method="post" name="level_form">
+       <label><input type="radio" name="level" id="primary" />初级</label>
+       <label><input type="radio" name="level" id="intermediate" />中级</label>
+       <label><input type="radio" name="level" id="senior" />高级</label>
+       <input type="submit" value="提交" />
+	</form>
+    
+	<script>
+		let formNodeList = document.getElementsByName('level_form')
+		console.log(formNodeList)
+		// 输出 NodeList[form]
+		let radioNodeList = document.getElementsByName('level')
+		console.log(radioNodeList)
+		// 输出 NodeList(3) [input, input, input]
+	</script>
+</body>
+</html>

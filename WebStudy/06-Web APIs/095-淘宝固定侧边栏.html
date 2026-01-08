@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝固定侧边栏</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            width: 45px;
+            height: 130px;
+            margin-left: 600px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 1. 获取元素
+        let sliderBar = document.querySelector('.slider-bar')
+        let banner = document.querySelector('.banner')
+        // banner.offsetTop 就是被卷去头部的大小 一定要写滚动的外面
+        let bannerTop = banner.offsetTop
+        let sliderBarTop = sliderBar.offsetTop - bannerTop
+        // 获取main 主体元素
+        let main = document.querySelector('.main')
+        let goBack = document.querySelector('.goBack')
+        let mainTop = main.offsetTop
+        // 2. 页面滚动事件 scroll
+        document.addEventListener('scroll', function() {
+            // window.pageYOffset 页面被卷去的头部
+            // console.log(window.pageYOffset)
+            // 3. 当我们页面被卷去的头部大于等于了 172px 此时 侧边栏就要改成固定定位
+            if (window.pageYOffset >= bannerTop) {
+                sliderBar.style.position = 'fixed'
+                sliderBar.style.top = sliderBarTop + 'px'
+            } else {
+                sliderBar.style.position = 'absolute'
+                sliderBar.style.top = '300px'
+            }
+
+            // 4. 但我们的页面滚动到main盒子时，就显示 goback模块
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block'
+            } else {
+                goBack.style.display = 'none'
+            }
+        })
+    </script>
+</body>
+</html>

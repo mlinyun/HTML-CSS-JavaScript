@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>替换字符串以及转换为数组</title>
+</head>
+<body>
+    <script>
+        let str1 = 'andy'
+        console.log(str1.replace('a', 'b'))
+        // 它只会替换第一个字符
+        let str2 = 'andyandy'
+        console.log(str2.replace('a', 'b'))
+
+        // 有一个字符串 'abcoefoxyozzopp'，要求将里面所有的 o 替换为 *
+        // 方法一
+        let str = 'abcoefoxyozzopp'
+        let new_str = str   // 声明一个新的字符串，将str的值赋给new_str
+        // 这样可以防止原来的字符串str被重新赋值
+        for (let i = 0; i < str.length; i++) {
+            new_str = new_str.replace('o', '*')
+        }
+        console.log(new_str)
+        // 方法二
+        while (str.indexOf('o') !== -1) {
+            str = str.replace('o', '*')
+        }
+        // 这种方法会让字符串str重新赋值，从而失去原来的字符串
+        console.log(str)
+
+        let str3 = 'a-b-c-d-e-f-g-h'
+        let arr = str3.split('-')
+        console.log(arr)    // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+        let str4 = arr.join('&')
+        console.log(str4)
+    </script>
+</body>
+</html>

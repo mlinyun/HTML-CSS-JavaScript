@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75-自定义选择菜单的实现练习</title>
+    <link rel="stylesheet" href="./css/75-自定义选择菜单的实现练习.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="profile">
+            <div class="imgBx">
+                <img src="./img/75-img/img.jpg">
+            </div>
+            <h4 class="text">web前端开发学习平台<br><span>网站：www.yyfun001.com</span></h4>
+        </div>
+        <ul class="menu">
+            <li>
+                <label>
+              <span class="title"><ion-icon name="wifi"></ion-icon> Wi-Fi</span>
+            <span class="action">
+              <input type="checkbox">
+              <i></i>
+            </span>
+            </label>
+            </li>
+            <li>
+                <label>
+              <span class="title"><ion-icon name="bluetooth"></ion-icon> 蓝牙</span>
+            <span class="action">
+              <input type="checkbox">
+              <i></i>
+            </span>
+            </label>
+            </li>
+            <li>
+                <label>
+              <span class="title"><ion-icon name="airplane"></ion-icon> 飞行模式</span>
+            <span class="action">
+              <input type="checkbox">
+              <i></i>
+            </span>
+            </label>
+            </li>
+            <li>
+                <label>
+              <span class="title"><ion-icon name="location"></ion-icon>位置</span>
+            <span class="action">
+              <input type="checkbox">
+              <i></i>
+            </span>
+            </label>
+            </li>
+            <li>
+                <label>
+              <span class="title"><ion-icon name="moon"></ion-icon> 夜间模式</span>
+            <span class="action">
+              <input type="checkbox" id="dark">
+              <i></i>
+            </span>
+            </label>
+            </li>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let body = document.querySelector('body');
+        let dark = document.querySelector('#dark');
+
+        dark.onclick = function() {
+            if (dark.checked == true) {
+                body.classList.add('darkMode');
+            } else {
+                body.classList.remove('darkMode');
+            }
+        }
+    </script>
+</body>
+
+</html>

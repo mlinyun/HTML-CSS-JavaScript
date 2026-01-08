@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增伪类选择器</title>
+		<style>
+		/* 要求：——————————————————————————————————————————————
+		使用CSS3新增伪类选择器，结合之前所学的伪类选择器，完成以下设置。		
+		 ———————————————————————————————————————————————————————*/
+			/* 1.使用根元素伪类选择器 ，设置其背景为lightgray*/
+			:root {
+				background-color: lightgray;
+			}
+			
+			/* 2.设置第一个li子元素背景为yellow */
+			ul li:first-child {
+				background-color: yellow;
+			}
+			
+			/* 3.设置最后一个li子元素，字的颜色为red */
+			ul li:last-child {
+				color: red;
+			}
+			
+			/* 4.设置第三个li子元素背景为orange */
+			ul li:nth-child(3) {
+				background-color: orange;
+			}
+			
+			/* 5.设置倒数第三个li子元素背景为blue */
+			ul li:nth-last-child(3) {
+				background-color: blue;
+			}
+			
+			/* 6.设置唯一子元素li字体为倾斜 */
+			li:only-child {
+				font-style: italic;
+			}
+			
+			/* 7.设置同类第一个子元素li边框为2px solid #008000 */
+			ul li:nth-of-type(1) {
+				border: 2px solid #008000;
+			}
+			
+			/* 8.设置同类最后一个li子元素背景为#A7C942 */
+			ul li:last-of-type {
+				background-color: #A7C942;
+			}
+			
+			/* 9.设置第二个li子元素字号30px */
+			ul li:nth-child(2) {
+				font-size: 30px;
+			}
+			
+			/* 10.设置倒数第二个li子元素字号40px */
+			ul li:nth-last-child(2) {
+				font-size: 40px;
+			}
+			
+			/* 11.设置同类唯一一个子元素li子元素字号50px */
+			ul li:only-of-type {
+				font-size: 50px;
+			}
+			
+			/* 12.设置没有子元素（包括文本内容）的元素 背景为red，宽度100px，高度30px；*/
+			:empty {
+				width: 100px;
+				height: 30px;
+				background-color: red;
+			}
+
+			
+		</style>
+	</head>
+	<body>		
+		<ul style="float: left;list-style: decimal inside;">
+		    <li>春</li>
+		    <li>色</li>
+		    <li>满</li>
+		    <li>园</li>
+		    <li>四</li>
+		    <li>海</li>
+		    <li>花</li>
+		    <li>团</li>
+		    <li>锦</li>
+		    <li>簇</li>
+		</ul>		
+		<ul style="float: left; list-style: decimal inside;">
+		    <li>九州同乐</li>
+		</ul>		
+		<ul style="float: left; list-style: decimal inside;">
+		    <li>龙</li>
+		    <li>行</li>
+		    <li>天</li>
+		    <li>下</li>
+		    <li>五</li>
+		    <li>湖</li>
+		    <li>唱</li>
+		    <li>响</li>
+		    <li>吉</li>
+		    <li>祥</li>
+		</ul>
+		
+		<p style="clear: both;">
+		    春联，又称“春贴”“门对”和“对联”。
+		</p>
+		<p></p>
+	</body>
+</html>

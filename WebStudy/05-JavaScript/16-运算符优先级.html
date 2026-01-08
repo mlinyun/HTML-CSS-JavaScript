@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符优先级</title>
+</head>
+<body>
+    <script>
+        // 练习1
+        console.log(4 >= 6 || 'a' != 'abc' && !(12 * 2 == 144) && true)
+        let num = 10
+        console.log(5 == num / 2 && (2 + 2 * num).toString() === '22')
+
+        // 练习2
+        let a = 3 > 5 && 2 < 7 && 3 == 4
+        console.log(a)  // fasle
+
+        let b = 3 <= 4 || 3 > 1 || 3 != 2
+        console.log(b)  // true
+
+        let c = 2 === '2'
+        console.log(c)  // false
+
+        let d = !c || b && a
+        console.log(d)  // true
+
+        console.log(undefined && 20)
+    </script>
+</body>
+</html>

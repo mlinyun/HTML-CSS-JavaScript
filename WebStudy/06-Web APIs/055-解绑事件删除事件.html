@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解绑事件删除事件</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // 获取所有的div
+        let divs = document.querySelectorAll('div')
+        // 1.
+        for (let i =0; i < divs.length; i++) {
+            // 点击一次就解绑事件
+            // 传统方式解绑事件
+            divs[i].onclick = function() {
+                alert(i + 1)
+                divs[i].onclick = null
+            }
+        }
+
+        // 2.
+        for (let i = 0; i < divs.length; i++) {
+            // divs[i].addEventListener('click', function() {
+            //     alert(i + 1)
+            // })
+            // 这种使用匿名函数方式绑定的事件无法删除
+            // 若想要解绑可以使用以下方法
+            // 事件侦听解绑事件
+            divs[i].addEventListener('click', fn)   // 里面的fn不需要加小括号
+            function fn() {
+                alert(i + 1)
+                divs[i].removeEventListener('click', fn)
+            }
+        }
+
+        // 3.
+        for (let i = 0; i < divs.length; i++) {
+            // ie9以下注册解绑事件
+            divs[i].attachEvent('onclick', fn1)
+            function fn1() {
+                alert(i + 1)
+                divs[i].detachEvent('onclick', fn1)
+            }
+        }
+    </script>
+</body>
+</html>

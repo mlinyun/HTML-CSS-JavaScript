@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <a href="088-list.html">点击我去往列表页</a>
+    <button>前进</button>
+    <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            // 前进功能
+            history.forward()
+            // 也可以使用
+            history.go(1)   // 前进1页
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>表单控件1</title>
+    <style type="text/css">
+        input[type="text"] {
+            width: 150px;
+            margin: 5px;
+            border: 1px solid #999;
+            padding: 5px;
+        }
+        
+        input[type="password"] {
+            width: 150px;
+            border: 1px solid orange;
+            padding: 5px;
+            background-color: lightblue;
+        }
+        
+        label {
+            color: #999;
+            margin-left: 10px;
+        }
+        
+        input:optional,
+        select:optional {
+            border-right: 3px solid #999;
+            background-color: lightyellow;
+        }
+        
+        input[type="reset"] {
+            width: 100px;
+            height: 30px;
+            border: 2px solid #00FF00;
+            margin: 5px;
+        }
+        
+        input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            border: 2px solid #aa0088;
+            margin: 5px;
+        }
+        
+        input[type="button"] {
+            width: 100px;
+            height: 30px;
+            border: 2px solid #0000FF;
+            margin: 5px;
+        }
+    </style>
+</head>
+<!-- 知识点：————————————————————————————————
+	表单控件标签：form,input,button,select,textarea,label，optgroup等。
+    属性：type（值：text,password,file,image,radio,checkbox,hidden,reset,button,submit等）
+	属性:method,action,readonly,disabled, for,checked,multiple,placeholder,autocomplete,autofocus
+	formaction,formmethod,formtarget,form等
+	 -->
+
+<body>
+    <!-- 设计一个表单，效果如图-->
+    <!-- 1.设置表单的数据发送方式为post，id为f1-->
+    <!-- 2.设置文本框
+		  （1） 单位文本框只读，默认值如图，添加label标签 
+		  （2）年级文本框为disabled，默认值如图，添加label标签
+		  
+		  -->
+    <!-- 3.设置下拉列表，并添加label标签，size为5，选项分三组，每组有两个班级选项 -->
+    <!-- 4.设置用户名框，最大长度为10，必填，自动聚焦，有提示文字，不能自动完成填写，效果如图。 -->
+    <!-- 5.设置密码框，有提示文字 -->
+    <!-- 6.设置单选按钮和复选框，默认选项如图 -->
+    <!-- 7.设置文件选择按钮，可上传多个文件 -->
+    <!-- 8.设置文本域 10行20列-->
+    <!-- 9.设置input标签类型为四种按钮，分别是：reset,submit,button和hidden，
+		 其中，submit提交到login页面，提交后新开一页，数据发送方式为get -->
+    <!-- 10.设置button标签类型分别为三种，button,reset,submit,
+		  其中button为一幅图片，submit提交到test页面，数据发送方式为post
+		  -->
+    <!-- 11.form表单标签之外设置一个测试文本框，使它属于f1表单 -->
+    <form action="" method="get" id="f1">
+        <label for="">
+			<input type="text" value="广州民航职业技术学院" readonly="readonly"> 单位
+		</label>
+        <br />
+        <label for="">
+			年级 <input type="text" value="2019" disabled="disabled">
+		</label>
+        <br />
+        <label for="s1">班级</label>
+        <select size="5" id="s1">
+			<optgroup label="信息管理">
+				<option value="">信管2</option>
+				<option value="">信管2</option>
+			</optgroup>
+			<optgroup label="计算机应用">
+				<option value="">计应1</option>
+				<option value="">计应2</option>
+			</optgroup>
+			<optgroup label="网络工程">
+				<option value="">网络1</option>
+				<option value="">网络2</option>
+			</optgroup>
+		</select>
+        <br />
+        <label for="username">用户名:</label>
+        <input type="text" placeholder="输入用户名" maxlength="10" required="reguired" autofocus="autofocus" autocomplete="off" id="username"><br />
+        密码:
+        <input type="password" placeholder="输入密码" id="userPsd"><br />
+        性别:
+        <label for="boy"></label><input type="radio" id="boy" name="gender">男</label>
+        <label for="girl"></label><input type="radio" id="girl" name="gender" checked="checked">女</label><br />
+        兴趣:
+        <label for="boy"></label><input type="checkbox" name="">足球</label>
+        <label for="boy"></label><input type="checkbox" name="">篮球</label>
+        <label for="boy"></label><input type="checkbox" name="">乒乓球</label><br />
+        选择文件
+        <input type="file" name="" id="" multiple>
+        <br />
+        图片:
+        <input type="image" src="./img/girl.png" width="50" height="60">
+        <br />
+        说明:
+        <textarea name="" id="" cols="20" rows="10" wrap="off"></textarea>
+        <br />
+        <input type="reset" value="重置" name="reset">
+        <input type="submit" value="提交" formaction="login" formtarget="_blank" formmethod="get">
+        <input type="button" value="自定义" name="button">
+        <button type="button">
+            <img src="./img/girl.png" alt="" width="50">
+        </button>
+        <button>清除</button>
+        <button>确定</button>
+        <br />
+        <label for="">
+            测试文本框
+            <input type="text" id="f1">
+        </label>
+    </form>
+</body>
+
+</html>

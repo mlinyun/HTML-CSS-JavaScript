@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之父节点</title>
+</head>
+<body>
+    <div class="demo">
+        <div class="box">
+            <span class="erweima"></span>
+        </div>
+    </div>
+    <script>
+        // 1. 父节点 parentNode
+        // 之前实现二维码关闭需要获取两个元素
+        let box = document.querySelector('.box')
+        let erweima = document.querySelector('.erweima')
+        // 分析上面html的结构 类名为erweima的元素是类名为box元素的子元素
+        // 反过来 类名为box的元素是类名为erweima元素的父元素
+        // 所以可以使用 node.parentNode 获取父节点
+        console.log(erweima.parentNode) // <div class="box">...</div>
+        // 得到的是离元素最近的父级节点，故上面不会得到 <div class="demo">...</div>
+        // 如果指定的节点没有父节点则返回null
+    </script>
+</body>
+</html>

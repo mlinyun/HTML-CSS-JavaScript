@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>偷菜游戏案例</title>
+    <meta charset="utf-8" />
+    <link href="css/cai.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        //登陆验证
+        function login() {
+            if ($("#username").val() == "") {
+                alert("登陆名称不能为空！");
+                $("#username").focus();
+                return false;
+            } else if ($("#password").val() == "") {
+                alert("登陆密码不能为空！");
+                $("#password").focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- 登陆表单 -->
+    <form name="login_form" method="post" action="login.php" onsubmit="return login()">
+        <div class="bg">
+            <div class="login">
+                <div class="login_items1">
+                    <div>登陆名称：</div>
+                    <div><input type="text" id="username" name="username" class="login_txt" /></div>
+                </div>
+                <div class="login_items2">
+                    <div>登陆密码：</div>
+                    <div><input type="password" id="password" name="password" class="login_txt" /></div>
+                </div>
+                <div class="login_items3">
+                    <input type="checkbox" id="remember" name="remember" />记住用户名和密码
+                </div>
+                <div class="login_items3">
+                    <span>没有帐号？</span><a href="#" class="a1">去注册&raquo;</a>
+                </div>
+                <div class="login_items4">
+                    <input type="submit" value="登陆" class="btn1" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

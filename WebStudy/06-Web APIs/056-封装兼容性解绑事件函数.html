@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装兼容性解绑事件函数</title>
+</head>
+<body>
+    <script>
+        function removeEventListener(element, eventName, fn) {
+            // 判断当前浏览器是否支持 removeEventListener 方法
+            if (element.removeEventListener) {
+                element.removeEventListener(eventName, fn)  // 第三个参数默认是 false
+            } else if (element.detachEvent) {
+                element.detachEvent(eventName, fn)
+            } else {
+                element['on' + eventName] = null
+            }
+        }
+    </script>
+</body>
+</html>

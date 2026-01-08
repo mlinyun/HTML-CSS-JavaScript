@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        console.log(location.search);   // ?name=andy
+        // 1. 先去掉？ substr('起始位置', 截取几个字符)
+        let params = location.search.substr(1) // 得到 uname=andy
+        console.log(params)
+        // 2. 利用 = 把字符串分隔为数组 split('=')
+        let arr = params.split('=')
+        console.log(arr) // ["uname", "andy"]
+        // 3. 把数据写入div中
+        let div = document.querySelector('div')
+        div.innerHTML = arr[1] + '欢迎您'
+    </script>
+</body>
+</html>

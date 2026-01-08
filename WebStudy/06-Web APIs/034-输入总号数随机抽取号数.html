@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 30px;
+            border: 1px solid pink;
+            color: hotpink;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>开始点名</div>
+    <button>点击点名</button>
+    <script>
+        // 得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min    // 含最大值，含最小值
+        }
+        let num = +prompt('请输入组员的人数：')
+        let arr = []
+        for (let i = 1; i <= num; i++) {
+            arr.push(i)
+        }
+
+        // 获取元素
+        let btn = document.querySelector('button')
+        let div = document.querySelector('div')
+        // 注册事件
+        btn.addEventListener('click', function() {
+            // 生成随机数
+            let random = getRandomIntInclusive(0, arr.length - 1)
+            div.innerHTML = arr[random]
+            arr.splice(random, 1)
+            if (arr.length === 0) {
+                this.disabled = true
+            }
+        })
+    </script>
+</body>
+</html>

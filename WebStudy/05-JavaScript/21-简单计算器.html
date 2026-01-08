@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单计算器</title>
+</head>
+<body>
+    <script>
+        let num1 = +prompt('请您输入第一个数: ')
+        let flag = prompt('请您输入运算符: ')
+        let num2 = +prompt('请您输入第二个数: ')
+        let result
+        // if 语句实现
+        if (flag === '+') {
+            result = num1 + num2
+            alert(`您选择的是加法运算: ${num1} + ${num2} = ${result}`)
+        } else if (flag === '-') {
+            result = num1 - num2
+            alert(`您选择的是减法运算: ${num1} - ${num2} = ${result}`)
+        } else if (flag === '*') {
+            result = num1 * num2
+            alert(`您选择的是乘法运算: ${num1} * ${num2} = ${result}`)
+        } else if (flag === '/') {
+            result = num1 / num2
+            alert(`您选择的是除法运算: ${num1} / ${num2} = ${result}`)
+        } else if (flag === '**') {
+            result = num1 ** num2
+            alert(`您选择的是平方运算: ${num1} ** ${num2} = ${result}`)
+        } else if (flag === '%') {
+            result = num1 % num2
+            alert(`您选择的是取余运算: ${num1} % ${num2} = ${result}`)
+        } else {
+            alert('您输入的运算符有误')
+        }
+        // switch 语句实现
+        switch (flag) {
+            case '+':
+                result = num1 + num2
+                alert(`您选择的是加法运算: ${num1} + ${num2} = ${result}`)
+                break
+            case '-':
+                result = num1 - num2
+                alert(`您选择的是减法运算: ${num1} - ${num2} = ${result}`)
+                break
+            case '*':
+                result = num1 * num2
+                alert(`您选择的是乘法运算: ${num1} * ${num2} = ${result}`)
+                break
+            case '/':
+                result = num1 / num2
+                alert(`您选择的是除法运算: ${num1} / ${num2} = ${result}`)
+                break
+            case '**':
+                result = num1 ** num2
+                alert(`您选择的是平方运算: ${num1} ** ${num2} = ${result}`)
+                break
+            case '%':
+                result = num1 % num2
+                alert(`您选择的是取余运算: ${num1} % ${num2} = ${result}`)
+                break
+            default:
+                alert('您输入的运算符有误')
+        }
+    </script>
+</body>
+</html>

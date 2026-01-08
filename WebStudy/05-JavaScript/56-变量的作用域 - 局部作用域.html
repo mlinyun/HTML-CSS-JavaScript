@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的作用域 - 局部作用域</title>
+</head>
+<body>
+    <script>
+        // 在局部作用域下，声明的变量是局部变量
+
+        //函数内声明的变量只能给函数内部使用，不能够给函数外部使用
+        function fn1() {
+            let num1 = 18   // 外层函数定义局部变量num1，在外层函数的作用域内可用
+            console.log(num1)
+            
+            function fn2() {
+                // 内层函数访问外层函数定义的局部变量num1，可以访问
+                console.log(num1)
+                let num2 = 19   // 内层函数定义局部变量num2，在内层函数的作用域内可用
+            }
+
+            fn2()   // 调用函数fn2()
+
+            // 在外层函数访问内层含函数定义的变量，会报错
+            // console.log(num2)   // 报错：Uncaught ReferenceError: num2 is not defined
+        }
+
+        fn1()   // 调用函数fn1()
+
+        // 在全局作用域下访问局部作用域定义的变量，会报错
+        // console.log(num1)   // 报错：Uncaught ReferenceError: num1 is not defined
+        // console.log(num2)   // 报错：Uncaught ReferenceError: num2 is not defined
+    </script>
+</body>
+</html>

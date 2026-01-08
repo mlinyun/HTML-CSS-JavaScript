@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符短路的应用</title>
+</head>
+<body>
+    <script>
+        function fun(x, y) {
+            // 若用户没有给实参（数据），则当0处理
+            x = x || 0
+            y = y || 0
+            return x + y
+        }
+        let num1 = +prompt('请您输入x的值: ')
+        // 在控制台中打印用户输入的数据，若用户没有输入，则为空字符串，其对应的布尔值是false
+        console.log(num1)
+        let num2 = +prompt('请您输入y的值: ')
+        console.log(num2)
+        let result = fun(num1, num2)
+        alert(`${num1} + ${num2} = ${result}`)
+    </script>
+</body>
+</html>

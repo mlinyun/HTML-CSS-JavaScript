@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机抽取名字</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid pink;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    抽中的选手是：<div></div>
+    <script>
+        // 得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min    // 含最大值，含最小值
+        }
+        // 获取元素
+        let div = document.querySelector('div')
+        let name  = ['张三', '李四', '王五', '老六', '李七']
+        let random = getRandomIntInclusive(0, name.length - 1)
+        div.innerHTML = name[random]
+        name.splice(random, 1)
+    </script>
+</body>
+</html>

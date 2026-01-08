@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var d1 = document.getElementById('mydiv')
+            d1.innerHTML = '这个是使用id获取的'
+            d1.style.backgroundColor = 'red'
+
+            var d2 = document.getElementsByName('namediv')
+            // console.log(d2);
+            for (let i = 0; i < 3; i++) {
+                d2[i].innerHTML = `这个是使用name属性获取的第${i + 1}个namediv`
+                d2[i].style.backgroundColor = 'yellow'
+            }
+
+            var d3 = document.getElementsByClassName('dclass1')
+            for (let i = 0; i < 3; i++) {
+                d3[i].innerHTML = `这个是使用class获取的第${i + 1}个dclass1`
+                d3[i].style.backgroundColor = 'skyblue'
+            }
+
+            var d4 = document.getElementsByTagName('p')
+            // console.log(d3);
+            // for (let i in d3) {
+            //     console.log(i);
+            // }
+            for (let i = 0; i < 3; i++) {
+                d4[i].innerHTML = `这个是使用标签名获取的第${i + 1}个p`
+                d4[i].style.backgroundColor = 'pink'
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <hr />
+    <div name="namediv"></div>
+    <div name="namediv"></div>
+    <div name="namediv"></div>
+    <hr />
+    <div class="dclass1"></div>
+    <div class="dclass1"></div>
+    <div class="dclass1"></div>
+    <hr />
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>

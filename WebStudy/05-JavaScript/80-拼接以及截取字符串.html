@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼接以及截取字符串</title>
+</head>
+<body>
+    <script>
+        // 字符串操作方法
+        // 1. concat('字符串1', '字符串2', ...)
+        let str1 = 'abcd'
+        let str2 = 'efg'
+        // 将str1 和 str2 拼接起来
+        console.log(str1.concat(str2, 'hijk'))  // abcdefghijk
+
+        // 2. substr('截取的起始位置', '截取几个字符')
+        let str3 = '改革春风吹满地'
+        // 截取 '春风' 两个字符
+        console.log(str3.substr(2, 2))  // 春风
+
+        // 3. slice('截取的起始位置', '截取的结束位置') 不包括结束位置
+        let str4 = '0123456'
+        // 截取 1~4
+        console.log(str4.slice(1, 5))   // 1234
+
+        // 4. substring('截取的起始位置', '截取的结束位置') 不接受负值
+        let str5 = 'abcdefg'
+        // 截取 bcd
+        console.log(str5.substring(1, 4))   // bcd
+    </script>
+</body>
+</html>

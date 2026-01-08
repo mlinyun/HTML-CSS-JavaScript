@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码框格式提示错误信息</title>
+    <style>
+        .register {
+            width: 600px;
+            margin: 100px auto;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+
+        .warning {
+            background-image: url('./images/mess.png');
+            padding-left: 20px;
+        }
+
+        .wrong {
+            color: red;
+            background-image: url('./images/wrong.png');
+            padding-left: 20px;
+        }
+
+        .right {
+            color: green;
+            background-image: url('./images/right.png');
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        设置密码：
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        //1. 获取元素
+        let ipt = document.querySelector('.ipt')
+        let message = document.querySelector('.message')
+
+        // 2. 事件监听 (注册事件)
+        // 2.1 获得焦点时提示警告
+        ipt.addEventListener('focus', function(){
+            // 使用 className 添加一个类
+            message.className = 'message warning'
+            message.innerHTML = '请输入6~16位密码'
+        })
+        // 2.2 失去焦点判断密码长度是否符，并给出相应的提示
+        ipt.addEventListener('blur', function() {
+            if (this.value.length < 6 || this.value.length > 16) {
+                message.className ='message wrong'
+                message.innerHTML = '您输入的位数不符合要求'
+            } else {
+                message.className = 'message right'
+                message.innerHTML = '该密码符合要求'
+            }
+        })
+    </script>
+</body>
+</html>

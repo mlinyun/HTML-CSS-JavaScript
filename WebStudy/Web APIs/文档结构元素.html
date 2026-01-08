@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文档结构元素</title>
+		<style>
+			ul{
+				list-style:none;
+			}
+			ul li{
+				float:left;
+				padding:5px 5px;
+			}
+			figure{
+				background-color: #98BF21;	
+				float:right;
+			}
+			figcaption{
+				color:red;
+				font-size:1.5rem;
+			}
+			#a1{
+				width:500px;
+				border:3px solid blue;
+				float:left;
+				clear:left;
+			    }
+			#a1 article{
+				border:2px solid greenyellow;
+				background-color:yellow;
+			}
+			hgroup{
+				border:2px solid red;
+			}
+			section{
+				border:3px dotted red;
+			}
+			header{
+				background-color:lightblue;
+			}
+			aside{
+				background-color: yellow;
+				position:fixed;
+				left:500px;
+				top:200px;
+			}
+			footer{
+				background-color: #ADD800;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 知识点：————————————————————————————————————————————————————————
+						HTML5新增的结构元素:
+						header，footer，aside,
+						nav,article,section,
+						figure,figcaption,hgroup等	
+			——————————————————————————————————————————————————————————————
+		 -->
+		 <!-- 按要求补全下列代码： -->
+		 
+		 <!-- 1.添加导航栏元素nav -->		 
+		 <nav>
+		     <ul>
+		         <li><a href="新闻"><b>新闻</b></a></li>
+		         <li><a href="军事">军事</a></li>
+		         <li><a href="国内">国内</a></li>
+		         <li><a href="国际">国际</a></li>
+		     </ul>
+		 </nav>
+		 <!--2.添加figure和figcapition元素，
+		  figure媒体元素，一段独立引用。figcaption是引用的说明标题 -->
+		  <figure>
+			  <img src="./img/girl.png" />
+			  <figcaption>女孩</figcaption>
+		  </figure>
+		  <figure>
+			 <figcaption><cite>水调歌头</cite> —— 苏轼</figcaption>
+			 <pre>
+		   明月几时有？把酒问青天。
+		   不知天上宫阙，今夕是何年。
+		   我欲乘风归去，又恐琼楼玉宇，
+		   高处不胜寒。起舞弄清影，何似在人间？
+			 </pre>	
+		  </figure>
+		 <!-- article定义文档内的文章，可嵌套使用，也可以使用header，footer,section等元素将article内容分成若干份。 -->
+	 <article id="a1">
+		<!-- 3.添加header元素，并在header元素中添加标题组元素 -->
+		    <!-- 标题组hgroup -->
+		<header>
+			<hgroup>
+				<h1>新增文档结构标签</h1>
+				<h2>HTML5</h2>
+			</hgroup>
+		</header>
+		<main>
+			<section>
+				<p>
+					<pre>
+			HTML，HyperText Markup Language，简称HTML，
+			中文名称为超文本标记语言。						
+					</pre>
+				</p>
+			</section>
+						
+			<!-- 4.添加section元素、article元素、header元素 -->
+			<section>
+				<h2>评论</h2>
+				<article>
+					<header>
+						<h3>发表者：张三</h3>
+						<p><time pubdate datetime="2020-01-01">1小时前</time> </p>
+					</header>
+					<p>沙发！</p>
+				</article>
+				<article>
+					<header>
+						<h3>发表者：李四</h3>
+						<p><time pubdate datetime="2020-01-01">1小时前</time> </p>
+					</header>
+					<p>板凳！</p>
+				</article>
+			</section>
+		</main>
+		<!-- 5.添加footer元素 -->
+		<footer>
+			<p>Public by: 王五</p>
+			<p>联系方式: <a href="mailto:wangwu@example.com">wangwu</a></p>
+		</footer>
+		
+	</article>
+	  <!-- 6.添加aside元素，aside为附属信息 -->
+	<aside>
+	----参考教材第8章
+	</aside>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根据页面宽度改变背景颜色</title>
+    <style>
+        /* 1. 媒体查询一般按照从小到大或者从大到小的顺序来 */
+        /* 2. 页面小于540px(即0~539px)时，页面的背景颜色变为蓝色 */
+        /* 注意：我们的max-width和max-width都是包含等于的 */
+        @media screen and (max-width: 539px) {
+            body {
+                background-color: blue;
+            }
+        }
+
+        /* 3.  页面介于540 ~ 970px之间时，背景颜色改为绿色*/
+        /* @media screen and (min-width: 540px) and (max-width: 969px) {
+            body {
+                background-color: green;
+            }
+        } */
+
+        /* 按照从小到大的顺序书写可以简化代码 */
+        /* 上面的代码可以写为： */
+        @media screen and (min-width: 540px) {
+            body {
+                background-color: green;
+            }       
+        }
+        /* CSS具有层叠性 */
+
+        /* 这样设置会覆盖上面冲突的部分，也就是上面大于等于970的部分会被覆盖为red */
+        /* 因此上面的代码只有540到969之间有效，为绿色 */
+        /* 4. 页面大于等于970px时，背景颜色改为红色 */
+        @media screen and (min-width: 970px) {
+            body {
+                background-color: red;
+            }
+        }
+
+        /* 5. screen 和 and 不能够省略，必须带上 */
+        /* 6. 还有数字后面必须带单位，不能省略 */
+    </style>
+</head>
+<body> 
+    
+</body>
+</html>

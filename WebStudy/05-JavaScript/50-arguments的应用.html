@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments的应用</title>
+</head>
+<body>
+    <script>
+        // 应用①：利用函数求任意个数的最大值
+        function getMax() {
+            let max = arguments[0]
+            for (let i = 1; i < arguments.length; i++) {
+                max = arguments[i] > max ? arguments[i] : max
+            }
+            return max
+        }
+        let re1 = getMax(88, 79, 66, 99, 101, 50, 120)
+        console.log(re1)	// 120
+        let re2 = getMax(88, 79, 66, 99, 101, 50)
+        console.log(re2)	// 101
+        let re3 = getMax(150, 79, 66, 99, 101)
+        console.log(re3)	// 150
+    </script>
+</body>
+</html>

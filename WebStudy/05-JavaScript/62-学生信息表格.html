@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生信息表格</title>
+</head>
+<body>
+    <script>
+        let students = [
+            {name : '小明', age : 17, gender : '男', hometown : '广东省'},
+            {name : '小红', age : 18, gender : '女', hometown : '广西省'},
+            {name : '小黄', age : 19, gender : '女', hometown : '湖南省'},
+            {name : '小蓝', age : 20, gender : '男', hometown : '湖北省'}
+        ]
+        // 头部
+        document.write(`
+            <table border="1" width="250" cellspacing="0" cellpadding='5'>
+            <caption><h4>学生列表</h4></caption>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>家乡</th>
+                </tr>	
+        `)
+        // 中间遍历行数
+        for (let i = 0; i < students.length; i++) {
+            document.write(`
+            <tr>
+                <td>${i + 1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].age}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].hometown}</td>
+            </tr>
+            `)
+        }
+        // 尾部
+        document.write(`
+            </table>
+        `)
+    </script>
+</body>
+</html>

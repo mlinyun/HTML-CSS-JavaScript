@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>伪元素选择器</title>
+		<!--新增伪类伪元素选择器———————————————————————— 
+		/* 	:enabled可用状态
+			:disabled不可用状态
+			:checked 选中状态
+			:not(selector)不是selector元素的元素
+			:target正在访问的锚点目标元素
+			::selection用户当前选取的内容元素
+		    :focus表示获得焦点的元素（如表单输入）。当用户点击或触摸元素或通过键盘的 “tab” 键选择它时会被触发。
+			:invalid 表示任意内容未通过验证的 <input> 或其他 <form> 元素。
+			:valid 表示内容验证正确的<input> 或其他 <form> 元素。这能简单地将校验字段展示为一种能让用户辨别出其输入数据的正确性的样式。
+			:required 表示任意 <input> 元素表示任意拥有required属性的 <input> 或 <textarea> 元素使用它. 它允许表单在提交之前容易的展示必填字段并且渲染其外观。
+			:optional 表示任意没有required属性的 <input>，<select> 或 <textarea> 元素使用它。 */
+			
+	    ————————————————————————————————————————————————————————————————————————————————————————
+		-->
+        <style type="text/css">
+			/* 1.向处于可用状态的元素添加背景色 #00FF00 */
+			input:enabled {
+				background-color:#00FF00 ;
+			}
+
+			form:enabled {
+				background-color:#00FF00 ;
+			}
+           
+			/* 2.向处于不可用状态的元素添加背景色 lightgrey */
+			:disabled {
+				background-color: lightgrey;
+			}
+            
+			/* 3.向处于选中状态的元素添加轮廓aqua dashed 3px */
+			:checked {
+				outline: aqua dashed 3px;
+			}
+			
+			/* 4.向不是black类的p元素添加字颜色blue */
+			p:not(black) {
+				color: blue;
+			}
+           
+			/* 5.向正在访问的锚点目标元素添加边框  3px red dashed*/
+			:target {
+				border: 3px red dashed;
+			}
+           
+			/* 6.向用户当前选取的内容元素添加字颜色 red*/
+			::selection {
+				color: red;
+			}
+			
+			/* 7.设置没有required的文本框背景为黄色 */
+			input:required {
+				border-color: yellow;
+			}
+           
+			
+			/* 8.设置内容未通过验证的 <input>背景为orange */
+			input:invalid {
+				background-color: orange;
+			}
+           
+			/* 9.设置内容验证正确的文本框背景色为lightblue */
+			input:valid {
+				background-color: lightblue;
+			}        
+		   
+		   /* 10.设置聚焦元素的边框 2px #0000FF solid*/
+		   :focus {
+				border:2px #0000FF solid;
+			}
+            
+        </style>
+    </head>
+    <body>
+        <p><a href="#content1">跳转至内容1</a></p>
+        <p><a href="#content2">跳转至内容2</a></p>
+		
+        <h1 id="content1">内容1</h1>		
+        <input type="button" value="可用标准按钮" />
+        <input type="button" value="不可用按钮" disabled="disabled" />
+        <br />
+        <input type="checkbox" name="fav" id="fav" value="sing" />唱歌
+        <input type="checkbox" name="fav" id="fav" value="dance" />跳舞
+		
+        <h1 id="content2">内容2</h1>
+        <p class="black">用一句话概括一下您有什么特长？</p>
+        <p>用一句话概括一下您有什么特长？</p>
+        <p>用一句话概括一下您有什么特长？</p>
+        <p class="black">用一句话概括一下您有什么特长？</p>
+		<hr>
+		<form action="">
+			姓名:<input type="text" required><br>
+			昵称:<input type="text"><br>
+			邮箱:<input type="email"><br>
+			说明：<textarea rows="5" cols="10" autofocus="autofocus">
+				
+			</textarea>
+			<input type="submit">
+		</form>
+    </body>
+</html>

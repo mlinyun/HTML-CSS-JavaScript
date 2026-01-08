@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时效果</title>
+    <style>
+        .box {
+            width: 160px;
+            height: 50px;
+            /* background-color: pink; */
+            margin: 100px auto 0;
+        }
+
+        div span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background-color: black;
+            color: aliceblue;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="hour">24</span>
+        <span class="minute">59</span>
+        <span class="second">59</span>
+    </div>
+    <script>
+        // 1. 获取元素（时分秒盒子）
+        let hour = document.querySelector('.hour')      // 小时的黑色盒子
+        let minute = document.querySelector('.minute')  // 分钟的黑色盒子
+        let second = document.querySelector('.second')  // 秒数的黑色盒子
+        let userInput = prompt('请输入倒计时结束时间（xxxx-xx-xx xx:xx:xx）')
+        if (userInput === '') {
+            let userInput = prompt('请输入倒计时结束时间（xxxx-xx-xx xx:xx:xx）')
+        }
+        
+        let inputTimer = null    // 全局变量 null是一个空的对象
+        if (userInput !== '') {
+            // 返回的是用户输入时间总的毫秒数
+            inputTimer = +new Date(userInput)
+        }
+
+        countDown() // 我们先调用一次这个函数，防止第一次刷新页面有空白
+        // 2. 开启定时器
+        setInterval(countDown, 1000)
+
+        function countDown() {
+            let nowTime = +new Date()   // 返回的是当前时间总的毫秒数
+            let times = (inputTimer - nowTime) / 1000
+            // times是剩余时间总的秒数
+            let h = parseInt(times / 60 / 60 % 24)  // 得到时
+            h = h >= 10 ? h : '0' + h
+            hour.innerHTML = h  // 把剩余的小时数给 小时黑色盒子
+            let m = parseInt(times / 60 % 60)   // 得到分
+            m = m >= 10 ? m : '0' + m
+            minute.innerHTML = m    // 把剩余的分钟数给 分钟黑色盒子
+            let s = parseInt(times % 60)    // 得到分钟
+            s = s >= 10 ? s : '0' + s
+            second.innerHTML = s    // 把剩余的秒数给 秒数黑色盒子
+        }
+    </script>
+</body>
+</html>

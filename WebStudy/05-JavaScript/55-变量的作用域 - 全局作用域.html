@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量的作用域 - 全局作用域</title>
+</head>
+<body>
+    <script>
+        // 1. 全局变量：全局能用（在整个script标签或js文件中能够使用）
+        let num = 18    // 声明全局变量
+
+        console.log(num)    // 在全局作用域下可以访问到num的值
+
+        function fn() {
+            console.log(num)    // 在局部作用域下也可以访问到num的值
+        }
+        fn()    // 18
+
+        if (true) {
+            console.log(num)    // 在块级作用域下也可以访问到num的值
+        }   // 18
+
+        // 特殊情况：如果函数内部或者块级作用域内部，变量没有声明，直接赋值，也当全局变量来看，但强烈不推荐这样子用
+        function fn() {
+            num = 18
+            console.log(num);
+        }
+
+        if (true) {
+            num = 19
+            console.log(num);
+        }
+    </script>
+</body>
+</html>

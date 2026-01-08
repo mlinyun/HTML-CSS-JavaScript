@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>得到一个两数直间的随机整数</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min)) + min    // 不含最大值，含最小值
+        }
+
+        let random = getRandomInt(1, 10)
+        console.log(random)
+    </script>
+</body>
+</html>

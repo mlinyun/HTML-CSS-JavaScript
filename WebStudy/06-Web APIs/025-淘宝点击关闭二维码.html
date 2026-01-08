@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝点击关闭二维码</title>
+    <style>
+        .box {
+            position: relative;
+            width: 74px;
+            height: 88px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            font-size: 12px;
+            text-align: center;
+            color: #f40;
+        }
+
+        .box img {
+            width: 60px;
+            margin-top: 5px;
+        }
+
+        .box .close-btn {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            line-height: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="./images/tao.png" alt="">
+        <i class="close-btn">×</i>
+    </div>
+
+    <script>
+        // 通过 getElementsByClassNama() 得到的是 元素对象集合（伪数组，数组元素是元素对象）
+        // 不能够直接操作，需要获取里面的元素才能够操作 eg: close_btn[0]
+        // 也可以使用 querySelector() 获得元素
+        let close_btn = document.getElementsByClassName('close-btn')
+        let box = document.getElementsByClassName('box')
+        close_btn[0].addEventListener('click', function() {
+            // this.style.display = 'none'
+            box[0].style.display = 'none'
+        })
+    </script>
+</body>
+</html>

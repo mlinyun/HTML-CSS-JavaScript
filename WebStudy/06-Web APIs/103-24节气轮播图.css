@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    position: relative;
+    width: 384px;
+    height: 216px;
+    margin: 100px auto 0;
+    overflow: hidden;
+}
+
+.box a[class^="arrow-"] {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    width: 24px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    z-index: 2;
+}
+
+.box .arrow-l {
+    left: 0;
+}
+
+.box .arrow-r {
+    right: 0;
+}
+
+.box ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    width: 900%;
+}
+
+.box ul li {
+    float: left;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    width: auto;
+    height: 10px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.circle li {
+    float: left;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circle li:first-child {
+    margin-left: 3px;
+}
+
+.circle li:last-child {
+    margin-right: 3px;
+}
+
+.circle .current {
+    background-color: #fff;
+}

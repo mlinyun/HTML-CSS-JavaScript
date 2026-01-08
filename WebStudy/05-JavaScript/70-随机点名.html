@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名</title>
+</head>
+<body>
+    <script>
+        // 得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min    // 含最大值，含最小值
+        }
+        // 声明一个数组
+        let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操']
+        console.log(arr)
+        // 生成一个随机数当索引号来使用
+        let random = getRandomIntInclusive(0, arr.length - 1)
+        console.log(arr[random])
+        // 将被抽中的元素删除
+        arr.splice(random, 1)
+        console.log(arr)
+    </script>
+</body>
+</html>

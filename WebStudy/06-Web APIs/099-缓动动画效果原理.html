@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动动画效果原理</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn500">点击移动500</button>
+    <button class="btn800">点击移动800</button>
+    <div></div>
+    <script>
+        // 定义动画
+        function animate(obj, target) {
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function() {
+                // 步长值需要写到定时器里面，因为每次调用都要重新计算步长值
+                // 我们步长值要改为整数，若是小数的话，可能达不到想要的距离
+                // 这个步长在取整的时候也要考虑到前进和后退的功能
+                // 若是前进则要往大了取 Math.ceil
+                // 若是后退则要往小了取 Math.floor
+                obj.step = (target - obj.offsetLeft) / 10
+                obj.step = obj.step <= 0 ? Math.floor(obj.step) : Math.ceil(obj.step)
+                if (obj.offsetLeft === target) {
+                    clearInterval(obj.timer)
+                } else {
+                    // 把每一次加1这个步长值改为 obj.step
+                    obj.style.left = obj.offsetLeft + obj.step + 'px'
+                }
+            }, 15)
+        }
+
+        // 获取元素
+        let div = document.querySelector('div')
+        let btn500 = document.querySelector('.btn500')
+        let btn800 = document.querySelector('.btn800')
+
+        // 调用函数
+        btn500.addEventListener('click', function() {
+            animate(div, 500)
+        })
+
+        btn800.addEventListener('click', function() {
+            animate(div, 800)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环精灵图背景</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            background-color: pink;
+            margin: 15px;
+            background: url('./images/sprite.png') no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        let lis = document.querySelectorAll('ul li')
+        // let index = 0    // 方法2：声明一个index赋值为0， 每次循环后加上44， 即为y坐标
+        for (let i = 0; i < lis.length; i++) {
+            // 方法1：让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
+            let index = i * 44
+            // 修改每一个图片的位置，不要忘记加上负号
+            lis[i].style.backgroundPosition = `0px -${index}px`
+            // index += 44
+        }
+    </script>
+</body>
+</html>

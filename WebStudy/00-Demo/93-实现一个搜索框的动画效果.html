@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>93-实现一个搜索框的动画效果.html</title>
+    <link rel="stylesheet" href="./css/93-实现一个搜索框的动画效果.css">
+</head>
+
+<body>
+    <div class="searchBox">
+        <div class="search">
+            <ion-icon name="search-outline"></ion-icon>
+        </div>
+        <div class="searchInput">
+            <input type="text" placeholder="输入你要查找的内容">
+        </div>
+        <div class="close">
+            <ion-icon name="close-outline"></ion-icon>
+        </div>
+    </div>
+    <!--字体图标文件-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const search = document.querySelector('.search');
+        const close = document.querySelector('.close');
+        const searchBox = document.querySelector('.searchBox');
+        search.onclick = function() {
+            searchBox.classList.add('active');
+        }
+        close.onclick = function() {
+            searchBox.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

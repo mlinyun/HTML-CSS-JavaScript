@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组遍历的应用</title>
+</head>
+<body>
+    <script>
+        // 1.打印输出数组里的每一个元素
+        let names = ['小明', '小红', '小刚', '小米', '小丽']
+        for (let i = 0; i < names.length; i++) {
+            console.log(names[i])
+        }
+
+        // 2.求数组 [2, 6, 1, 7, 4] 里面所有元素的和及平均值
+        let nums = [2, 6, 1, 7, 4]
+        // 定义变量sum存储数组元素里的和
+        let sum = 0
+        // 定义变量average存储数组里面元素的平均值
+        let average = 0
+        // 遍历数组
+        for (let i = 0; i < nums.length; i++) {
+            // nums[i]就是数组里面的每一个值
+            sum += nums[i]
+        }
+        average = sum / nums.length
+        console.log(`这组数的和是: ${sum}`)
+        console.log(`这组数的平均值是: ${average}`)
+
+        // 3.求数组 [2, 6, 1, 77, 52, 25, 7] 中最大的值
+        let nums1 = [2, 6, 1, 77, 52, 25, 88]
+        let max = nums1[0]
+        for (let i = 1; i < nums1.length; i++) {
+            max = max > nums1[i] ? max : nums1[i]
+        }
+        console.log(`这组数的最大值是: ${max}`)
+
+        // 4.将数组 ['red', 'green', 'blue', 'pink'] 里面的元素转换为字符串，输出： 'redgreenbluepink'
+        let arrStr = ['red', 'green', 'blue', 'pink']
+        let str = ''
+        for (let i = 0; i < arrStr.length; i++) {
+            str += arrStr[i]
+        }
+        console.log(str)
+
+        // 5.将数组 ['red', 'green', 'blue', 'pink'] 转换为字符串，并且用 | 或其他符号分割，输出： 'red|green|blue|pink'
+        let arr = ['red', 'green', 'blue', 'pink']
+        let str1 =''
+        let separator = '|'
+        for (let i = 0; i < arr.length; i++) {
+            if (i !== arr.length - 1) {
+                str1 += arr[i] + separator
+            } else {
+                str1 += arr[i]
+            }
+        }
+        console.log(str1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 768px;
+            height: 432px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background: url('./images/changcheng.png') no-repeat;
+            background-size: contain;
+            overflow: hidden;
+        }
+        
+        .fl {
+            float: left;
+        }
+
+        div[class^="son"] {
+            width: 384px;
+            height: 432px;
+            transition: all .5s;
+        }
+
+        .son1 {
+            background-color: pink;
+        }
+
+        .son2 {
+            background-color: skyblue;
+        }
+
+        .father:hover .son1 {
+            transform: translateX(-100%);
+        }
+
+        .father:hover .son2 {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1 fl"></div>
+        <div class="son2 fl"></div>
+    </div>
+</body>
+</html>

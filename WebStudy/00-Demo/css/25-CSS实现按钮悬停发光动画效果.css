@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #42db14;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 40px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.5s;
+    transition-delay: 0s;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+}
+
+a:hover {
+    transition-delay: 1.5s;
+    color: #fff;
+    box-shadow: 0 0 10px #42db14, 0 0 20px #42db14, 0 0 40px #42db14, 0 0 80px #42db14, 0 0 160px #42db14;
+}
+
+a:nth-child(2) {
+    filter: hue-rotate(40deg);
+}
+
+a:nth-child(3) {
+    filter: hue-rotate(70deg);
+}
+
+a:nth-child(4) {
+    filter: hue-rotate(90deg);
+}
+
+a span {
+    position: relative;
+    z-index: 10;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #42db14;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+    box-shadow: 5px -8px 0 #42db14, 5px 8px 0 #42db14;
+}
+
+a:hover:before {
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+    box-shadow: 0px 0 0 #42db14, 0px 0 0 #42db14;
+}
+
+a:after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #42db14;
+    transition: width 0.5s, right 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+    box-shadow: -5px -8px 0 #42db14, -5px 8px 0 #42db14;
+}
+
+a:hover:after {
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+    box-shadow: 0px 0 0 #42db14, 0px 0 0 #42db14;
+}

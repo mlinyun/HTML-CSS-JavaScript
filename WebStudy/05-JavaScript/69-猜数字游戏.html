@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+</head>
+<body>
+    <script>
+        // 案例：猜数字游戏
+        // 需求：程序生成一个1~100之间的数字，并让用户输入一个数字
+        // ① 设置用户可猜数字的次数为6次，若未在在规定的次数内猜中数字，就给出相应的提示，并告知程序生成的随机数
+        // ② 如果输入的数字大于程序生成的数字，就提示 "很遗憾，猜大了，继续猜！"
+        // ③ 如果输入的数字小于程序生成的数字，就提示 "很遗憾，猜小了，继续猜！"
+        // ④ 如果输入的数组等于程序生成的数字，就提示 "恭喜你！猜对了！"，然后结束程序
+
+        // 得到一个两数之间的随机整数，包括两个数在内的函数
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+
+        let flag = true
+        while (flag) {
+            // 电脑从1~100随机得到一个整数，且每进行一轮游戏更新一次数据
+            let macNum = getRandomIntInclusive(1, 100)
+            console.log(macNum);
+            for (let i = 1; i <= 6; i++) {
+                let userNum = +prompt(`第${i}次猜数，请输入1~100之间的整数:`)
+                if (i === 6) {
+                    if (userNum === macNum) {
+                        alert('恭喜你！猜对了！')
+                        let choice = prompt('再玩一局请输入Y，否则退出游戏')
+                        if (choice !== 'Y') {
+                            flag = false
+                        }
+                    } else {
+                        alert(`很遗憾，你未能在规定的次数内猜中数字，程序生成的随机数是：${macNum}`)
+                        let choice = prompt('重新开始新一轮游戏请输入Y，否则退出游戏')
+                        if (choice !== 'Y') {
+                            flag = false
+                        }
+                    }
+                } else {
+                    if (userNum > macNum) {
+                        alert('很遗憾，猜大了，继续猜！')
+                    } else if (userNum < macNum) {
+                        alert('很遗憾，猜小了，继续猜！')
+                    } else {
+                        alert('恭喜你！猜对了！')
+                        let choice = prompt('重新开始新一轮游戏请输入Y，否则退出游戏')
+                        if (choice !== 'Y') {
+                            flag = false
+                            break
+                        } else {
+                            break
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

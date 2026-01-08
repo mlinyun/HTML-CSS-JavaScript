@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建节点添加节点</title>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        // 1. 创建节点：元素节点    document.createElement('tagName')
+        let li = document.createElement('li')
+        // 2. 添加节点  node.appendChild(child) node父级    child子级
+        let ul = document.querySelector('ul')
+        ul.appendChild(li)  // 这个是在后面追加元素，类似于数组中的push
+        // 3. 添加节点 node.insertBefore(child, 指定元素)
+        let lili = document.createElement('li')
+        ul.insertBefore(lili, ul.children[0])
+        // 4. 我们想要在页面添加一个新的元素：1. 创建元素 2. 添加元素
+    </script>
+</body>
+</html>

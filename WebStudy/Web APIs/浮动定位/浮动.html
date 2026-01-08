@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动</title>
+		<style>	
+		/* 1.（1）设置div1和div2的CSS样式：宽400px,高80px，背景色黄色，外边距5px,右浮动
+		  （2）设置所有div下的段落背景为#A7C942
+		  */
+		#div1,
+		#div2 {
+			width: 400px;
+			height: 80px;
+			background-color: yellow;
+			margin: 5px;
+			float: right;
+		}
+
+		div p {
+			background-color: #A7C942;
+		}
+		
+			
+		/* 2.（1）设置div1下的图片宽度50px，高度50px，向左浮动
+		     （2）设置div2下的图片宽度50px，高度50px，向右浮动 */
+		#div1 img {
+			width: 50px;
+			height: 50px;
+			float: left;
+		}
+
+		#div2 img {
+			width: 50px;
+			height: 50px;
+			float: right;
+		}
+		
+		/* 3.(1)设置div3宽度600px,高度250px,背景色灰色,边框2px solid 蓝色
+			(2)设置div3下的p1宽度400px,高度50px,溢出处理为自动，向左浮动
+			(3)设置div3下的p2宽度200px,高度50px,溢出处理为隐藏，向右浮动，清除左侧浮动
+			(4)设置div3下的p3始终出现滚动条，向右浮动，清除右侧浮动*/
+		#div3 {
+			width: 600px;
+			height: 250px;
+			background-color: grey;
+			border: 2px solid blue;
+		}
+
+		#div3 #p1 {
+			width: 400px;
+			height: 50px;
+			overflow: auto;
+			float: left;
+		}
+
+		#div3 #p2 {
+			width: 200px;
+			height: 50px;
+			overflow: hidden;
+			float: right;
+			clear: left;
+		}
+
+		#div3 #p3 {
+			overflow: scroll;
+			float: right;
+			clear: right;
+		}
+		
+		/* 4.（1）清除div4双侧浮动。 
+			（2）设置div4下的clipImg2绝对定位，剪裁图片为右上坐标（220px，10px），左下坐标（110px，100px）
+			（3）设置div4下的 sp1和sp3显示为行内块，边框2px红实线，宽度200px,文字居中。
+			(4)设置div4下的sp2隐藏。
+			(5)设置div4下的sp4显示为块元素,宽度300px,高度为50px,边框2px #98BF21圆点。
+			
+			*/
+		#div4 {
+			clear: both;
+		}
+
+		#div4 #clipImg2 {
+			position: absolute;
+			/* 剪裁图片为右上坐标（220px，10px），左下坐标（110px，100px） */
+			clip: rect(10px, 220px, 100px, 110px);
+		}
+
+		#div4 #sp1,
+		#div4 #sp3 {
+			display: inline-block;
+			width: 200px;
+			border: 2px solid red;
+			text-align: center;
+		}
+
+		#div4 #sp2 {
+			display: none;
+		}
+
+		#div4 #sp4 {
+			display: block;
+			width: 300px;
+			height: 50px;
+			border: 2px dotted #98BF21;
+		}
+		</style>
+	</head>
+	
+	<body>
+	<div id="div1">
+		  <img src="./img/1001.png" />
+		  <p>
+			  唧唧复唧唧，木兰当户织。
+			  不闻机杼声，惟闻女叹息。
+			  问女何所思，问女何所忆。
+			  女亦无所思，女亦无所忆。
+		  </p>
+	 </div>
+	 <div id="div2">	 	 
+	 	  <img src="./img/1002.png" />
+	 	  <p>
+	 		  昨夜见军帖，可汗大点兵，
+			  军书十二卷，卷卷有爷名。
+			  阿爷无大儿，木兰无长兄，
+			  愿为市鞍马，从此替爷征。
+	 	  </p>
+	  </div>
+	<div id="div3">		  
+	  	  <p id="p1">
+	  		  东市买骏马，西市买鞍鞯，
+			  南市买辔头，北市买长鞭。
+			  旦辞爷娘去，暮宿黄河边，
+			  不闻爷娘唤女声，但闻黄河流水鸣溅溅。			 
+	  	  </p>		  
+		  <p id="p2">
+			  旦辞黄河去，暮至黑山头，
+			  不闻爷娘唤女声，
+			  但闻燕山胡骑鸣啾啾。
+		  </p>
+		  <p id="p3">
+		  	万里赴戎机，关山度若飞。
+			朔气传金柝，寒光照铁衣。
+		  </p>
+		 
+	   </div>
+	   <div id="div4">
+		   <span id="sp1">图片剪裁及display属性设置</span>
+		   <span id="sp2">会看到两张图片</span>
+		   <span id="sp3">未剪裁的图片</span>
+		   <img src="./img/1001.png" alt="花木兰" id="clipImg1">
+		   <span id="sp4">剪裁后的图片</span>
+		   <img src="./img/1001.png" alt="花木兰" id="clipImg2">  
+	   </div>
+	  
+	 
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过classList修改样式</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .active {
+            width: 400px;
+            height: 400px;
+            background-color: hotpink;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+        // 获取元素
+        let box = document.querySelector('.one')
+        // 1. 追加一个类 active
+        box.classList.add('active')
+        // 2. 删除一个类 active
+        box.classList.remove('active')
+        // 3. 切换一个类（若原来该类存在则删除，否则追加该类）
+        box.classList.toggle('one')
+    </script>
+</body>
+</html>

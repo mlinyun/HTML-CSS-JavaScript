@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自增自减运算符</title>
+</head>
+<body>
+    <script>
+        let a = 10
+        ++a // ++a = 11(a = 10 + 1 = 11)
+        let b = ++a + 2 // ++a = 12(a = 11 + 1 = 12)  b = 12 + 2 = 14
+        console.log(b) // 结果输出 14
+
+        let c = 10
+        c++ // c++ = 11(c = 10 + 1 = 11)
+        let d = c++ + 2 // c++ = 11(先返回原值11参与运算，后自加) d = 11 + 2 = 13
+        console.log(c) // 上步c++执行完之后自加1 c = 11 + 1 = 12 故输出 12 
+        console.log(d) // 结果输出 13
+
+        let e = 10
+        let f = e++ + ++e // e++ = 10(执行之后e = 10 + 1 = 11)  ++e = 12(e = 11 + 1 = 12)
+        console.log(f) // f = 10 + 12 = 22  结果输出 22
+    </script>
+</body>
+</html>

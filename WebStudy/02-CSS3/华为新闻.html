@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华为新闻</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 1110px;
+            height: 247px;
+            margin: 20px auto;
+            /* ps */
+            /* background-color: pink; */
+        }
+
+        .box ul li {
+            position: relative;
+            float: left;
+            width: 350px;
+            height: 247px;
+            margin-right: 30px;
+            overflow: hidden;
+        }
+
+        .box ul li:last-child {
+            margin-right: 0;
+        }
+
+        .box .pic img {
+            width: 100%;
+            transition: all .5s;
+        }
+
+        .box li .title {
+            position: absolute;
+            left: 0;
+            bottom: -50px;
+            width: 350px;
+            height: auto;
+            padding: 20px 30px;
+            color: #fff;
+            z-index: 1;
+            transition: all .5s;
+        }
+
+        .box .title h4 {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 2em;
+        }
+
+        .box .title h5 {
+            margin-bottom: 40px;
+            font-size: 18px;
+            line-height: 1.5em;
+        }
+
+        .box .title p {
+            font-size: 14px;
+        }
+
+        .box .title p .iconfont {
+            color: #c7000b;
+            vertical-align: middle;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .box li .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 247px;
+            background-image: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, .6)
+            );
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .box li:hover img {
+            transform: scale(1.2);
+        }
+
+        .box li:hover .title {
+            transform: translateY(-50px);
+        }
+
+        .box li:hover .mask {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href="#">
+                    <div class="pic">
+                        <img src="./images/product.jpeg" alt="">
+                    </div>
+                    <div class="title">
+                        <h4>产品</h4>
+                        <h5>OceanStor Pacific 海量存储斩获2021 Interop金奖</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="pic">
+                        <img src="./images/huawei1.jpeg" alt="">
+                    </div>
+                    <div class="title">
+                        <h4>行业洞察</h4>
+                        <h5>迈向智能世界2030</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="pic">
+                        <img src="./images/huawei2.jpeg" alt="">
+                    </div>
+                    <div class="title">
+                        <h4>《ICT新视界》刊首语</h4>
+                        <h5>笃行致远，共建具有获得感、幸福感、安全感的智慧城市</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                    <div class="mask"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

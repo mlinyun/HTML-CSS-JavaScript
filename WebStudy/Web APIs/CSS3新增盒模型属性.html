@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增盒模型属性</title>
+	   <style>
+		  div{
+			 width:80px;
+			 height:80px;
+			 border:2px solid;
+			 margin:10px;
+			 padding: 5px;
+			 float: left;
+			 background-color: #90EE90;
+			 background-clip: content-box;
+			 font-size:0.6em;
+		  }
+	   </style>
+	</head>
+	<!-- 知识点：————————————————————————————————————————————————
+	盒模型： 内容 width，height
+	        内边距padding
+			外边距margin
+			边框border
+	新增盒模型属性：
+	    1.圆角边框属性(值为长度/百分比)
+		       border-radius: 每个半径的四个值的顺序是：左上角，右上角，右下角，左下角。
+							   如果省略左下角，右上角是相同的。
+							   如果省略右下角，左上角是相同的。
+							   如果省略右上角，左上角是相同的。 ;
+				示例：1em 2em 1.5em 2.5em/2em 1em 0.5em 1.5em 
+				八个值，前四个代表水平方向左上、右上、右下、左下
+						后四个代表垂直方向左上、右上、右下、左下
+			   border-top-left-radius: 第一个值是水平半径，第二个是垂直半径;
+			   border-top-right-radius: ;
+			   border-bottom-left-radius: ;
+			   border-bottom-right-radius: ;
+		2.盒模型阴影box-shadow，如果设置多个阴影用逗号分隔。
+				语法：box-shadow: h-shadow v-shadow blur spread color inset;
+						h-shadow	必需。水平阴影的位置。允许负值。	
+						v-shadow	必需。垂直阴影的位置。允许负值。	
+						blur	可选。模糊的半径距离。	
+						spread	可选。阴影额外增加的尺寸。	
+						color	可选。阴影的颜色。
+						inset	可选。将外部阴影 (outset) 改为内部阴影。
+		3.调整元素尺寸resize，注意：此属性需配合overflow属性才能生效。
+			语法：resize: none|both|horizontal|vertical;
+				none	用户无法调整元素的尺寸。
+				both	用户可调整元素的高度和宽度。
+				horizontal	用户可调整元素的宽度。
+				vertical	用户可调整元素的高度。
+		4.轮廓的偏移量outline-offset
+	 ————————————————————————————————————————————————————————————-->
+	<body>
+		<!--1.根据运行效果图补全圆角边框的样式代码 -->
+		<div>圆角边框</div>
+		<div style="border-top-left-radius: 20px 20px;
+					border-bottom-left-radius: 40px 20px;"></div>
+		<div style="border-radius: 20px 10px 5px 10px;"></div>
+		<div style="border-radius: 20px 10px 4px 7px;"></div>
+		<div style="border-radius: 20px 10px;"></div>
+		<div style="border-radius: 10px;"></div>
+		<div style="border-radius: 20px 10px 5px 15px;"></div>
+		<div style="border-radius: 20px 10px"></div>
+		<div style="border-radius: 10px;"></div>
+		<br style="clear:left">
+		<!--2.根据运行效果图补全盒模型阴影的样式代码 -->
+		<div style="box-shadow: 10px 10px 0 #000;">盒模型阴影</div>
+		<div style="box-shadow: 10px 10px 5px #000;"></div>
+		<div style="box-shadow: 10px 10px 5px 2px #000;"></div>
+		<div style="box-shadow: 10px 10px 5px 2px #f00;"></div>
+		<div style="box-shadow: 10px 10px 5px #f00 inset;"></div>
+		<div style="box-shadow: 10px 10px 5px #f00,
+								20px 20px 5px #ff0;"> </div>
+		<br style="clear:left">
+		<div style="border-radius: 20px;
+					box-shadow: 100px 0 4px #f00,
+								200px 0 4px #ff0,
+								300px 0 4px #00f;"></div>
+		<br style="clear:left;">
+		<!--3.根据运行效果图补全窗体可调整的样式代码 -->
+		<div>窗体不可调整</div>
+		<div style="overflow: hidden; resize: both;">可以调整宽和高</div>
+		<div style="overflow: hidden; resize: horizontal;">可以调整宽度</div>
+		<div style="overflow: hidden; resize: vertical;">可以调整高度</div>
+		<br style="clear:left;">
+		<!--4.根据运行效果图补全轮廓及轮廓偏移的样式代码 -->
+		<div style="outline: 5px solid red; outline-offset: 0px">轮廓</div>
+		<div style="outline: 5px solid red; outline-offset: 10px">轮廓偏移</div>
+	</body>
+</html>

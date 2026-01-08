@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 1152px;
+            height: 216px;
+            margin: 100px auto;
+            border: 2px solid #333;
+            /* background-color: pink; */
+            overflow: hidden;
+        }
+
+        .box ul {
+            width: 4224px;
+            height: 216px;
+            animation: move 15s infinite linear;
+        }
+
+        .box:hover ul {
+            animation-play-state: paused;
+        }
+
+        .box li {
+            float: left;
+            width: 384px;
+            height: 216px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-3072px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="./images/1001.png" alt=""></img></li>
+            <li><img src="./images/1002.png" alt=""></img></li>
+            <li><img src="./images/1003.png" alt=""></img></li>
+            <li><img src="./images/1004.png" alt=""></img></li>
+            <li><img src="./images/1005.png" alt=""></img></li>
+            <li><img src="./images/1006.png" alt=""></img></li>
+            <li><img src="./images/1007.png" alt=""></img></li>
+            <li><img src="./images/1008.png" alt=""></img></li>
+            <li><img src="./images/1001.png" alt=""></img></li>
+            <li><img src="./images/1002.png" alt=""></img></li>
+            <li><img src="./images/1003.png" alt=""></img></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用构造函数创建四大天王对象</title>
+</head>
+<body>
+    <script>
+        function Stars(uname, age, gender) {
+            this.uname = uname
+            this.age = age
+            this.gender = gender
+            this.sing = function(sang) {
+                console.log(sang)
+            }
+        }
+
+        let ldh = new Stars('刘德华', 18, '男')
+        console.log(ldh)
+        console.log(typeof ldh)
+        console.log(ldh.uname)
+        ldh.sing('冰雨')
+
+        let zxy = new Stars('张学友', 19, '男')
+        console.log(zxy)
+        console.log(typeof zxy)
+        console.log(zxy.uname)
+        zxy.sing('李香兰')
+
+        delete zxy.age
+        console.log(zxy.age);
+    </script>
+</body>
+</html>

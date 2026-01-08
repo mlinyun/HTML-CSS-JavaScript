@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装自己的数学对象</title>
+</head>
+<body>
+    <script>
+        let myMath = {
+            // PI 属性
+            PI: 3.141592653589793,
+
+            // max 求最大值方法
+            max: function() {
+                let max = arguments[0]
+                for (let i = 1; i < arguments.length; i++) {
+                    max = arguments[i] > max ? arguments[i] : max
+                }
+                return max
+            },
+
+            // min 求最小值方法
+            min: function() {
+                let min = arguments[0]
+                for (let i = 1; i < arguments.length; i++) {
+                    min = arguments[i] < min ? arguments[i] : min
+                }
+                return min
+            }
+        }
+
+        let PI = myMath.PI
+        console.log(PI)
+
+        let max = myMath.max(1, 2, 3, 4, 5, 6)
+        console.log(max)
+
+        let min = myMath.min(1, 2, 3, 4, 5, 6)
+        console.log(min)
+    </script>
+</body>
+</html>

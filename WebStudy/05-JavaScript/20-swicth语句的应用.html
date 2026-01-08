@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch语句的应用</title>
+</head>
+<body>
+    <script>
+        // 根据stuType的不同取值，提示对应的学生类型
+        let stuType = prompt('请您输入该学生的类型：')
+        switch (stuType) {
+            case 'underGraduate':
+                alert('本科生')
+                break
+            case 'master':
+                alert('硕士研究生')
+                break
+            case 'ph.D':
+                alert('博士研究生')
+                break
+            default:
+                alert('不合理取值')
+        }
+    </script>
+</body>
+</html>

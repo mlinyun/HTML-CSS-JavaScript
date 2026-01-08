@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象的使用</title>
+</head>
+<body>
+    <div id="time"></div>
+    <button id="stop">停止时间</button>
+    <script>
+        // 1. 使用日期函数，获取当前时间，显示今天星期几
+        function getTimes() {
+            // 创建一个时间对象date
+            let date = new Date()
+            // 格式化日期 - 年月日
+            let year = date.getFullYear()	// 获取当年
+            let month = date.getMonth() + 1	// 获取当月（0 ~ 11）从0开始算起 所以这里要加1
+            let dates = date.getDate()	// 获取当天日
+            // 格式化日期 - 星期几
+            let arr = ['星期日', '星期一','星期二', '星期三', '星期四', '星期五', '星期六']
+            let day = date.getDay()	// 获取星期	返回的是(0 ~ 6) 所以可以借助数组完成
+            // 格式化日期 - 时分秒
+            let hours = date.getHours()		// 获取当前小时
+            let minute = date.getMinutes()	// 获取当前分钟
+            let second = date.getSeconds()	// 获取当前秒钟
+            // 时间补零
+            month = month >= 10 ? month : '0' + month
+            dates = dates >= 10 ? dates : '0' + dates
+            hours = hours >= 10 ? hours : '0' + hours
+            minute = minute >= 10 ? minute : '0' + minute
+            second = second >= 10 ? second : '0' + second
+            // 格式化输出今天是xxxx年x月x日 星期x x时x分x秒
+            return '今天是' + year + '年' + month + '月' + dates+ '日 ' + arr[day] + ' ' + hours + '时' + minute + '分' + second + '秒'
+        }
+
+        // 调用执行时间函数
+        let time = getTimes()
+        console.log(time)
+
+        // 2. 使用数学函数，产生10个50以内的随机整数
+        function getRandomIntNum() {
+            for (let i = 0; i < 10; i++) {
+                let num = 0
+                do {
+                    num = Math.ceil(100 * Math.random())
+                } while(num > 50)
+                return num
+            }
+        }
+        // 定义一个数组，将随机产生的10个随机数保存在数组里
+        let arr = []
+        for (let i = 0; i < 10; i++) {
+            arr[i] = getRandomIntNum()
+        }
+        // 打印数组
+        console.log(arr)
+
+        // 3. 把时间显示在页面上，每隔一秒获取一次当前时间并显示。单机停止按钮清除定时器
+        let div = document.getElementById('time')
+        let time1 = setInterval(function() {
+            div.innerHTML = getTimes()
+        }, 1000)
+        let btn = document.getElementById('stop')
+        btn.addEventListener('click', function() {
+            clearInterval(time1)
+        })
+    </script>
+</body>
+</html>

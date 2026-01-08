@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单全选按钮</title>
+    <style>
+        input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    爱好：
+    <input type="checkbox" name="hobby" value="1" id="">阅读
+    <input type="checkbox" name="hobby" value="2" id="">唱歌
+    <input type="checkbox" name="hobby" value="3" id="">跳舞
+    <button>全选</button>
+    <script>
+        // 1. 获取所有多选框和全选按钮
+        let checkbox = document.querySelectorAll('input[type=checkbox')
+        let btn = document.querySelector('button')
+
+        // 2. 事件监听 (注册事件)
+        btn.addEventListener('click', function() {
+            for (let i = 0; i < checkbox.length; i++) {
+                checkbox[i].checked = true
+            }
+            // 点击一次全选按钮后禁用该按钮
+            this.disabled = true
+            // this 指向的是事件函数的调用者 btn
+        })
+    </script>
+</body>
+</html>

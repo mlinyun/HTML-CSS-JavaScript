@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>新增文本属性</title>
+		<style>
+			/* p1段落样式 */
+			.p1{
+				float:left;
+				margin:5px;
+				width:300px;
+				height:60px;
+				background-color: #00FF00;
+				}
+			/* 1.根据效果图设置图像的垂直对齐方式，分别为：默认，text-top,text-bottom,middle对齐 */
+			.top {
+				vertical-align: text-top;
+			}
+
+			.bottom {
+				vertical-align: text-bottom;
+			}
+
+			.middle {
+				vertical-align: middle;
+			}
+					
+			/* 2.（1）设置test类的元素，空白符处理方式为nowrap，宽度12em，溢出为隐藏，加边框。
+			（2）在body部分找到test的类，将style属性设置text-overflow
+			（3）设置鼠标放在test类上时的样式，背景色#00ff00,溢出为可见。
+			（4）完成（1）-（3）步骤后，运行查看效果是否正确。
+			*/
+
+			.test {
+				width: 12em;
+				white-space: nowrap;
+				overflow: hidden;
+				border: 2px solid #000;
+			}
+
+			.test:hover {
+				background-color: #00ff00;
+				overflow: visible;
+			}
+			
+			/* 3.设置test1类样式，左浮动，外边距5px，宽度9em，有边框，背景色为yellow，自动换行方式为keep-all。*/
+			.test1 {
+				float: left;
+				width: 9em;
+				margin: 5px;
+				border: 2px solid #000;
+				background-color: yellow;
+				word-break: keep-all;
+			}
+			
+			
+		    /* 4.设置test2类样式，左浮动，外边距5px，宽度9em，有边框，背景色为yellow，允许在单词内换行。*/
+			.test2 {
+				float: left;
+				width: 9em;
+				margin: 5px;
+				border: 2px solid #000;
+				background-color: yellow;
+				word-break: break-all;
+			}
+		    
+		
+			/* 5.设置test3类样式，宽度11em，有边框，背景色为yellow，长单词允许换行。*/
+			.test3 {
+				width: 11em;
+				border: 2px solid #000;
+				background-color: yellow;
+				word-wrap: break-word;
+			}
+		
+		</style>
+	</head>
+	<!--
+	CSS文本属性：
+				color	设置文本颜色
+				direction	设置文本方向。
+				letter-spacing	设置字符间距
+				line-height	设置行高
+				text-align	对齐元素中的文本
+				text-decoration	向文本添加修饰
+				text-indent	缩进元素中文本的首行
+				text-shadow	设置文本阴影
+				text-transform	控制元素中的字母				
+				white-space	设置元素中空白的处理方式
+				word-spacing	设置字间距
+				unicode-bidi	设置或返回文本是否被重写
+				vertical-align	设置元素的垂直对齐
+	 CSS3新增文本属性：
+				
+				hanging-punctuation	规定标点字符是否位于线框之外。	
+				punctuation-trim	规定是否对标点字符进行修剪。	
+				text-align-last	设置如何对齐最后一行或紧挨着强制换行符之前的行。	
+				text-emphasis	向元素的文本应用重点标记以及重点标记的前景色。	
+				text-justify	规定当 text-align 设置为 "justify" 时所使用的对齐方法。	
+				text-outline	规定文本的轮廓。	
+				text-overflow	规定当文本溢出包含元素时发生的事情。	
+				text-shadow	向文本添加阴影。	
+				text-wrap	规定文本的换行规则。	
+				word-break	规定非中日韩文本的换行规则。	
+				word-wrap	允许对长的不可分割的单词进行分割并换行到下一行。
+	 -->
+	<!--知识点：---—————————————————————————————————————— 
+	   1.text-overflow:clip/ellipsis(剪裁文本内容/显示省略号) 该属性需要配合overflow:hidden和white-space：nowrap
+	   2.word-break：
+			    normal	使用浏览器默认的换行规则。
+				break-all	允许在单词内换行。
+				keep-all	只能在半角空格或连字符处换行。
+	   3.word-wrap:break-word/normal;normal默认值只允许在断点字换行。可在break-word长单词或者URL中间换行
+	 ——————————————————————————————————————————————————————————————————————————————————————
+	 -->
+	<body>
+		
+		</head>
+		<body>
+		<p><b>vertical-align垂直对齐属性：</b></p>
+		<p class="p1">一个<img src="./img/game.png" width="40px" height="40px" />默认对齐的图像。</p>
+		<p class="p1">一个<img class="top" src="./img/game.png" width="40px" height="40px"  /> text-top 对齐的图像。</p> 
+		<p class="p1">一个<img class="bottom" src="./img/game.png" width="40px" height="40px"  />text-bottom 对齐的图像。</p>
+		<p class="p1">一个<img class="middle" src="./img/game.png"  width="40px" height="40px"/> center 对齐的图像。</p>
+		<br style="clear:both;">
+		<p><b>text-overflow属性:</b>鼠标移动到框内，查看效果.</p>		
+		<div class="test" style="text-overflow:ellipsis">This is some long text that will not fit in the box</div>
+		<br>
+		<div class="test" style="text-overflow:clip">This is some long text that will not fit in the box</div>
+		<p><b>word-break属性:</b></p>
+		<p class="test1"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+		<p class="test2"> This paragraph contains some text: The lines will break at any character.</p>
+		<br style="clear:both;">
+		<p><b>word-wrap属性:</b></p>
+		<p class="test3"> This paragraph contains a very 
+		long word: thisisaveryveryveryveryveryverylongword. </p>
+		
+		</body>
+	</body>
+</html>

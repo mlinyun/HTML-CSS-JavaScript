@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>007-jQuery筛选选择器</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        // jQuery 筛选选择器
+        $(function() {
+            // 将ul里的第一个li的文字设置成红色 :first
+            $('ul li:first').css('color', 'red')
+            // 将ul里面的最后一个li的文字设置成蓝色  :last
+            $('ul li:last').css('color', 'blue')
+            // 将ul里面的第3个li的文字颜色设置成粉红色    :eq(index) index从0开始
+            $('ul li:eq(2)').css('color', 'pink')
+
+            // 将ol里面奇数行的li的文字颜色设置为深红色 :odd 注意：行数也是从0开始算的
+            $('ol li:odd').css('color', 'red')
+            // 将ol里面偶数数行的li的文字颜色设置为天蓝色 :even 注意：行数也是从0开始算的
+            $('ol li:even').css('color', 'skyblue')
+        })
+    </script>
+</body>
+</html>

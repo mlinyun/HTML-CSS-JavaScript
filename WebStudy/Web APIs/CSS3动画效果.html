@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>
+		<style>
+			/* 要求：
+			1.定义三个动画，分别应用于d1，d2，d3 
+			（1）第一个动画背景色由红变黄，持续时间为5s
+			（2）第二个动画背景色变化为红-蓝-绿-黄-红，持续时间5s
+			（3）第三个动画背景色变化为红-蓝-绿-黄-红，位置也随着变化。
+			    时间为5s，速度时间为linear，延迟2s，动画循环进行，方向为交替，状态为running
+			*/
+		   div {
+			   margin: 10px;
+			   width: 100px;
+			   height: 100px;
+			   background-color: red;
+		   }
+			
+			#d1 {
+				animation: my1 5s;
+			}
+			
+			#d2 {
+				animation: my2 5s;
+			}
+			
+			#d3 {
+				position: relative;
+				animation-name: my3;
+				animation-duration: 5s;
+				animation-timing-function: linear;
+				animation-delay: 2s;
+				animation-direction: alternate;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+				animation-fill-mode: backwards;
+			}
+		
+			@keyframes  my1{
+				0% {
+					background-color: red;
+				}
+				
+				100% {
+					background-color: yellow;
+				}
+			}
+			
+			@keyframes  my2{
+				0% {
+					background-color: red;
+				}
+				
+				25% {
+					background-color: blue;
+				}
+				
+				50% {
+					background-color: green;
+				}
+				
+				75% {
+					background-color: yellow;
+				}
+				
+				100% {
+					background-color: red;
+				}
+			}
+			
+			@keyframes  my3{
+				0% {
+					background-color: red;
+					left: 0px;
+					top: 0px;
+				}
+				
+				25% {
+					background-color: blue;
+					left: 200px;
+					top: 0px;
+				}
+				
+				50% {
+					background-color: green;
+					left: 200px;
+					top: 100px;
+				}
+				
+				75% {
+					background-color: yellow;
+					left: 0px;
+					top: 100px;
+				}
+				
+				100% {
+					background-color: red;
+					left: 0px;
+					top: 0;
+				}
+			}
+		</style>
+	</head>
+	<!-- 知识点——————————————————————————————————————————————————
+	@keyframes	规定动画。
+	animation	所有动画属性的简写属性，除了 animation-play-state 属性。	
+	animation-name	规定 @keyframes 动画的名称。	
+	animation-duration	规定动画完成一个周期所花费的秒或毫秒。默认是 0。	
+	animation-timing-function	规定动画的速度曲线。默认是 "ease"。	
+	animation-delay	规定动画何时开始。默认是 0。	
+	animation-iteration-count	规定动画被播放的次数。默认是 1。	
+	animation-direction	规定动画是否在下一周期逆向地播放。默认是 "normal"。	
+	animation-play-state	规定动画是否正在运行或暂停。默认是 "running"。	
+	animation-fill-mode	规定对象动画时间之外的状态。
+	
+	————————————————————————————————————————————————————————————————
+	 -->
+	<body>
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+	</body>
+</html>

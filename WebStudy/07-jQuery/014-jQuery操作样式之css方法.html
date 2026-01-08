@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>014-jQuery操作样式之css方法</title>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>我是div</div>
+    <script>
+        // 操作样式之css方法
+        $(function() {
+            // 1.参数只写属性名，则是返回属性值
+            $('div').css('width')
+
+            // 2.  参数是属性名，属性值，逗号分隔，是设置一组样式，属性必须加引号，值如果是数字可以不用跟单位和引号
+            $('div').css('color', 'red')
+            // 3.  参数可以是对象形式，方便设置多组样式。属性名和属性值用冒号隔开， 属性可以不用加引号
+            $('div').css({ 'textAlign':'center', 'font-size':'20px'})
+            $('div').css({
+                width: 400,
+                height: 400,
+                backgroundColor: 'skyblue'
+            })
+        }) 
+    </script>
+</body>
+</html>

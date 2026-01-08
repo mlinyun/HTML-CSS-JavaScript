@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调整窗口大小事件</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 注册页面加载事件
+        window.addEventListener('load', function() {
+            let div = document.querySelector('div')
+            // 注册调整窗口大小事件
+            window.addEventListener('resize', function() {
+                console.log(window.innerWidth);
+                // window.innerWidth 获取窗口大小
+                if(window.innerWidth <= 800) {
+                    div.style.display = 'none'
+                } else {
+                    div.style.display = 'block'
+                }
+            })
+        })
+    </script>
+    <div></div>
+</body>
+</html>

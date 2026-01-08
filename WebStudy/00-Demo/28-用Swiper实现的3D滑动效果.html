@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-用Swiper实现的3D滑动效果</title>
+    <link rel="stylesheet" href="./css/28-用Swiper实现的3D滑动效果.css">
+    <link rel="stylesheet" href="./css/28-swiper.min.css">
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="imgBx">
+                    <img src="./img/28-img/img1.jpg">
+                </div>
+                <div class="details">
+                    <h3>杨小爱<br><span>Web前端开发-网页设计</span></h3>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <script type="text/javascript" src="./js/28-swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+
+</html>

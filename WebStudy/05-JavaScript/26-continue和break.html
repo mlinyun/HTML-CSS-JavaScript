@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue和break</title>
+</head>
+<body>
+    <script>
+        let i = 1
+        while (i <= 5) {
+            if (i === 3) {
+                console.log('这个包子有虫子，扔掉')
+                i++	// 注意要修改循环变量的值，否则会造成死循环
+                continue
+                // break
+            }
+            console.log('我正在吃第' + i + '个包子呢')
+            i++
+        }
+    </script>
+</body>
+</html>

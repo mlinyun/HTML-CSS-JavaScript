@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="qval">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <div id="content"></div>
+    <script>
+        let div = document.getElementById('content')
+        let select = document.getElementById('qval')
+        select.addEventListener('change', function() {
+            let index = select.selectedIndex
+            let text = select[index].innerText
+            // let text = select.options[index].text;
+            div.innerHTML = text
+        })
+    </script>
+</html>

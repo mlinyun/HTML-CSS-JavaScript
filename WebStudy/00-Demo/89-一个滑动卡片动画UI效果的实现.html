@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>89-一个滑动卡片动画UI效果的实现.html</title>
+    <link rel="stylesheet" href="./css/89-一个滑动卡片动画UI效果的实现.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="contentBx">
+            <div class="content">
+                <h2>web前端开发<br><span>网页上为用户呈现的部分</span></h2>
+                <div class="imgBx">
+                    <img src="./img/89-img/img.png">
+                </div>
+                <button>欢迎学习</button>
+            </div>
+        </div>
+        <div class="toggle">
+            <span></span>
+        </div>
+    </div>
+    <script>
+        let card = document.querySelector('.card');
+        let cardtoggle = document.querySelector('.toggle');
+        cardtoggle.onclick = function() {
+            card.classList.toggle('active');
+        };
+    </script>
+
+</body>
+
+</html>

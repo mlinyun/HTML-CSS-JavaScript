@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        // 声明函数
+        // function 函数名() { 函数体 }
+        // let 变量名(函数名) = function() { 函数体 }
+        // let 变量名(函数名) = new Functio( 函数体 )
+
+        // ... 扩展符表示每一个
+        function print(...param) {
+            for (i in param) {
+                console.log("第" + i + "个参数是：" + param[i]);
+            }
+        }
+        print(1, 2, 3, 4)
+
+        function print1(name, age) {
+            var obj = {}
+            obj.name = name
+            obj.age = age
+            return obj
+        }
+
+        let obj = print1("lishi", 22)
+        console.log(obj);
+
+        // 闭包函数
+        // 内部函数用到了外部函数的变量，被外部函数返回出去了，在外部执行，不会释放变量
+
+        function outFun(i) {
+            function inFun() {
+                ++i
+                console.log(i)
+            }
+
+            return inFun
+        }
+
+        var fn1 = outFun(200)
+        fn1()
+        fn1()
+        fn1()
+        var fn2 = outFun(500)
+        fn2()
+        fn2()
+        fn2()
+    </script>
+</body>
+</html>

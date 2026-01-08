@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏文本框内容</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="手机">
+    <script>
+        // 1. 获取元素
+        let text = document.querySelector('input')
+        // 2. 事件监听 (注册事件)
+        // 2.1 获得焦点
+        text.addEventListener('focus', function() {
+            // 判断表单里面内容是否为默认文字，若是，则清空默认文字内容
+            if (this.value === '手机') {
+                this.value = ''
+            }
+            // 获得焦点需要把文本框的文字颜色变黑
+            this.style.color = '#333'
+        })
+        // 2.2 失去焦点
+        text.addEventListener('blur', function() {
+            // 判断表单内容是否为空，若为空，则恢复默认文字内容
+            // 若表单内容为空则说明用户没有输入内容
+            if (this.value === '') {
+                this.value = '手机'
+            }
+            // 失去焦点需要把文本框里面的文字颜色浅色
+            this.style.color = '#999'
+        })
+    </script>
+</body>
+</html>

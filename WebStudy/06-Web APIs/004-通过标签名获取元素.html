@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过标签名获取元素</title>
+</head>
+<body>
+    <h1>Web前端开发</h1>
+    <section>
+        <h2>HTML</h2>
+        <p>超文本标记语言</p>
+    </section>
+    <section>
+        <h2>CSSL</h2>
+        <p>层叠样式表</p>
+    </section>
+    <section>
+        <h2>JS</h2>
+        <p>客户端脚本语言</p>
+    </section>
+    
+    <script>
+        // document 对象的 getElementsByTagName() 方法
+        let contentList = document.getElementsByTagName("p")
+        console.log(contentList)
+        // 输出 HTMLCollection(3) [p, p, p]
+    </script>
+
+    <ul id="fruit-list-wrap">
+        <li>葡萄</li>
+        <li>橘子</li>
+        <li>香蕉</li>
+        <li>梨</li>
+        <li>芒果</li>
+    </ul>
+    <ul id="drank-list-wrap">
+        <li>咖啡</li>
+        <li>果汁</li>
+        <li>奶茶</li>
+    </ul>
+    <script>
+        // element 对象的 getElementsByTagName() 方法
+        // 获取指定ul
+        let fruitListWrap = document.getElementById('fruit-list-wrap')
+        // 获取该ul的li
+        let fruitList = fruitListWrap.getElementsByTagName('li')
+        console.log(fruitList)
+        // 输出 THMLCollection(5) [li, li, li, li, li]
+    </script>
+
+    <ul>
+        <li>知否知否，应是等你好久01</li>
+        <li>知否知否，应是等你好久02</li>
+        <li>知否知否，应是等你好久03</li>
+        <li>知否知否，应是等你好久04</li>
+        <li>知否知否，应是等你好久05</li>
+    </ul>
+
+    <ul id="nav">
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ul>
+    <script>
+        // 获取页面中的上述ul中的li标签
+        let lis = document.getElementsByTagName('li')
+        // 1.返回的是 获取过来元素对象的集合 以伪数组的形式存储的
+        console.log(lis)    // HTMLCollection(5) [li, li, li, li, li]
+        console.log(lis[0]) // <li>知否知否，应是等你好久01</li>
+
+        // 2. 我们想要依次打印里面的元素对象我们可以采取遍历的方式
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i])
+        }
+
+        // 3. element.getElementsByTayName() 可以得到这个元素里面的某些标签
+        let nav = document.getElementById('nav')    // 先通过id获取到id名为nav的ul
+        let navLis = nav.getElementsByTagName('li') // 再使用element.getElementsByTayName()方法
+        console.log(navLis)                         // 获取id名为nav的ul里面的li元素
+        console.log(navLis[0])
+
+        for (let i = 0; i < navLis.length; i++) {
+            console.log(navLis[i])
+        }
+    </script>
+</body>
+</html>

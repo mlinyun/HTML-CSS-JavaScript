@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定位</title>
+		<style>
+			/* 知识点：———————————————————————————————————————————————————————————— */
+			/* 固定定位，相对于浏览器窗口 */
+			/* 绝对定位，相对于 static 定位以外的第一个父元素进行定位 */
+			/* 静态定位，默认值，出现在正常的流中，top、left设置无效 */
+			/* 相对定位，相对其正常位置 */
+			/* z-index元素堆叠顺序值在static才不起作用 */
+			/* —————————————————————————————————————————————————————————————————————— */
+			
+			/* 1.（1）清除所有元素的内外边距
+			 （2）设置所有div中文本水平居中，字号为16px*/
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				text-align: center;
+				font-size: 16px;
+			}
+			
+			/* 2.（1）设置container的宽度为500px,高度为500px，背景色gray,绝对定位，距左50px ，距上50px */
+			/*  （2）设置div1宽度为100px,高度为100px，背景色#00ff00,固定定位，距左30px ，距上30px，透明度0.5  */
+			/*  （3）设置div2宽度为100px,高度为100px，背景色red,静态定位，距左100px ，距上100px  */
+			/*（4）设置div3宽度为100px,高度为100px，背景色yellow,绝对定位，距右50px ，距下50px  */
+			/*  （5）设置div4宽度为100px,高度为100px，背景色blue,相对定位，距左30px ，距上30px，透明度0.5   */
+			#container {
+				width: 500px;
+				height: 500px;
+				background-color: gray;
+				position: absolute;
+				top: 50px;
+				left: 50px;
+			}
+
+			#container #div1 {
+				width: 100px;
+				height: 100px;
+				background-color: #0f0;
+				position: fixed;
+				top: 30px;
+				left: 30px;
+				opacity: 0.5;
+			}
+
+			#container #div2 {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: static;
+				top: 100px;
+				left: 100px;
+			}
+
+			#container #div3 {
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				right: 50px;
+				bottom: 50px;
+			}
+
+			#container #div4 {
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+				position: relative;
+				top: 30px;
+				left: 30px;
+				opacity: 0.5;
+			}
+		    /* 3.（1）设置div5宽度为100px,高度为100px，背景色pink,静态定位（默认定位，不用设） */
+		     /* （2）设置div6宽度为100px,高度为100px，背景色#008000,绝对定位，距左80px ，距上200px，堆叠顺序为1 */
+		      /* （3）设置div7宽度为100px,高度为100px，背景色orange,绝对定位，距右100px ，距下200px */
+			#container #div5 {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+
+			#container #div6 {
+				width: 100px;
+				height: 100px;
+				background-color: #008000;
+				position: absolute;
+				top: 200px;
+				left: 80px;
+				z-index: 1;
+			}
+			
+			#container #div7 {
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+				position: absolute;
+				right: 100px;
+				bottom: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">			
+			<div id="div1">1固定定位
+			    left:30px;
+				top:30px;</div>
+			<div id="div2">2静态定位（默认）
+			     left:100px;
+				 top:100px;	
+			    <div id="div7">7静态定位中的绝对定位
+				right:100px;
+				bottom:200px;
+			    </div>
+			</div>
+			<div id="div3">3绝对定位
+			     right:50px;
+				bottom:50px;		
+				</div>
+			<div id="div4">4相对定位
+			    left:30px;
+				top:30px;</div>
+			<div id="div5">5静态定位（默认）</div>
+			<div id="div6">6堆叠顺序
+			     left:80px;
+				top:200px;
+			</div>
+				#container
+				left:50px;
+				top:50px;			
+		</div>
+	   
+	</body>
+</html>

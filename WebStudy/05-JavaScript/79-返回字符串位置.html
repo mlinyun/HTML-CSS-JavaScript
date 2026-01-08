@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基础铺垫 有一个对象，判断里面是否有某个属性，给出相应的提示
+        let o = {
+            age: 18
+        }
+
+        if (o['age']) {
+            console.log('这个对象里面有该属性')
+        } else {
+            console.log('这个对象里面没有该属性')
+        }
+
+        if (o.age) {
+            console.log('这个对象里面有该属性')
+        } else {
+            console.log('这个对象里面没有该属性')
+        }
+
+        if (o['gender']) {
+            console.log('这个对象里面有该属性')
+        } else {
+            console.log('这个对象里面没有该属性')
+        }
+
+        let str = 'abcoefoxyozzopp'
+        // 将字符串的每一个字符作为对象的属性名，每个字符出现的次数作为该属性的属性值
+        // 声明一个空对象
+        let obj = {}
+        // 遍历字符串
+        for (let i = 0; i < str.length; i++) {
+            let chars = str.charAt(i)   // 查找字符串索引号为i的字符(属性名)，赋值给chars
+            // 判断对象 obj 是否有 chars 该属性
+            // 如果有则将该属性的属性值加1
+            // 如果没有则增加该属性并将该属性的属性值设为1
+            if (obj[chars]) {   // 这里的chars是字符串类型了，所以直接写就可以了，写成obj['chars']是错误的
+                obj[chars]++
+            } else {
+                obj[chars] = 1
+            }
+        }
+        // 得到一个有关字符串str的对象
+        console.log(obj)
+        // 遍历对象，找出出现次数最多的字符及其次数
+        // 声明一个最大值
+        let max = 0
+        // 声明一个存放出现次数最多的字符的变量
+        let ch = ''
+        for (let k in obj) {
+            // k 得到的是属性名
+            // obj[k] 得到的是属性值
+            if (obj[k] > max) {
+                max = obj[k]
+                ch = k
+            }
+        }
+        console.log(`出现次数最多的字符是${ch}，出现的次数为${max}`)
+    </script>
+</body>
+</html>

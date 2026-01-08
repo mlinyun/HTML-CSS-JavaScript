@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数相互调用的应用</title>
+</head>
+<body>
+    <script>
+        // 应用①：用户输入年份，输出当前年份2月份的天数
+        let year = +prompt('请输入一个年份: ')
+        function getDays(year) {
+            let days = 28
+            if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                days = 29
+            }
+            return days
+        }
+        let re = getDays(year)
+        alert(`${year}的2月份有${re}天`)
+    </script>
+</body>
+</html>

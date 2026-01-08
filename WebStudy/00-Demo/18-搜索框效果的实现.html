@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-搜索框效果的实现</title>
+    <link rel="stylesheet" href="./css/18-搜索框效果的实现.css">
+</head>
+
+<body>
+    <div class="search">
+        <div class="icon"></div>
+        <div class="input">
+            <input type="text" name="" id="SearchInput" placeholder="Search">
+        </div>
+        <span class="clear" onclick="document.getElementById('SearchInput').value = ''"></span>
+    </div>
+    <script type="text/javascript">
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function() {
+            search.classList.toggle('active');
+        }
+    </script>
+
+</html>

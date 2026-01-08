@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匿名函数和立即执行函数</title>
+</head>
+
+<body>
+    <script>
+        // 匿名函数
+        // 这是函数表达式写法，匿名函数后面跟分号结束   let 变量名 = function() { 函数体 }
+        // 调用的方式，函数调用必须写到函数体下面   变量名()
+        let fn = function() {
+            console.log('hi~~');
+        }
+        fn();
+
+        // 立即执行函数
+        // 立即执行，无需调用
+        // let fn = function() {}
+        // fn()
+        (function() {
+            console.log(18);
+        })();
+        (function() {
+            console.log(20);
+        })();
+
+        (function() {
+            console.log(22);
+        }());
+        (function() {
+            console.log(24);
+        }());
+
+        let re = (function(x, y) {
+            return x + y
+        })(2, 2);
+        console.log(re);
+
+        // 立即执行函数也可以有函数名
+        (function fn(x, y) {
+            console.log(x + y);
+        }(1, 2));
+    </script>
+</body>
+
+</html>

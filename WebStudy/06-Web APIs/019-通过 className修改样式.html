@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过className修改样式</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .active {
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <script>
+        // 1. 获取元素
+        let box = document.querySelector('div')
+        // 2. 修改样式
+        box.style.width = '300px'
+        box.style.height = '300px'
+        box.style.backgroundColor = 'hotpink'
+
+        // 如果修改的样式比较多，直接通过style属性修改比较繁琐，我们可以通过借助于css类名的形式
+        // 这样子写原来的样式会被新添加的类名替换
+        box.className = 'active'
+        // 假设div原本就有了one这个类名，现在需要在给这个div添加一个active类名，可以这样子写
+        box.className = 'one active'
+    </script>
+</body>
+</html>

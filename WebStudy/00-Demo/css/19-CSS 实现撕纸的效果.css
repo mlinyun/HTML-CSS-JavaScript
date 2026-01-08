@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100vh;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/19-img/bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/19-img/paper.jpg');
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: lighten;
+    filter: brightness(1.1);
+}

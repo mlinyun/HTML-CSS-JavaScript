@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单版发布留言案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgba(245, 209,243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <script>
+        // 1. 获取元素
+        let button = document.querySelector('button')
+        // 2. 注册事件
+        button.addEventListener('click', function() {
+            // 如果用户没有输入内容，给出相应的提示
+            if (button.previousElementSibling.value === '') {
+                alert('您没有输入内容')
+                return false
+            } else {
+                // 创建节点 创建li元素
+                let li = document.createElement('li')
+                // 获取文本框里用户输入的值，并赋值给li的内容
+                li.innerHTML = button.previousElementSibling.value
+                // 添加节点 将创建好的li元素添加到页面
+                // button.nextElementSibling.appendChild(li)   // 在后面添加
+                button.nextElementSibling.insertBefore(li, button.nextElementSibling.children[0])
+            }
+        })
+    </script>
+</body>
+</html>

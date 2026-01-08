@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2D变形</title>
+		<style>
+			#d2{
+				position: absolute;	
+				top:200px;
+			}
+			#d3{
+				position:absolute;
+				top:350px;
+			}
+			#d4{
+				position:absolute;
+				left:550px;
+			}
+		   #d5{
+			   position: absolute;
+			   left:600px;
+			   top:400px;
+		   }
+			#d1 div{
+				width:100px;
+				height:100px;
+				background-color: red;
+				border:1px solid blue;
+			}
+			#d2 div{
+				width:100px;
+				height:100px;
+				background-color: yellow;
+				border:1px solid blue;
+			}
+			#d3 div{
+				width:100px;
+				height:100px;
+				background-color: greenyellow;
+				border:1px solid blue;
+			}
+			#d4 div{
+				width:100px;
+				height:100px;
+				background-color:orange;
+				border:1px solid blue;
+			}
+			#d5 div{
+				width:100px;
+				height:100px;
+				background-color:powderblue;
+				border:1px solid blue;
+			}
+		</style>
+	</head>
+	<!--
+	知识点——————————————————————————————————————————————————
+	Transform属性应用于元素的2D或3D转换。
+	这个属性可以将元素旋转，缩放，移动，倾斜等。
+	语法：transform: none|transform-functions;
+			 none	定义不进行转换。
+			 matrix(n,n,n,n,n,n)	定义 2D 转换，使用六个值的矩阵。
+									matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能
+			 matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)	定义 3D 转换，使用 16 个值的 4x4 矩阵。
+			 translate(x,y)	定义 2D 转换。
+					元素水平方向移动x，垂直方向移动y，其中y可以省略表示垂直方向没有位移。
+			 translate3d(x,y,z)	定义 3D 转换。
+			 translateX(x)	定义转换，只是用 X 轴的值。
+			 translateY(y)	定义转换，只是用 Y 轴的值。
+			 translateZ(z)	定义 3D 转换，只是用 Z 轴的值。
+			 scale(x,y)	定义 2D 缩放转换。
+			 scale3d(x,y,z)	定义 3D 缩放转换。
+			 scaleX(x)	通过设置 X 轴的值来定义缩放转换。
+			 scaleY(y)	通过设置 Y 轴的值来定义缩放转换。
+			 scaleZ(z)	通过设置 Z 轴的值来定义 3D 缩放转换。
+			 rotate(angle)	定义 2D 旋转，在参数中规定角度。
+			 rotate3d(x,y,z,angle)	定义 3D 旋转。
+			 rotateX(angle)	定义沿着 X 轴的 3D 旋转。
+			 rotateY(angle)	定义沿着 Y 轴的 3D 旋转。
+			 rotateZ(angle)	定义沿着 Z 轴的 3D 旋转。
+			 skew(x-angle,y-angle)	定义沿着 X 和 Y 轴的 2D 倾斜转换。
+			 skewX(angle)	定义沿着 X 轴的 2D 倾斜转换。
+			 skewY(angle)	定义沿着 Y 轴的 2D 倾斜转换。
+			 perspective(n)	为 3D 转换元素定义透视视图。	
+	基准点：
+		transform-origin:默认是中心点，left top左上点，right bottom右下，...
+		也可以是具体的值，第一个值代表水平方向的值 第二个值代表垂直方向的值
+		 
+	  -->
+	<body>
+		<!-- 1.根据效果图和文字提示，平移元素，在style属性中补全样式代码。
+		注意：以下两个div为一组，为了产生对比效果。对第一个div进行变形、定位，对第二个div设置透明背景、定位。
+		 -->
+		<div id="d1">
+			<div style="position: absolute; transform: translateX(50px);"></div>
+			<div style="background-color: transparent; position: absolute;">x轴平移50px</div>
+
+			<div style="position: absolute;left:200px; transform: translate(50px, 50px);"></div>
+			<div style="background-color: transparent; position: absolute;left:200px;">x轴、y轴都平移50px</div>
+
+			<div style="position: absolute; left:400px; transform: translateY(50px);"></div>
+			<div style="background-color: transparent; position: absolute; left:400px;">y轴平移50px</div>
+		</div>
+		<!--  2.根据效果图和文字提示，翻转元素（倾斜），在style属性中补全样式代码。
+		 注意：以下两个div为一组，为了产生对比效果。对第一个div进行变形、定位，对第二个div设置透明背景、定位。
+		-->
+		<div id="d2">
+			<div style="position: absolute; left: 20px; transform: skewX(30deg);"></div>
+			<div style="background-color: transparent; position: absolute; left: 20px;">向x轴倾斜30度</div>
+			
+			<div style="position: absolute; left:200px; transform-origin: left top; transform: skewX(30deg);"></div>
+			<div style="background-color: transparent; position: absolute; left:200px;">改变基准点，向x轴倾斜30度</div>
+			
+			<div style="position: absolute; left:400px; transform: skew(30deg, 45deg);"></div>
+			<div style="background-color: transparent; position: absolute; left:400px;">向x轴倾斜30度，y轴倾斜45度</div>
+		</div>
+		<!--  3.根据效果图和文字提示，旋转元素，在style属性中补全样式代码。
+		 注意：以下两个div为一组，为了产生对比效果。对第一个div进行变形、定位，对第二个div设置透明背景、定位。
+		-->
+		<div id="d3">
+			<div style="position: absolute; left: 20px; transform: rotate(45deg);">顺</div>
+			<div style="background-color: transparent; position: absolute; left: 20px;">顺时针旋转45度</div>
+			
+			<div style="position: absolute; left: 200px; transform: rotate(-60deg);">逆</div>
+			<div style="background-color: transparent; position: absolute; left:200px;">逆时针旋转60度</div>
+			
+			<div style="position: absolute; left: 350px; transform-origin: right bottom; transform: rotate(45deg);"></div>
+			<div style="background-color: transparent; position: absolute; left:350px;">改变基准点，顺时针旋转45度</div>
+		</div>
+		
+		<!-- 4.根据效果图和文字提示，缩放元素，在style属性中补全样式代码。
+		 注意：以下两个div为一组，为了产生对比效果。对第一个div进行变形、定位，对第二个div设置透明背景、定位。
+		-->
+		<div id="d4">
+			<div style="position: absolute; left: 50px; transform: scaleX(2);"></div>
+			<div style="background-color: rgba(200, 200, 200, .3); position: absolute; left: 50px;">x轴方向放大2倍</div>
+			
+			<div style="position: absolute; top: 200px; left: 50px; transform: scaleY(2);"></div>
+			<div style="background-color: rgba(200, 200, 200, .3); position: absolute; top: 200px; left: 50px;" >Y轴方向放大2倍</div>
+			
+			<div style="position: absolute; top: 200px; left: 300px; transform: scale(1.5, 2);"></div>
+			<div style="background-color: rgba(200, 200, 200, .3); position: absolute; top: 200px; left: 300px;">X轴方向放大1.5倍，Y轴方向放大2倍</div>
+		</div>
+		<!-- 5.根据效果图和文字提示，综合变形元素，在style属性中补全样式代码。
+		 注意：以下两个div为一组，为了产生对比效果。对第一个div进行变形、定位，对第二个div设置透明背景、定位。
+		-->
+		<div id="d5">
+			<!--matrix两组参数分别为(0.866,0.5,-0.5,0.866,0,0)，(0.5,0.375,0.75,0.5,0,0) -->
+			<div style="position: absolute; transform: matrix(0.866,0.5,-0.5,0.866,0,0);">1</div>
+			<div style="background-color: transparent; position: absolute;">matrix转换1</div>
+			
+			<div style="position: absolute; left:150px; transform: matrix(0.5,0.375,0.75,0.5,0,0)">2</div>
+			<div style="background-color: transparent; position: absolute; left:150px;">matrix转换2</div>
+		</div>
+	</body>
+</html>

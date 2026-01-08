@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑短路运算</title>
+</head>
+<body>
+    <script>
+        console.log(123 && 456)     // 456
+        console.log(0 && 123)       // 0
+        console.log(0 && 1 + 2 && 345 * 678)    // 0
+        console.log(123 && 0 && 456)    // 0
+
+        console.log(123 || 456)    // 123
+        console.log(0 || 456)      // 456
+        console.log(123 || 0 || 456)    // 123
+        console.log(0 || 1 + 2 || 345 * 678)    // 3
+
+        // 逻辑中断很重要，它会影响程序的执行结果
+        let num = 0
+        console.log(123 || num++)   // 123
+        console.log(num)    // 0
+
+        let num1 = 2
+        console.log(num1 *= num1)   // 4
+    </script>
+</body>
+</html>

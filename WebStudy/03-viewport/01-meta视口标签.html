@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>meta视口标签</title>
+    <style>
+        table {
+            width: 700px;
+            height: 200px;
+            margin: 100px auto;
+        }
+
+        div {
+            width: 320px;
+            height: 220px;
+            margin-top: 50px;
+            margin-left: 670px;
+            /* text-align: center; */
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li{
+            padding: 0px 0 5px 8px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <caption><h3>meta视口标签</h3></caption>
+        <tr>
+            <th>属性</th>
+            <th>解释说明</th>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>宽度设置的是viewport宽度，可以设置device-width特殊值</td>
+        </tr>
+        <tr>
+            <td>initial-scale</td>
+            <td>初始缩放比例，大于0的数字</td>
+        </tr>
+        <tr>
+            <td>maximun-scale</td>
+            <td>最大缩放比例</td>
+        </tr>
+        <tr>
+            <td>minimum-scale</td>
+            <td>最小缩放比例</td>
+        </tr>
+        <tr>
+            <td>user-scalable</td>
+            <td>用户是否可以缩放，yes或no(1或0)</td>
+        </tr>
+    </table>
+    <div>
+        <h3>标准的viewport设置</h3>
+        <ul>
+            <li>视口默认和设备保持一致</li>
+            <li>视口的默认缩放比例1.0</li>
+            <li>不允许用户自行缩放</li>
+            <li>最大允许的缩放比例1.0</li>
+            <li>最小允许的缩放比例1.0</li>
+        </ul>
+    </div>
+</body>
+</html>

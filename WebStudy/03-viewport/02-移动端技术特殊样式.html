@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端技术特殊样式</title>
+    <style>
+        /* CSS3盒子模型 */
+        div {
+            box-sizing: border-box;
+            /* 浏览器私有前缀 -webkit代表safari、Chrome私有属性 */
+            -webkit-box-sizing: border-box;
+        }
+
+        /* 移动端点击链接时会有高亮的效果，需要清除 */
+        /* 可以设置高亮为透明: transparent完全透明 */ 
+        a {
+            text-decoration: none;
+            /* 清除高亮 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式 */
+        input {
+            -webkit-appearance: none;
+        }
+
+        /* 禁用长按页面时弹出菜单 */
+        img,
+        a {
+            -webkit-touch-callout: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">百度</a>
+        <input type="button" value="按钮">
+    </div>
+</body>
+</html>

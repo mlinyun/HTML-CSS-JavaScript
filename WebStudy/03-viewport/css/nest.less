@@ -1,0 +1,34 @@
+.header {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    text-align: center;
+    a {
+        text-decoration: none;
+        line-height: 200px;
+        color: red;
+        // 内层选择器的前面如果没有 & 符号，则它会被解析成为父选择器的后代
+        // 如果有 & 符号，它就会被解析为父元素自身伪元素或父元素自身的伪类
+        &:hover {
+            color: orange;
+        }
+    }
+}
+
+.nav {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        text-align: center;
+        line-height: 50px;
+    }
+}

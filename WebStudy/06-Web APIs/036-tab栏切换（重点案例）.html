@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tab {
+            width: 978px;
+            margin: 100px auto 0;
+        }
+
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            text-align: center;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+
+        .item_info {
+            padding: 20px 0 0 20px;
+        }
+        
+        .item {
+            /* 隐藏所有含有类 item 的div */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后与保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">商品介绍模块内容</div> <!-- 默认将这个显示 -->
+            <div class="item">规格与包装模块内容</div>
+            <div class="item">售后与保障模块内容</div>
+            <div class="item">商品评价模块内容</div>
+            <div class="item">手机社区模块内容</div>
+        </div>
+    </div>
+
+    <script>
+        // 获取元素
+        let tab_list = document.querySelector('.tab_list')
+        let lis = tab_list.querySelectorAll('li')
+        let items = document.querySelectorAll('.item')
+        // for循环绑定点击事件
+        for (let i = 0; i < lis.length; i++) {
+            // 给5个li设置自定义属性并赋值 index
+            lis[i].setAttribute('index', i)
+            lis[i].addEventListener('click', function() {
+                // 1. 上的模块选项卡，点击某一个，当前这个底色会是红色，其余不变（排他思想）修改类名的方式
+                // 我们先把所有的背景颜色去掉 - 干掉所有的人
+                for (let j = 0; j < lis.length; j++) {
+                    lis[j].className = ''
+                }
+                // 然后才复活自己
+                this.className = 'current'
+                // 2.下面的显示内容模块
+                let index = this.getAttribute('index')  // 获取索引号
+                for (let k = 0; k < lis.length; k++) {
+                    items[k].style.display = 'none'
+                }
+                items[index].style.display = 'block'
+            })
+        }
+        // 自定义属性目的：是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中
+    </script>
+
+</body>
+</html>

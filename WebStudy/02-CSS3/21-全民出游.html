@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            /* height: 100%; */
+            background: url("./images/f1_1.jpg") no-repeat center 0;
+            background-size: cover;
+        }
+
+        .cloud img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            animation: cloud 1s infinite linear alternate;
+        }
+
+        .cloud img:first-child {
+            margin-top: 20px;
+            margin-left: -230px;
+        }
+
+        .cloud img:nth-child(2) {
+            margin-top: 100px;
+            margin-left: 380px;
+            animation-delay: .2s;
+        }
+
+        .cloud img:nth-child(3) {
+            margin-top: 200px;
+            margin-left: -480px;
+            animation-delay: .4s;
+        }
+
+        .price img {
+            position: absolute;
+            top: 555px;
+            left: 50%;
+            transform: scale(.65);
+            animation: price 1s infinite linear alternate;
+        }
+        
+        .price img:first-child {
+            margin-left: -345px;
+        }
+
+        .price img:nth-child(2) {
+            margin-left: -165px;
+            animation-delay: .2s;
+        }
+
+        .price img:nth-child(3) {
+            animation-delay: .4s;
+            
+        }
+
+        .price img:nth-child(4) {
+            margin-left: 170px;
+            animation-delay: .6s;
+        }
+
+        /* 云彩动画 */
+        @keyframes cloud {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(20px);
+            }
+        }
+
+        /* 价格动画 */
+        @keyframes price {
+            0% {
+                transform: translateY(0) scale(.65);
+            }
+
+            100% {
+                transform: translateY(-20px) scale(.65);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud">
+        <img src="./images/yun1.png" alt="">
+        <img src="./images/yun2.png" alt="">
+        <img src="./images/yun3.png" alt="">
+    </div>
+    <div class="price">
+        <img src="./images/10001.png" alt="">
+        <img src="./images/10002.png" alt="">
+        <img src="./images/10003.png" alt="">
+        <img src="./images/10004.png" alt="">
+    </div>
+</body>
+</html>

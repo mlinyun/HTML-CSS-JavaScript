@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面窗口加载事件</title>
+</head>
+<body>
+    <!-- 若将JS代码写在页面元素的前面，元素还没加载完成就执行JS代码，可能会获取不到元素 -->
+    <!-- <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            alert('点击我')
+        })
+    </script> -->
+
+    <!-- 解决方法一：注册窗口加载事件 -->
+    <script>
+        // 传统方式注册窗口加载事件
+        window.onload = function() {
+            let btn = document.querySelector('button')
+            btn.addEventListener('click', function() {
+                alert('点击我')
+            })
+        }
+
+        // 监听注册方式注册窗口加载事件
+        window.addEventListener('load', function() {
+            let btn = document.querySelector('button')
+            btn.addEventListener('click', function() {
+                alert('点击我')
+            })
+        })
+    </script>
+
+    <!-- 解决方法二：注册 DOMContentLoaded 事件 -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            let btn = document.querySelector('button')
+            btn.addEventListener('click', function() {
+                alert('点击我')
+            })
+        })
+    </script>
+    <button>点击</button>
+
+    <!-- 之前的写法：JS代码必须写在页面元素的下面 -->
+    <!-- <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            alert('点击我')
+        })
+    </script> -->
+</body>
+</html>

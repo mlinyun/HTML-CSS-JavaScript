@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过CSS类名获取元素</title>
+</head>
+<body>
+    <div id="parent-id">
+        <p>hello world 1</p>
+        <p class="test">hello world 2</p>
+        <p>hello world 3</p>
+        <p>hello world 4</p>
+    </div>
+
+    <script>
+        let parentDOM = document.getElementById('parent-id')
+        let test = parentDOM.getElementsByClassName('test')
+        // test 得到的是匹配到类名为 'test'的元素的集合，并不是指元素本身
+        console.log(test)   // HTMLCollection [p.test]
+        let testTarget = test[0]    // 我们想要取得第一个元素
+        console.log(testTarget)     // <p class="test">hello world 2</p>
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>列表属性</title>
+		<style type="text/css">
+			/* 根据给出的运行效果图，写出列表的CSS样式代码，
+			其中#ls2样式用list-style属性，
+			其他ul样式使用list-style-image、list-style-position、
+			list-style-type等属性 */
+			#ls1 {
+				list-style-type: upper-alpha;
+				list-style-position: inside;
+			}
+
+			#ls1 li:nth-of-type(1) {
+				list-style-image: url('./img/banana.png');
+			}
+
+			#ls1 li:nth-of-type(2) {
+				list-style-image: url('./img/apple.png');
+			}
+
+			#ls2 {
+				list-style-type: upper-alpha;
+				list-style-position: outside;
+			}
+			
+			#ls2 li {
+				list-style-image: url('./img/cucumber.png');
+			}
+
+			#ls3 li {
+				list-style-type: decimal;
+			}
+		</style>
+	</head>
+	<!-- 知识点：
+	list-style:以下三个属性。
+	list-style-image:none/inherit/url地址 
+	list-style-position:inside/outside/inherit
+	list-style-type:disc/circle/square/decimal/low-roman/upper-roman/low-alpha/upper-alpha/inherit/none
+	
+	-->
+	
+	<body>
+		<ul id="ls">
+		    <li>水果
+				<ul id="ls1">
+					<li>香蕉</li>
+					<li>苹果</li>
+					<li>哈密瓜</li>
+					<li>菠萝蜜</li>
+					<li>榴莲</li>
+					<li>火龙果</li>
+				</ul>
+			</li>
+		    <li>蔬菜
+				<ul id="ls2">
+					<li>黄瓜</li>
+					<li>南瓜</li>
+					<li>冬瓜</li>
+				</ul>
+			</li>			
+		    <li>肉类
+				<ul id="ls3">
+					<li>猪肉</li>
+					<li>牛肉</li>
+					<li>羊肉</li>
+				</ul>
+			</li>
+		</ul>		
+	</body>
+</html>

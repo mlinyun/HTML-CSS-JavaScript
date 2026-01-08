@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查找字符串</title>
+</head>
+<body>
+    <script>
+        // 需求：查找字符串 'abcoefoxyozzopp' 中所有o出现的位置以及次数
+        let str = 'abcoefoxyozzopp'
+        let arr = []
+        for (let i = 0; i < str.length; i++) {
+            let index = str.indexOf('o', i)
+            if (index !== -1) {
+                if (arr.indexOf(index) === -1) {
+                    arr.push(index)
+                    // index++
+                }
+            }
+        }
+        console.log(arr)    // [3, 6, 9, 12]
+        console.log(arr.length) // o出现的次数
+        // 我自己写的代码
+        // let str = 'abcoefoxyozzopp'
+        // let arr = []
+        // // 将第一个出现的o的索引加到数组arr里
+        // arr.push(str.indexOf('o'))
+        // // 若返回的是-1则退出循环	arr[arr.length]是o出现的索引
+        // while (str.indexOf('o', arr[arr.length - 1] + 1) !== -1) {
+        //     // 将第一个o出现之后的o的索引加到arr里
+        //     arr.push(str.indexOf('o', arr[arr.length - 1] + 1))
+        // }
+        // console.log(arr)
+
+        // 视频教程里的代码
+        // let str = 'abcoefoxyozzopp'
+        // let arr = []
+        // // 查找第一个o出现的索引
+        // let index = str.indexOf('o')
+        // while (index !== -1) {
+        //     arr.push(index)
+        //     index = str.indexOf('o', index + 1)
+        // }
+        // console.log(arr)
+    </script>
+</body>
+</html>

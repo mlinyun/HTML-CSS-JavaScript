@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>CSS3新增属性1</title>
+		<style type="text/css">
+		    .d1 div{
+		        width: 100px;
+		        height: 100px;
+		        padding: 20px;
+		        border: 5px black dashed;
+		        float: left;
+		        margin: 5px;
+		        background: red;
+		    }
+			.d2 div{				
+				    width: 100px;
+				    height: 100px;
+				    padding: 20px;
+				    border: 5px red dashed;
+				    float: left;
+				    margin: 5px;
+					font-weight:bold;
+				    background-image: url('./img/banana.png');				
+			}
+			.d3  div {
+                width: 100px;
+                height: 100px;
+				padding: 20px;
+                border: 5px dashed;
+                float: left;
+                margin: 5px;
+				font-weight:bold;
+                background-image: url('./img/bird.png');
+            }
+			.d4{
+				
+				width: 300px;
+				height: 280px;
+				border: 5px dashed;
+				float: left;
+				margin: 5px;
+				/* 2.设置背景图片5张；不重复；
+				位置分别为：左上，右上，中间，坐下，右下；
+				大小分别为 自动，100px，自动，120px，130px*/
+				/* 代码写在此处 */
+				background-image: url('./img/cucumber.png'), 
+								  url('./img/bird.png'), 
+								  url('./img/banana.png'), 
+								  url('./img/game.png'), 
+								  url('./img/girl.png');
+				background-position: left top, right top, center center, left bottom, right bottom;
+				background-size: auto, 100px, auto, 120px, 130px;
+				background-repeat: no-repeat;
+			}
+			
+		</style>
+	</head>
+	<!-- 
+	背景属性：	
+	background-color,background-image,background-repeat
+	background-attachment,background-position,
+	background
+	______________________________________________________
+	CSS3新增背景属性：
+	background-clip:设置背景覆盖范围，border-box/padding-box/content-box
+	background-origin:设置背景覆盖的起点，border-box/padding-box/content-box
+	background-size:设置背景的大小，cover/contain/长度/百分比
+	 -->
+	<body>
+		<!-- 1.根据div的内容提示，在以下style属性中设置其背景样式 -->
+		<div class="d1">
+			<div>未设置，采用默认值</div>
+			<div style="background-clip: border-box">背景显示区域到边框，默认值</div>
+			<div style="background-clip: padding-box">背景显示区域到内边距框</div>
+			<div style="background-clip: content-box">背景显示区域到内容框</div>
+		</div>
+		<div class="d2">
+			<div>未设置，采用默认值</div>
+			<div style="background-origin: border-box">背景起点在边框的左上角</div>
+			<div style="background-origin: padding-box">背景起点在内边距框的左上角，默认值</div>
+			<div style="background-origin: content-box">背景起点在内容框的左上角</div>
+			<br style="clear: both;" />
+			<div style="background-repeat: no-repeat;">默认</div>
+			<div style="background-origin: border-box; background-repeat: no-repeat;">背景起点在边框的左上角，不重复</div>
+			<div style="background-origin: padding-box; background-repeat: no-repeat;" >背景起点在内边距框的左上角，默认值，不重复</div>
+			<div style="background-origin: content-box; background-repeat: no-repeat;" >背景起点在内容框的左上角，不重复</div>
+		</div>
+		<div class="d3">
+			<div>未设置，采用默认值</div>
+			<div style="background-size: 20px;">背景大小宽度为20px</div>
+			<div style="background-size: 20px 60px;">背景大小宽高分别为20px 60px</div>
+			<div style="background-size: 20%;">背景大小宽度为20%</div>
+			<br style="clear: both;" />
+			<div style="background-size: cover;">背景大小设为cover</div>
+			<div style="background-size: contain;">背景大小设为contain</div>
+		</div>
+		<!-- 2.在头部代码中，设置以下div的样式 -->
+		<div class="d4">
+			
+		</div>
+	</body>
+</html>

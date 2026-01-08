@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BOM浏览器对象模型</title>
+	<script>	
+		alert("学号：213102080120 姓名：林灿辉")
+		function prt() {
+			var el = document.getElementById("content");//通过id获取元素
+			// 浏览器的内部宽高、外部宽高
+			el.innerHTML = `显示器屏幕的宽为：${outerWidth}，高为：${outerHeight}<br />
+							浏览器窗口的宽为：${innerWidth}，高为：${innerHeight}<br />`		
+			// navigator对象的内容，
+			el.innerHTML += `浏览器信息：${navigator.appName}<br/>
+							 浏览器的平台和版本信息：${navigator.appVersion}<br/>
+							 运行浏览器的操作平台：${navigator.platform}<br/>`
+			// location对象的内容
+			el.innerHTML += `URL链接地址：${location.href}<br />
+							 主机域名：${location.hostname}<br />
+							 端口号：${location.port}`
+		}
+		
+		function changebg(a) {
+			document.bgColor = a;//设置文档背景色
+		}
+		
+		function changefg(a) {
+			document.fgColor = a;//设置文档前景色
+		}
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+	<button onclick="prt()">内容</button>
+	<button onclick="changebg('skyblue')">改变背景色天蓝色</button>
+	<button onclick="changefg('green')">改变前景色绿色</button>
+</body>
+</html>

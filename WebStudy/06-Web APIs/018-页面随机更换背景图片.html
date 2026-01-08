@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面随机更换背景图片</title>
+    <style>
+        body {
+            background-image: url("./images/desktop_1.jpg");
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min    // 含最大值，含最小值
+        }
+        // 获取body元素
+        let body = document.body
+        // 生成随机数
+        let random = getRandomIntInclusive(1, 10)
+        // 通过style属性修改元素的CSS
+        body.style.backgroundImage = `url("./images/desktop_${random}.jpg")`
+    </script>
+</body>
+</html>

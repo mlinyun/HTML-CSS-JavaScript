@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱心跳动</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            transform: rotate(45deg);
+            animation: change .6s infinite linear;
+        }
+
+        div::before,
+        div::after {
+            position: absolute;
+            top: -55px;
+            right: 0px;
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        div::after {
+            /* background-color: yellow; */
+            top: 0;
+            right: 55px;
+        }
+
+        @keyframes change {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(.9);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(.8);
+            }
+        }
+
+        p {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            text-align: center;
+            font-size: 20px;
+            color: hotpink;
+            transform: translate(-50%);
+        }
+        .wenzi {
+            top: 234px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>You are the only the here</p>
+    <p class="wenzi">是心动啊</p>
+</body>
+</html>

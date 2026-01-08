@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var mytable = document.getElementById('mytable')
+            var trs = mytable.getElementsByTagName('tr')
+            var flag = true
+            for (let i = 0; i < 5; i++) {
+                if (flag) {
+                    trs[i].setAttribute('bgcolor', '#ccc')
+                    flag = false
+                } else {
+                    flag = true
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="mytable" border="1" width="500" align="center">
+        <tr>
+            <td>01</td>
+            <td>02</td>
+            <td>03</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+        </tr>
+    </table>
+</body>
+</html>

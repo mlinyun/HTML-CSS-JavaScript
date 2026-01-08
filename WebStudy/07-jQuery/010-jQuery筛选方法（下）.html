@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>010-jQuery筛选方法（下）</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <ol>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li class="item">我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+    </ol>
+
+    <ul>
+        <li>我是ul里面的li</li>
+        <li>我是ul里面的li</li>
+        <li>我是ul里面的li</li>
+        <li>我是ul里面的li</li>
+        <li>我是ul里面的li</li>
+        <li>我是ul里面的li</li>
+    </ul>
+    <div class="current">我有类名current</div>
+    <div>我没有current类名</div>
+    <script>
+        // 兄
+        $(function() {
+            // 1. 兄弟元素  siblings 除了自身元素之外的所有亲兄弟
+            $('ol .item').siblings('li').css('color', 'red')
+
+            // 2. 第n个元素
+            // 2.1 我们可以利用选择器的方式选择 E:eq(index)
+            $('ul li:eq(2)').css('color', 'blue')
+            // 2.2 我们可以利用选择方法的方式选择 eq(index) 更推荐使用这种方式
+            $('ul li').eq(3).css('color', 'skyblue')
+
+            // 3. 判断是否有某个类名
+            if ($('div:first').hasClass('current')) {
+                console.log('该div有current类名')
+            } else {
+                console.log('该div没有current类名')
+            }
+
+            if ($('div:last').hasClass('current')) {
+                console.log('该div有current类名')
+            } else {
+                console.log('该div没有current类名')
+            }
+        })
+    </script>
+</body>
+</html>

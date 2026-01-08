@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内容属性</title>
+		<style>
+			h1::after {
+				content: "小花";
+				color: red;
+			}
+
+			h2::before {
+				content: "";
+				display: inline-block;
+				width: 150px;
+				height: 150px;
+				background: url("img/person.png") no-repeat;
+				background-size: 150px;
+				margin-top: 0px;
+				vertical-align: text-bottom;
+			}
+
+			a::after {
+				content: '(http://www.caac.net)';
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>我的名字:</h1>
+		<h2>这是我的相片</h2>
+        <a href="http://www.caac.net">广州民航学院</a>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的增加</title>
+</head>
+<body>
+    <script>
+        // 方法①：数组 .push (新增的内容)  方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度（重点）
+        let arr1 = ['red', 'pink']
+        let length1 = arr1.push('blue', 'green')
+        console.log(arr1)	// ['red', 'pink', 'blue', 'green']
+        console.log(length1)	// 返回数组的最新长度：4
+
+        // 注意
+        // (1) push() 是可以给数组的末尾追加新的元素
+        // (2) push() 参数直接写数组的元素就可以了
+        // (3) push() 完毕之后，返回值是新数组的长度
+        // (4) push() 会修改原数组，即原数组会发生改变
+
+
+        // 方法②：数组 .unshift (新增的内容)  方法将一个或多个元素添加到数组的开头，并返回该数组的新长度
+        let arr2 = ['red', 'pink']
+        let length2 = arr2.unshift('blue', 'green')
+        console.log(arr2)	// ['blue', 'green', 'red', 'pink']
+        console.log(length2)	// 返回数组的最新长度：4
+
+        // 注意
+        // (1) unshift() 是可以给数组的开头追加新元素
+        // (2) unshift() 参数直接写数组元素就可以了
+        // (3) unshift() 完毕之后，返回值是新数组的长度
+        // (4) unshift() 会修改原数组，即原数组会发生变化
+
+
+        // 方法③：可以通过修改 数组length属性长度 来实现数组扩容的目的，没有给值的，默认值就是undefined
+        let arr3 = ['red', 'green', 'blue']
+        console.log(arr3.length)	// 3
+        // 将数组的长度改为5，里面就有5个元素
+        arr3.length = 5
+        console.log(arr3)	// ['red', 'green', 'blue', empty × 2]
+        // 数组里面的两个空元素默认为undefined
+        console.log(arr3[3]) // undefined
+        console.log(arr3[4])	// undefined
+
+
+        // 方法④：修改索引号，给新增的索引号赋值
+        let arr4 = ['red', 'green', 'blue']
+        arr4[3] = 'pink'
+        console.log(arr4)	// ['red', 'green', 'blue', 'pink']
+        arr4[4] = 'hotpink'
+        console.log(arr4)	// ['red', 'green', 'blue', 'pink', 'hotpink']
+        // 若索引号已被占用，此时在赋值，意味着替换原来的元素
+        arr4[0] = 'yellow'
+        console.log(arr4)	// ['yellow', 'green', 'blue', 'pink', 'hotpink']
+        // 注意：不要直接给数组名赋值，否则会覆盖掉原来的数据
+        arr4 = '有点意思'	// 此时 arr 的数据类型已经不再是数组，而是字符串了
+        console.log(arr4)	// 有点意思
+
+
+        // 方法⑤：数组中可以通过以下方式在数组的末尾插入新元素
+        let arr5 = ['red', 'green', 'blue']
+        arr5[arr5.length] = 'pink'
+        console.log(arr5)  // ['red', 'green', 'blue', 'pink']
+    </script>
+</body>
+</html>

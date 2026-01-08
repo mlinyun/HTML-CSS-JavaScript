@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格属性2</title>
+		<style>
+			#student {
+				width: 600px;
+				text-align: center;
+				font-family: "宋体";
+				font-size: 26px;
+				border-spacing: 10px;
+				border: 1px solid #333;
+				empty-cells: hide;
+				caption-side: bottom;
+			}
+
+			#student th {
+				background-color: #aaeb30;
+				color: white;
+			}
+
+			#student td {
+				border: 1px solid lightgreen;
+			}
+
+			.alt {
+				background-color: #b1fc4a;
+			}
+		</style>
+		</head>
+		
+		<body>
+			
+			<table id="student">
+			<caption>学生信息表</caption>
+			<tr>
+			<th>班级</th>
+			<th>学号</th>
+			<th>姓名</th>
+			</tr>
+			
+			<tr>
+			<td>19信管1</td>
+			<td>01</td>
+			<td>张三</td>
+			</tr>
+			
+			<tr class="alt">
+			<td>19计应1</td>
+			<td>05</td>
+			<td>李四</td>
+			</tr>
+			
+			<tr>
+			<td>19信管1</td>
+			<td>03</td>
+			<td>王五</td>
+			</tr>
+			
+			<tr class="alt">
+			<td>19信管1</td>
+			<td>08</td>
+			<td>赵六</td>
+			</tr>
+			
+			<tr>
+			<td>19计应1</td>
+			<td>12</td>
+			<td>王小二</td>
+			</tr>
+			
+			<tr class="alt">
+			<td>19信管1</td>
+			<td>18</td>
+			<td>李小华</td>
+			</tr>
+						
+			<tr>
+			<td>19计应1</td>
+			<td>40</td>
+			<td></td>
+			</tr>
+			</table>
+	</body>
+</html>

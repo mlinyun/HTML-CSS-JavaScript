@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 声明一个函数用于统计字符串中数字的个数、字母的个数
+        function count(str) {
+            // 统计数字的个数
+            var countNum = 0;
+            var num = str.match(/\d{1}/g);
+            for (i in num) {
+                countNum++
+            }
+            console.log("这个字符串中数字的个数是" + countNum);
+
+            // 统计字母的个数
+            var countLetter = 0;
+            var letter = str.match(/[a-zA-Z]/g);
+            for (i in letter) {
+                countLetter++
+            }
+            console.log("这个字符串中数字的个数是" + countLetter);
+        }
+
+        var str = "zhengwenjie2022!!12..08";
+        console.log(str);
+        count(str)
+
+        // 2. 声明一个给字符串去重的函数
+        function remove(str) {
+            str = str.replace(/(.).*\1/g, "$1")
+            return str
+        }
+
+        var str2 = "WebWebWebWeb202211";
+        console.log(str2);
+        var result2 = remove(str2);
+        console.log(result2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单控件2</title>
+	</head>
+	<body>
+		<!--知识点：——————————————————————————
+		1. 新增input类型：color，time,datetime,datetime-local,date,month,week
+		 email,number,range,search,tel,url等
+		2. 新增标签output
+		3. textarea新增属性maxlength，wrap（值为soft或hard）
+		4. 新增属性pattern,novalidate，list
+		
+		 -->
+		 
+		 <!-- 根据效果图，设计表单1，
+		  1. 电话输入框需要验证手机号码的正确性，
+		  正则表达式：1[345678]\d{9}$ 号码为数字1开头+
+		  一位3-8的数字+后面任意9位数字， $表示结尾
+		  2.email可输入多个邮箱。
+		  3.日期、月份、星期都设有最大最小值
+		  4.数字设定最大最小值，并设置步长
+		  5.文本区域设置wrap和maxlength属性-->
+		  
+		<form id="f1" action="" method="get" >
+			颜色：
+			<input type="color" value="#ff0000"><br />
+			时间：
+			<input type="time" value="00:00"><br />
+			日期时间：
+			<input type="datetime-local" name="" id=""><br />
+			日期：
+			<input type="date" max="2022-11-30" min="2020-11-30"><br />
+			月份：
+			<input type="month"><br />
+			星期：
+			<input type="week" max="2022-16" min="2022-1"><br />
+			email:
+			<input type="email" multiple="multiple"><br />
+			数字：
+			<input type="number"><br />
+			范围1：
+			<input type="range" step="10" min="0" max="100" value="20"><br />
+			范围2：
+			<input type="range" list="d1" id="r1"><br />
+			搜索：
+			<input type="search"><br />
+			电话：
+			<input type="tel" placeholder="请输入" pattern="1[345678]\d{9}$"><br />
+			URL:
+			<input type="url" name="" id=""><br />
+			文本区域:
+			<textarea name="" id="" cols="5" rows="10"></textarea>
+			<input type="submit" />
+		</form>
+		<datalist id="d1">
+			<option value="0">0</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+			<option value="60">60</option>
+			<option value="70">70</option>
+			<option value="80">80</option>
+			<option value="90">90</option>
+			<option value="100">100</option>
+		</datalist>
+		<!-- 根据效果图,设计表单2,范围值在输出框中显示。
+		oninput 事件在用户输入时触发。
+		 -->
+		
+		<form id="f2" action="" method="get"  >
+			<input type="range" list="d1" id="r2" onchange="document.getElementById('op1').innerHTML=this.value" value="">
+			<output for="r2" name="op" id="op1"></output>
+		</form>
+		
+	</body>
+</html>

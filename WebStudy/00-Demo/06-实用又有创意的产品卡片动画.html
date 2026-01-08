@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-实用又有创意的产品卡片动画</title>
+    <link rel="stylesheet" href="./css/06-实用又有创意的产品卡片动画.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="thumb">
+            <li onmouseover="imgURL('./img/06-img/shoes1.png')"><img src="./img/06-img/shoes1.png"></li>
+            <li onmouseover="imgURL('./img/06-img/shoes2.png')"><img src="./img/06-img/shoes2.png"></li>
+            <li onmouseover="imgURL('./img/06-img/shoes3.png')"><img src="./img/06-img/shoes3.png"></li>
+        </ul>
+        <div class="imgBox">
+            <h2>耐克运动鞋</h2>
+            <img src="./img/06-img/shoes1.png">
+            <ul class="size">
+                <span>尺寸</span>
+                <li>42</li>
+                <li>43</li>
+                <li>44</li>
+                <li>45</li>
+            </ul>
+            <a href="#" class="btn">加入购物车</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function imgURL(hmmm) {
+            document.querySelector(".imgBox img").src = hmmm;
+        }
+    </script>
+</body>
+
+</html>

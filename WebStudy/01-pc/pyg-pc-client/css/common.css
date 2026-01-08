@@ -1,0 +1,190 @@
+/* --------------------版心的公共类 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* --------------------快捷导航模块 start */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.container {
+    height: 31px;
+    /* ps */
+    /* background-color: pink; */
+}
+
+.shortcut .fl ul li {
+    float: left;
+    font-size: 12px;
+}
+
+.shortcut .fl ul li:first-child {
+    margin-right: 12px;
+}
+
+.shortcut .fl ul li a:first-child {
+    margin-right: 10px;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+.shortcut .fr ul li {
+    float: left;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.shortcut .fr ul li:first {
+    margin-left: 0px;
+}
+
+.shortcut .fr ul li a {
+    border-right: 1px solid #666;
+    padding-right: 15px;
+}
+
+.shortcut .fr ul li:last-child a {
+    border: none;
+    padding-right: 0px;
+}
+
+/* --------------------快捷导航模块  end */
+.header {
+    position: relative;
+    height: 105px;
+    /* ps */
+    background-color: pink;
+}
+
+/* --------------------logo模块 */
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 176px;
+    height: 56px;
+    /* ps */
+    /* background-color: skyblue; */
+}
+
+.logo h1 a {
+    display: block;
+    width: 176px;
+    height: 56px;
+    background: url('../images/logo.png') no-repeat;
+    /* 隐藏文字 */
+    /* 京东的做法 */
+    /* font-size: 0px; */
+    /* 淘宝的做法 */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/* --------------------search搜索模块制作 */
+.search {
+    position: absolute;
+    top: 25px;
+    left: 346px;
+    width: 538px;
+    height: 36px;
+    /* ps */
+    background-color: skyblue;
+    border: 2px solid #b1191a;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search button {
+    position: relative;
+    top: -1px;
+    right: 0px;
+    width: 80px;
+    height: 35px;
+    font-size: 16px;
+    color: #fff;
+    background-color:  #b1191a;
+}
+
+/* --------------------hotword热词模块制作 */
+.hotwords {
+    position: absolute;
+    top: 70px;
+    left: 346px;
+    height: 12px;
+    line-height: 12px;
+    padding-left: 10px;
+    /* ps */
+    /* background-color: skyblue; */
+
+}
+
+.hotwords ul li {
+    float: left;
+    margin-right: 24px;
+    font-size: 12px;
+}
+
+.hotwords ul li:last-child {
+    margin-right: 0px;
+}
+
+/* --------------------购物车模块制作 */
+
+.shopcar {
+    position: absolute;
+    top: 25px;
+    right: 43px;
+    width: 140px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border: 1px solid #dfdfdf;
+    font-size: 12px;
+    color: #666;
+}
+
+.shopcar::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 13px;
+    margin-top: 0px;
+    margin-right: 7px;
+    /* ps */
+    background-color: skyblue;
+    background: url("../images/icons.png") -415px -90px;
+}
+
+.shopcar::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 12px;
+    margin-left: 14px;
+    /* ps */
+    background-color: skyblue;
+}
+
+.count {
+    position: absolute;
+    left: 105px;
+    bottom: 26px;
+    height: 14px;
+    line-height: 14px;
+    padding: 0px 5px;
+    border-radius: 7px 7px 7px 0px;
+    color: #fff;
+    background-color: #e60012;
+}

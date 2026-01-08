@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>return语句的使用</title>
+</head>
+<body>
+    <script>
+        // 应用①：利用函数求两个数的最大值
+        // function getMax(num1, num2) {
+        //     // if (num1 > num2) {
+        //     //     return num1
+        //     // } else {
+        //     //     return num2
+        //     // }
+        //     let max = num1 > num2 ? num1 : num2
+        //     return max
+        // }
+        // console.log(getMax(10, 11))
+
+        // 应用②：利用函数求任意一个数组中的最大值
+        // function getArrMaxValue(arg) {   // arr 用来接收一个数组
+        //     let max = arg[0]
+        //     for (let i = 1; i < arg.length; i++) {
+        //         if (arg[i] > max) {
+        //             max = arg[i]
+        //         }
+        //     }
+        //     return max
+        // }
+        // console.log(getArrMaxValue([5, 2, 99, 101, 67, 77]))
+        // function getArrMaxValue(arr) {
+        //     let max = arr[0]
+        //     for (let i = 1; i < arr.length; i++) {
+        //         max = arr[i] > max ? arr[i] : max
+        //     }
+        //     return max
+        // }
+        // // 在我们实际开发过程中，我们经常用一个变量来接收 函数的返回结果
+        // let re = getArrMaxValue([5, 2, 99, 101, 67, 77])
+        // console.log(re)
+
+        // 应用③：求任意一个数组的最大值和最小值，并返回这两个值
+        // function getArrMaxAndMin(arr) {
+        //     let max = [0]
+        //     let min = [0]
+        //     for (let i = 0; i < arr.length; i++) {
+        //         max = arr[i] > max ? arr[i] : max
+        //         min = arr[i] < min ? arr[i] : min
+        //     }
+        //     return [max, min]
+        // }
+        // let re = getArrMaxAndMin([1, 8, 85, 0, -9, -3])
+        // console.log(`这个数组的最大值是${re[0]},最小值是${re[1]}`)
+
+        // function getArrMaxAndMin(arr) {
+        //     // 外层循环控制趟数：arr.length - 1
+        //     for (let i = 0; i < arr.length - 1; i++) {
+        //         // 内层循环控制次数：arr.length - i - 1
+        //         for (let j = 0; j < arr.length - i - 1; j++) {
+        //             // 如果前一个元素的值大于后面的元素时：交换两个变量的值
+        //             if (arr[j] > arr[j + 1]) {
+        //                 let temp = arr[j]
+        //                 arr[j] = arr[j + 1]
+        //                 arr[j + 1] = temp
+        //             }
+        //         }
+        //     }
+        //     return arr
+        // }
+        // let re = getArrMaxAndMin([1, 8, 85, 0, -9, -3])
+        // console.log(re)
+        // console.log(`这个数组的最大值是${re[re.length - 1]},最小值是${re[0]}`)
+
+        // 应用④：利用函数，翻转任意一个数组
+        function reveser(arr) {
+            let new_arr = []
+            for (let i = 0; i < arr.length; i++) {
+                new_arr.unshift(arr[i])
+            }
+            return new_arr
+        }
+        let re1 = reveser([1, 2, 3, 4, 5])
+        let re2 = reveser([10, 9, 8, 7, 6, 5])
+        console.log(re1)
+        console.log(re2)
+
+        // 应用⑤：输入一个年份，判断这个年份是否为闰年（闰年：能被4整除并且不能被100整除的，或者能被400整除）
+        // let year = +prompt('请输入一个年份')
+        // function isRunYear(year) {
+        //     // 如果是闰年我们返回true，否则返回false
+        //     let flag = false
+        //     if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        //         flag = true
+        //     }
+        //     return flag
+        // }
+        // let re = isRunYear(year)
+        // console.log(re)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装函数获得时间</title>
+</head>
+<body>
+    <script>
+        function getTimes() {
+            let date = new Date()
+            let hours = date.getHours()
+            let minute = date.getMinutes()
+            let second = date.getSeconds()
+            hours = hours >= 10 ? hours : '0' + hours
+            minute = minute >= 10 ? minute : '0' + minute
+            second = second >= 10 ? second : '0' + second
+            let time = `${hours}:${minute}:${second}`
+            return time
+        }
+
+        let time = getTimes()
+        console.log(time)
+    </script>
+</body>
+</html>
